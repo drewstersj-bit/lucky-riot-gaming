@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Sora } from "next/font/google";
+import { Archivo_Black, Sora } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -16,8 +16,8 @@ const sans = Sora({
   display: "swap",
 });
 
-// Anton is reserved for short, impactful display headlines only.
-const display = Anton({
+// Archivo Black is reserved for short, impactful display headlines only.
+const display = Archivo_Black({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-display",

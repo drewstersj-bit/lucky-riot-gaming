@@ -63,7 +63,7 @@ export function HeroReveal() {
 
           <motion.h1
             variants={rise}
-            className="font-display text-[clamp(2.75rem,8vw,6rem)] uppercase leading-[0.95] text-riot-white"
+            className="font-display text-[clamp(2.75rem,8vw,6rem)] uppercase leading-[1.05] text-riot-white"
           >
             Built to <span className="text-gradient-lucky">Break</span> the Pattern.
           </motion.h1>

@@ -59,12 +59,11 @@ const config: Config = {
         display: ["var(--font-display)", "var(--font-sans)", "system-ui", "sans-serif"],
       },
       fontSize: {
-        // Anton is a very tall, condensed face. Multi-line display headings need
-        // generous line-height (its glyphs nearly fill the em box) plus a little
-        // tracking so letters and lines don't crowd.
-        "display-xl": ["clamp(2.75rem, 7vw, 5.5rem)", { lineHeight: "1.22", letterSpacing: "0.015em" }],
-        "display-lg": ["clamp(2.25rem, 5vw, 4rem)", { lineHeight: "1.25", letterSpacing: "0.015em" }],
-        "display-md": ["clamp(1.75rem, 3.5vw, 2.75rem)", { lineHeight: "1.3", letterSpacing: "0.015em" }],
+        // Archivo Black is a normal-width bold display face — standard tight
+        // display line-heights read well without crowding.
+        "display-xl": ["clamp(2.75rem, 7vw, 5.5rem)", { lineHeight: "1.05", letterSpacing: "-0.015em" }],
+        "display-lg": ["clamp(2.25rem, 5vw, 4rem)", { lineHeight: "1.08", letterSpacing: "-0.015em" }],
+        "display-md": ["clamp(1.75rem, 3.5vw, 2.75rem)", { lineHeight: "1.12", letterSpacing: "-0.01em" }],
       },
       maxWidth: {
         container: "80rem",

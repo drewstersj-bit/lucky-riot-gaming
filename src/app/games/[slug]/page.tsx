@@ -63,7 +63,7 @@ export default async function GameDetailPage({ params }: PageProps) {
                 <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${a.text}`}>
                   {game.category}
                 </p>
-                <h1 className="mt-3 font-display text-[clamp(2.25rem,5vw,4rem)] uppercase leading-[0.95] text-riot-white">
+                <h1 className="mt-3 font-display text-[clamp(2.25rem,5vw,4rem)] uppercase leading-[1.05] text-riot-white">
                   {game.title}
                 </h1>
                 <Streak className="mt-5" />
