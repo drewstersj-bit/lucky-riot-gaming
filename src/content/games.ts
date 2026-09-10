@@ -31,6 +31,46 @@ export interface GameRelease {
   date?: string;
 }
 
+/** Category accent identity, consistent site-wide (gold/pink/cyan). */
+export type CategoryAccentKey = "gold" | "pink" | "cyan";
+
+export function accentForCategory(category: GameCategory): CategoryAccentKey {
+  switch (category) {
+    case "Online Slot":
+      return "gold";
+    case "Video Poker":
+      return "pink";
+    case "Roulette":
+      return "cyan";
+    default:
+      return "gold";
+  }
+}
+
+/**
+ * Commercial "Game Passport" — clean, verified specification data shown
+ * separately from the expressive game presentation.
+ *
+ * Every field is optional. Only supplied values are rendered; missing fields
+ * are hidden rather than invented. Do NOT populate RTP, max win, certification
+ * or market availability with speculative values.
+ */
+export interface GamePassport {
+  gameType?: string;
+  gridFormat?: string;
+  orientation?: string;
+  volatility?: string;
+  rtpConfigurations?: string[];
+  maxWin?: string;
+  featureSummary?: string;
+  languages?: string[];
+  platforms?: string[];
+  targetMarkets?: string[];
+  certificationStatus?: string;
+  releaseStatus?: string;
+  demoAvailability?: string;
+}
+
 export interface Game {
   /** URL-safe unique identifier, also used for the detail page route. */
   slug: string;
@@ -59,6 +99,8 @@ export interface Game {
   /** Technical spec key/value pairs for the detail page. */
   technical?: { label: string; value: string }[];
   release?: GameRelease;
+  /** Commercial specification panel. Only supplied fields are shown. */
+  passport?: GamePassport;
   /** When true a dedicated /games/[slug] detail page is generated. */
   hasDetailPage: boolean;
   /** Concept cards render with a distinct "teaser" treatment. */
@@ -104,6 +146,17 @@ export const games: Game[] = [
       },
     ],
     release: { label: "In development" },
+    passport: {
+      gameType: "Video slot",
+      gridFormat: "Expanding grid (from 5×5 towards 7×7)",
+      orientation: "Landscape and portrait",
+      featureSummary:
+        "Expanding grid, persistent progression, character modifiers and the headline Maximus Mode.",
+      maxWin: "5,000× potential (design target, subject to change)",
+      releaseStatus: "In development",
+      certificationStatus: "Not yet certified",
+      demoAvailability: "Not yet available",
+    },
     hasDetailPage: true,
   },
   {

@@ -1,133 +1,137 @@
 import type { Metadata } from "next";
-import { HeroBackground } from "@/components/HeroBackground";
+import { HeroReveal } from "@/components/HeroReveal";
 import { ButtonLink } from "@/components/Button";
 import { Section, SectionHeading } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
-import { CategoryCard } from "@/components/CategoryCard";
-import { GameCard } from "@/components/GameCard";
+import { Streak } from "@/components/Streak";
+import { CategoryPanels } from "@/components/CategoryPanels";
+import { FeaturedGame } from "@/components/FeaturedGame";
+import { InsideTheRiot } from "@/components/InsideTheRiot";
+import { RiotDrops } from "@/components/RiotDrops";
 import { Pillars } from "@/components/Pillars";
-import { featuredGames } from "@/content/games";
+import { getGameBySlug } from "@/content/games";
 import {
-  heroContent,
   studioIntro,
+  gameCategories,
+  insideTheRiot,
   approachPillars,
   partnershipCta,
 } from "@/content/home";
+import { riotDrops, riotDropsIntro } from "@/content/riot-drops";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Lucky Riot Games | Original Slots and Online Games",
   ...buildMetadata({
-    title: "Lucky Riot Games | Original Slots and Online Games",
+    title: "Lucky Riot Games | Built to Break the Pattern",
     description:
-      "Lucky Riot Games is an independent studio creating original online slots, video poker, roulette and distinctive new gaming experiences.",
+      "Lucky Riot Games creates original online slots, video poker and roulette. Serious maths. Beautiful chaos.",
     path: "/",
   }),
 };
 
 export default function HomePage() {
+  const flagship = getGameBySlug("cluckus-maximus-eggspander");
+
   return (
     <>
-      {/* Hero */}
-      <section className="relative flex min-h-[88vh] items-center overflow-hidden">
-        <HeroBackground />
-        <div className="container-page relative z-10 py-24">
-          <div className="max-w-3xl">
-            <Reveal>
-              <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-riot-border bg-riot-surface/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-lucky-yellow">
-                Independent game studio
-              </p>
-            </Reveal>
-            <Reveal delay={0.05}>
-              <h1 className="text-display-xl font-extrabold text-riot-white">
-                Games Should Never Feel{" "}
-                <span className="text-gradient-lucky">Predictable.</span>
-              </h1>
-              <div className="divider-riot mt-6 w-28 rounded-full" aria-hidden="true" />
-            </Reveal>
-            <Reveal delay={0.12}>
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-riot-text md:text-xl">
-                {heroContent.supporting}
-              </p>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <ButtonLink href={heroContent.primaryCta.href} size="lg">
-                  {heroContent.primaryCta.label}
-                </ButtonLink>
-                <ButtonLink href={heroContent.secondaryCta.href} size="lg" variant="secondary">
-                  {heroContent.secondaryCta.label}
-                </ButtonLink>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
+      {/* 1. Brand-reveal hero */}
+      <HeroReveal />
 
-      {/* Studio introduction */}
-      <Section aria-labelledby="studio-heading">
+      {/* 2. Featured game */}
+      {flagship && (
+        <Section aria-labelledby="featured-heading">
+          <Reveal>
+            <SectionHeading
+              id="featured-heading"
+              eyebrow="Flagship title"
+              title="The First Riot"
+              intro="Our debut flagship project, in development now."
+            />
+            <Streak className="mt-6" />
+          </Reveal>
+          <Reveal delay={0.06}>
+            <div className="mt-10">
+              <FeaturedGame game={flagship} />
+            </div>
+          </Reveal>
+        </Section>
+      )}
+
+      {/* 3. Game categories */}
+      <Section gradient aria-labelledby="categories-heading">
         <Reveal>
           <SectionHeading
-            id="studio-heading"
-            eyebrow="Who we are"
-            title={studioIntro.heading}
+            id="categories-heading"
+            eyebrow="What we make"
+            title="Slots. Poker. Roulette. Turned Up."
             intro={studioIntro.copy}
           />
         </Reveal>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {studioIntro.categories.map((cat, i) => (
-            <Reveal key={cat.title} delay={i * 0.08}>
-              <CategoryCard title={cat.title} description={cat.description} index={i} />
-            </Reveal>
-          ))}
+        <div className="mt-12">
+          <Reveal>
+            <CategoryPanels categories={gameCategories} />
+          </Reveal>
         </div>
       </Section>
 
-      {/* Featured games */}
-      <Section gradient aria-labelledby="featured-heading">
+      {/* 4. Inside the Riot */}
+      <Section aria-labelledby="inside-heading">
         <Reveal>
           <SectionHeading
-            id="featured-heading"
-            eyebrow="From the studio"
-            title="Featured Games"
-            intro="A first look at what we're building. More titles are in development."
+            id="inside-heading"
+            eyebrow="Under the hood"
+            title={insideTheRiot.heading}
+            intro={insideTheRiot.intro}
           />
+          <Streak className="mt-6" />
         </Reveal>
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {featuredGames.map((game, i) => (
-            <Reveal key={game.slug} delay={i * 0.06}>
-              <GameCard game={game} />
-            </Reveal>
-          ))}
+        <div className="mt-12">
+          <Reveal>
+            <InsideTheRiot cards={insideTheRiot.cards} />
+          </Reveal>
         </div>
       </Section>
 
-      {/* Our approach */}
-      <Section aria-labelledby="approach-heading">
+      {/* 5. Our approach */}
+      <Section gradient aria-labelledby="approach-heading">
         <Reveal>
-          <SectionHeading
-            id="approach-heading"
-            eyebrow="Our approach"
-            title="How We Build"
-          />
+          <SectionHeading id="approach-heading" eyebrow="Our approach" title="Built Properly. Played Loudly." />
         </Reveal>
         <div className="mt-12">
           <Pillars pillars={approachPillars} />
         </div>
       </Section>
 
-      {/* Partnership CTA */}
+      {/* 6. Riot Drops */}
+      <Section aria-labelledby="drops-heading">
+        <Reveal>
+          <SectionHeading
+            id="drops-heading"
+            eyebrow="Announcements"
+            title={riotDropsIntro.heading}
+            intro={riotDropsIntro.intro}
+          />
+          <Streak className="mt-6" />
+        </Reveal>
+        <div className="mt-12">
+          <Reveal>
+            <RiotDrops drops={riotDrops} />
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* 7. Commercial partnership CTA */}
       <Section gradient aria-labelledby="partner-heading">
         <Reveal>
-          <div className="relative overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface p-8 md:p-14">
+          <div className="group relative overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface p-8 md:p-14">
+            <span className="light-sweep pointer-events-none absolute inset-0" aria-hidden="true" />
             <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-riot-pink/20 blur-3xl" />
             <div className="relative max-w-2xl">
-              <h2 id="partner-heading" className="text-display-md font-extrabold text-riot-white">
+              <h2 id="partner-heading" className="font-display text-3xl uppercase text-riot-white md:text-4xl">
                 {partnershipCta.heading}
               </h2>
-              <p className="mt-5 text-lg leading-relaxed text-riot-text">
-                {partnershipCta.copy}
-              </p>
+              <p className="mt-5 text-lg leading-relaxed text-riot-text">{partnershipCta.copy}</p>
               <ButtonLink href={partnershipCta.button.href} size="lg" className="mt-8">
                 {partnershipCta.button.label}
               </ButtonLink>

@@ -70,7 +70,7 @@ export function Header() {
             </Link>
           ))}
           <ButtonLink href="/contact" className="ml-3">
-            Work With Us
+            Start a Riot
           </ButtonLink>
         </nav>
 
@@ -135,7 +135,7 @@ export function Header() {
                   </Link>
                 ))}
                 <ButtonLink href="/contact" size="lg" className="mt-3 w-full">
-                  Work With Us
+                  Start a Riot
                 </ButtonLink>
               </nav>
             </motion.div>

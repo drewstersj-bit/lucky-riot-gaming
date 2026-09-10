@@ -4,8 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
+import { Streak } from "@/components/Streak";
 import { ButtonLink } from "@/components/Button";
-import { getDetailPageGames, getGameBySlug } from "@/content/games";
+import { GamePassport } from "@/components/GamePassport";
+import { GridExpansionDemo } from "@/components/GridExpansionDemo";
+import { accentClasses } from "@/lib/accents";
+import { accentForCategory, getDetailPageGames, getGameBySlug } from "@/content/games";
 import { buildMetadata } from "@/lib/seo";
 
 interface PageProps {
@@ -33,11 +37,21 @@ export default async function GameDetailPage({ params }: PageProps) {
   const game = getGameBySlug(slug);
   if (!game || !game.hasDetailPage) notFound();
 
+  // Per-game visual world: each title adopts its category accent while keeping
+  // the Lucky Riot navigation, typography and interface system intact.
+  const accent = accentForCategory(game.category);
+  const a = accentClasses[accent];
+  const showGridDemo = game.slug === "cluckus-maximus-eggspander";
+
   return (
     <>
-      {/* Hero */}
+      {/* Hero — tinted towards the game's world */}
       <section className="relative overflow-hidden border-b border-riot-border surface-gradient">
-        <div className="container-page py-16 md:py-24">
+        <div
+          aria-hidden="true"
+          className={`pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full ${a.bgSoft} blur-3xl`}
+        />
+        <div className="container-page relative py-16 md:py-24">
           <Reveal>
             <Link href="/games/" className="text-sm font-semibold text-riot-text-muted hover:text-riot-cyan">
               ← Back to games
@@ -46,11 +60,14 @@ export default async function GameDetailPage({ params }: PageProps) {
           <div className="mt-6 grid items-center gap-10 lg:grid-cols-2">
             <Reveal>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lucky-gold">
+                <p className={`text-xs font-semibold uppercase tracking-[0.2em] ${a.text}`}>
                   {game.category}
                 </p>
-                <h1 className="mt-3 text-display-lg font-extrabold text-riot-white">{game.title}</h1>
-                <p className="mt-3 inline-flex rounded-full border border-riot-pink/40 bg-riot-pink/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-riot-pink">
+                <h1 className="mt-3 font-display text-[clamp(2.25rem,5vw,4rem)] uppercase leading-[0.95] text-riot-white">
+                  {game.title}
+                </h1>
+                <Streak className="mt-5" />
+                <p className={`mt-5 inline-flex rounded-full border ${a.border} ${a.bgSoft} px-3 py-1 text-xs font-semibold uppercase tracking-wider ${a.text}`}>
                   {game.status}
                 </p>
                 <p className="mt-6 max-w-xl text-lg leading-relaxed text-riot-text">
@@ -93,18 +110,38 @@ export default async function GameDetailPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* Inside this game — grid-expansion demonstration for Cluckus */}
+      {showGridDemo && (
+        <Section aria-labelledby="inside-game-heading">
+          <Reveal>
+            <h2 id="inside-game-heading" className="font-display text-3xl uppercase text-riot-white">
+              Inside the Grid
+            </h2>
+            <p className="mt-4 max-w-2xl leading-relaxed text-riot-text-muted">
+              The playing area expands as players advance towards Maximus Mode. Here&apos;s a
+              lightweight look at how the grid grows.
+            </p>
+          </Reveal>
+          <Reveal delay={0.06}>
+            <div className="mt-10">
+              <GridExpansionDemo />
+            </div>
+          </Reveal>
+        </Section>
+      )}
+
       {/* Feature breakdown */}
       {game.featureBreakdown && game.featureBreakdown.length > 0 && (
-        <Section aria-labelledby="features-heading">
+        <Section gradient aria-labelledby="features-heading">
           <Reveal>
-            <h2 id="features-heading" className="text-display-md font-extrabold text-riot-white">
+            <h2 id="features-heading" className="font-display text-3xl uppercase text-riot-white">
               Features
             </h2>
           </Reveal>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {game.featureBreakdown.map((feature, i) => (
               <Reveal key={feature.title} delay={i * 0.06}>
-                <div className="h-full rounded-xl2 border border-riot-border bg-riot-surface p-7">
+                <div className={`h-full rounded-xl2 border border-riot-border bg-riot-surface p-7 transition-colors ${a.hoverBorder}`}>
                   <h3 className="text-lg font-bold text-riot-white">{feature.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-riot-text-muted">
                     {feature.description}
@@ -118,9 +155,9 @@ export default async function GameDetailPage({ params }: PageProps) {
 
       {/* Feature tags */}
       {game.featureTags && game.featureTags.length > 0 && (
-        <Section gradient aria-labelledby="highlights-heading">
+        <Section aria-labelledby="highlights-heading">
           <Reveal>
-            <h2 id="highlights-heading" className="text-display-md font-extrabold text-riot-white">
+            <h2 id="highlights-heading" className="font-display text-3xl uppercase text-riot-white">
               At a glance
             </h2>
           </Reveal>
@@ -128,7 +165,7 @@ export default async function GameDetailPage({ params }: PageProps) {
             {game.featureTags.map((tag) => (
               <li
                 key={tag}
-                className="rounded-full border border-lucky-gold/30 bg-riot-surface px-4 py-2 text-sm font-medium text-riot-text"
+                className={`rounded-full border ${a.border} bg-riot-surface px-4 py-2 text-sm font-medium text-riot-text`}
               >
                 {tag}
               </li>
@@ -141,7 +178,7 @@ export default async function GameDetailPage({ params }: PageProps) {
       {game.screenshots && game.screenshots.length > 0 && (
         <Section aria-labelledby="screens-heading">
           <Reveal>
-            <h2 id="screens-heading" className="text-display-md font-extrabold text-riot-white">
+            <h2 id="screens-heading" className="font-display text-3xl uppercase text-riot-white">
               Screenshots
             </h2>
           </Reveal>
@@ -158,46 +195,42 @@ export default async function GameDetailPage({ params }: PageProps) {
         </Section>
       )}
 
-      {/* Technical + release */}
-      {(game.technical?.length || game.release?.label) && (
-        <Section gradient aria-labelledby="tech-heading">
+      {/* Game Passport — clean commercial specification, visually separated */}
+      {game.passport && (
+        <Section gradient aria-labelledby="passport-heading">
           <Reveal>
-            <h2 id="tech-heading" className="text-display-md font-extrabold text-riot-white">
-              Technical information
+            <h2 id="passport-heading" className="font-display text-3xl uppercase text-riot-white">
+              Commercial Details
             </h2>
+            <p className="mt-4 max-w-2xl leading-relaxed text-riot-text-muted">
+              The numbers behind the noise. Verified specification only — anything not yet confirmed
+              is left off.
+            </p>
           </Reveal>
-          <dl className="mt-8 grid gap-x-8 gap-y-4 sm:grid-cols-2">
-            {game.release?.label && (
-              <div className="flex justify-between border-b border-riot-border py-3">
-                <dt className="text-riot-text-muted">Release status</dt>
-                <dd className="font-semibold text-riot-white">{game.release.label}</dd>
-              </div>
-            )}
-            {game.technical?.map((row) => (
-              <div key={row.label} className="flex justify-between border-b border-riot-border py-3">
-                <dt className="text-riot-text-muted">{row.label}</dt>
-                <dd className="font-semibold text-riot-white">{row.value}</dd>
-              </div>
-            ))}
-          </dl>
+          <Reveal delay={0.06}>
+            <div className="mt-10 max-w-3xl">
+              <GamePassport passport={game.passport} />
+            </div>
+          </Reveal>
         </Section>
       )}
 
       {/* Partnership CTA */}
       <Section aria-labelledby="game-cta-heading">
         <Reveal>
-          <div className="relative overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface p-8 md:p-12">
+          <div className="group relative overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface p-8 md:p-12">
+            <span className="light-sweep pointer-events-none absolute inset-0" aria-hidden="true" />
             <div className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-riot-pink/20 blur-3xl" />
             <div className="relative max-w-2xl">
-              <h2 id="game-cta-heading" className="text-display-md font-extrabold text-riot-white">
-                Interested in this title?
+              <h2 id="game-cta-heading" className="font-display text-3xl uppercase text-riot-white md:text-4xl">
+                Start a Riot With Us.
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-riot-text">
                 We work with operators, aggregators and platform providers. Get in touch to talk
                 about distribution and partnership.
               </p>
               <ButtonLink href="/contact/" size="lg" className="mt-8">
-                Start a Conversation
+                Talk to Lucky Riot
               </ButtonLink>
             </div>
           </div>

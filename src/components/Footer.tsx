@@ -57,8 +57,8 @@ export function Footer() {
         <div className="mt-12 rounded-xl2 border border-riot-border bg-riot-charcoal/60 p-5 text-sm text-riot-text-muted">
           <p>
             <strong className="font-semibold text-riot-text">
-              Lucky Riot Games is a game development studio and does not accept wagers or operate a
-              gambling service through this website.
+              Lucky Riot Games is an independent game development studio. We do not accept wagers or
+              operate a gambling service through this website.
             </strong>
           </p>
         </div>

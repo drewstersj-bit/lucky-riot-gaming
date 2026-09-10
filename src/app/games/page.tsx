@@ -19,7 +19,7 @@ export default function GamesPage() {
         <SectionHeading
           id="games-heading"
           eyebrow="Portfolio"
-          title="Our Games"
+          title="Slots. Poker. Roulette. Turned Up."
           intro="Original slots and fresh takes on classic casino games. Use the filters to explore by category or development status."
         />
       </Reveal>

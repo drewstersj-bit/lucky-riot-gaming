@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Anton, Sora } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -8,15 +8,18 @@ import { SiteGate } from "@/components/SiteGate";
 import { siteConfig, siteGate } from "@/content/site";
 import { organizationJsonLd } from "@/lib/seo";
 
-const sans = Inter({
+// Sora handles navigation, body copy, buttons and technical information.
+const sans = Sora({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const display = Sora({
+// Anton is reserved for short, impactful display headlines only.
+const display = Anton({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["400"],
   variable: "--font-display",
   display: "swap",
 });
