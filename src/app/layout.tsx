@@ -4,7 +4,8 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
-import { siteConfig } from "@/content/site";
+import { SiteGate } from "@/components/SiteGate";
+import { siteConfig, siteGate } from "@/content/site";
 import { organizationJsonLd } from "@/lib/seo";
 
 const sans = Inter({
@@ -33,7 +34,8 @@ export const metadata: Metadata = {
     apple: [{ url: "/icon.svg" }],
   },
   manifest: "/site.webmanifest",
-  robots: { index: true, follow: true },
+  // While the pre-launch gate is on, keep the site out of search indexes.
+  robots: siteGate.locked ? { index: false, follow: false } : { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
@@ -56,10 +58,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
         />
-        <Header />
-        <main id="main">{children}</main>
-        <Footer />
-        <CookieConsent />
+        <SiteGate>
+          <Header />
+          <main id="main">{children}</main>
+          <Footer />
+          <CookieConsent />
+        </SiteGate>
       </body>
     </html>
   );

@@ -11,6 +11,9 @@
   # Netlify enables Corepack automatically when packageManager is set,
   # but we set NPM_FLAGS to avoid an implicit npm install step.
   NPM_FLAGS = "--version"
+  # Pre-launch access gate. Keep "true" until you're ready to go public, then
+  # set to "false" here (or in Netlify env vars) and redeploy. See README.
+  NEXT_PUBLIC_SITE_LOCKED = "true"
 
 # ---------------------------------------------------------------------------
 # Redirects

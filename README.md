@@ -189,6 +189,21 @@ Add a `trailerUrl` (e.g. a YouTube link). The **Watch Trailer** button appears a
 trailerUrl: "https://www.youtube.com/watch?v=XXXXXXXXXXX",
 ```
 
+### Pre-launch password protection
+
+The site can be gated behind a login screen until you're ready to go public.
+
+**Current setup (client-side gate):**
+- Controlled by the `NEXT_PUBLIC_SITE_LOCKED` env var (set to `"true"` in `netlify.toml` and `.env.example`).
+- Credentials live in `src/content/site.ts` (`siteGate`): username `LuckyRiot02`, password `WIP123`.
+- When locked, the whole site shows a login overlay and is marked `noindex, nofollow` so search engines don't crawl it. The unlock persists for the browser session.
+
+**To go public at launch:** set `NEXT_PUBLIC_SITE_LOCKED` to `"false"` (in `netlify.toml` or Netlify → Environment variables) and redeploy. No code changes needed.
+
+> ⚠️ **Security note:** because this is a static export, the client-side gate is *obscurity, not security* — the credentials are present in the JavaScript bundle and can be read by anyone who inspects the source. It deters casual visitors only.
+>
+> **For genuine protection**, use Netlify's built-in password protection instead (available on paid plans): **Site settings → Access & security → Visitor access / Password protection**. This enforces HTTP Basic Auth at the edge before any file is served, so credentials never reach the browser. You can use it alongside or instead of the client-side gate. Set a site-wide password (or per-branch passwords for deploy previews) there, and set `NEXT_PUBLIC_SITE_LOCKED` to `"false"` to avoid a double login.
+
 ### How to update contact and social links
 
 Edit `src/content/site.ts`:
