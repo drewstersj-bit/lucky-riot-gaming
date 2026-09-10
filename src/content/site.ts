@@ -14,6 +14,18 @@ export const siteConfig = {
   description:
     "Lucky Riot Games is an independent studio creating original online slots, video poker, roulette and distinctive new gaming experiences.",
   /**
+   * Verified legal entity details (source: UK Companies House, company 12884658).
+   * "Lucky Riot Games" is the studio/trading brand; the registered company is
+   * "Lucky Riot Gaming Limited".
+   */
+  legal: {
+    entityName: "Lucky Riot Gaming Limited",
+    companyNumber: "12884658",
+    incorporatedOn: "16 September 2020",
+    registeredOffice: "7 Stamford Square, Ashton-Under-Lyne, Lancashire, England, OL6 6QU",
+    jurisdiction: "England & Wales",
+  },
+  /**
    * Primary business contact email.
    *
    * NOTE: This address has NOT been confirmed as active in the project.

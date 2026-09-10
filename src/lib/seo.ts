@@ -42,9 +42,19 @@ export function organizationJsonLd() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: siteConfig.name,
+    legalName: siteConfig.legal.entityName,
     url: siteConfig.url,
     description: siteConfig.description,
     logo: new URL("/icon.svg", siteConfig.url).toString(),
+    foundingDate: "2020-09-16",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "7 Stamford Square",
+      addressLocality: "Ashton-Under-Lyne",
+      addressRegion: "Lancashire",
+      postalCode: "OL6 6QU",
+      addressCountry: "GB",
+    },
     ...(siteConfig.social.linkedin ? { sameAs: [siteConfig.social.linkedin] } : {}),
   };
 }

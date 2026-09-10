@@ -3,6 +3,7 @@ import { Section, SectionHeading } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
 import { ButtonLink } from "@/components/Button";
 import { aboutIntro, aboutSections } from "@/content/about";
+import { siteConfig } from "@/content/site";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -45,7 +46,35 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section aria-labelledby="about-cta-heading">
+      <Section aria-labelledby="company-heading">
+        <Reveal>
+          <SectionHeading id="company-heading" eyebrow="The details" title="Company information" />
+        </Reveal>
+        <Reveal delay={0.06}>
+          <dl className="mt-8 max-w-2xl divide-y divide-riot-border rounded-xl2 border border-riot-border bg-riot-surface">
+            <div className="flex flex-col gap-1 p-5 sm:flex-row sm:justify-between">
+              <dt className="text-sm text-riot-text-muted">Registered name</dt>
+              <dd className="font-semibold text-riot-white">{siteConfig.legal.entityName}</dd>
+            </div>
+            <div className="flex flex-col gap-1 p-5 sm:flex-row sm:justify-between">
+              <dt className="text-sm text-riot-text-muted">Company number</dt>
+              <dd className="font-semibold text-riot-white">{siteConfig.legal.companyNumber}</dd>
+            </div>
+            <div className="flex flex-col gap-1 p-5 sm:flex-row sm:justify-between">
+              <dt className="text-sm text-riot-text-muted">Incorporated</dt>
+              <dd className="font-semibold text-riot-white">{siteConfig.legal.incorporatedOn}</dd>
+            </div>
+            <div className="flex flex-col gap-1 p-5 sm:flex-row sm:justify-between">
+              <dt className="text-sm text-riot-text-muted">Registered office</dt>
+              <dd className="font-semibold text-riot-white sm:text-right">
+                {siteConfig.legal.registeredOffice}
+              </dd>
+            </div>
+          </dl>
+        </Reveal>
+      </Section>
+
+      <Section gradient aria-labelledby="about-cta-heading">
         <Reveal>
           <div className="relative overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface p-8 md:p-12">
             <div className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-lucky-gold/15 blur-3xl" />

@@ -63,15 +63,22 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 border-t border-riot-border pt-6 text-sm text-riot-text-muted md:flex-row md:items-center md:justify-between">
-          <p>© {year} Lucky Riot Games. All rights reserved.</p>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-            <span>For business and industry audiences</span>
-            <span aria-hidden="true" className="hidden md:inline">
-              •
-            </span>
-            <span className="font-semibold text-riot-text">18+ | Please gamble responsibly</span>
+        <div className="mt-8 border-t border-riot-border pt-6 text-sm text-riot-text-muted">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <p>© {year} {siteConfig.legal.entityName}. All rights reserved.</p>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+              <span>For business and industry audiences</span>
+              <span aria-hidden="true" className="hidden md:inline">
+                •
+              </span>
+              <span className="font-semibold text-riot-text">18+ | Please gamble responsibly</span>
+            </div>
           </div>
+          <p className="mt-4 text-xs leading-relaxed text-riot-text-muted/80">
+            {siteConfig.legal.entityName} is a company registered in {siteConfig.legal.jurisdiction}
+            {" "}(company no. {siteConfig.legal.companyNumber}). Registered office:{" "}
+            {siteConfig.legal.registeredOffice}.
+          </p>
         </div>
       </div>
     </footer>

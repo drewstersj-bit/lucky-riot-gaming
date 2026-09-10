@@ -20,7 +20,8 @@ export const privacyContent: LegalSection[] = [
   {
     heading: "Overview",
     paragraphs: [
-      `This policy explains how ${siteConfig.name} handles information when you visit this website. We are a game development studio. This website is aimed at businesses and industry audiences and does not accept wagers, deposits or player registrations.`,
+      `This policy explains how ${siteConfig.legal.entityName} (trading as ${siteConfig.name}) handles information when you visit this website. We are a game development studio. This website is aimed at businesses and industry audiences and does not accept wagers, deposits or player registrations.`,
+      `The data controller is ${siteConfig.legal.entityName}, company number ${siteConfig.legal.companyNumber}, registered office ${siteConfig.legal.registeredOffice}.`,
     ],
   },
   {
@@ -91,7 +92,14 @@ export const termsContent: LegalSection[] = [
   {
     heading: "About this website",
     paragraphs: [
-      `This website is operated by ${siteConfig.name} as an informational and business-facing resource about our game development studio.`,
+      `This website is operated by ${siteConfig.legal.entityName} (trading as ${siteConfig.name}) as an informational and business-facing resource about our game development studio.`,
+    ],
+  },
+  {
+    heading: "Company information",
+    paragraphs: [
+      `${siteConfig.legal.entityName} is a private limited company registered in ${siteConfig.legal.jurisdiction} under company number ${siteConfig.legal.companyNumber}.`,
+      `Registered office: ${siteConfig.legal.registeredOffice}.`,
     ],
   },
   {
