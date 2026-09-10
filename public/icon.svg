@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Lucky Riot Games">
+  <defs>
+    <linearGradient id="lucky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE126"/>
+      <stop offset="50%" stop-color="#FFC20A"/>
+      <stop offset="100%" stop-color="#F16F28"/>
+    </linearGradient>
+    <linearGradient id="riot" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FA0597"/>
+      <stop offset="45%" stop-color="#7A238F"/>
+      <stop offset="100%" stop-color="#18C8F2"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="10" fill="#050609"/>
+  <circle cx="24" cy="24" r="18" fill="#0C1118" stroke="url(#lucky)" stroke-width="2"/>
+  <path d="M24 8 L28.5 20 L41 20 L31 28 L35 40 L24 32.5 L13 40 L17 28 L7 20 L19.5 20 Z" fill="url(#lucky)"/>
+  <circle cx="24" cy="24" r="3.6" fill="#050609" stroke="url(#riot)" stroke-width="1.4"/>
+</svg>

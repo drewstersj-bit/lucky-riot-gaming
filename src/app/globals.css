@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Foundation */
+  --riot-black: #050609;
+  --riot-charcoal: #0c1118;
+  --riot-surface: #141b24;
+  --riot-surface-raised: #1b2530;
+  --riot-border: #293543;
+
+  /* Typography */
+  --riot-white: #fffdf5;
+  --riot-text: #f5f2e9;
+  --riot-text-muted: #aeb7c2;
+  --riot-text-dark: #080a0d;
+
+  /* Lucky gold */
+  --lucky-yellow: #ffe126;
+  --lucky-gold: #ffc20a;
+  --lucky-orange: #f9950b;
+  --lucky-deep-orange: #f16f28;
+
+  /* Riot pink */
+  --riot-pink: #fa0597;
+  --riot-magenta: #e805b7;
+  --riot-deep-pink: #b80b83;
+
+  /* Electric blue */
+  --riot-cyan: #18c8f2;
+  --riot-blue: #2175d7;
+  --riot-deep-blue: #1655a6;
+
+  /* Supporting purple */
+  --riot-purple: #7a238f;
+  --riot-violet: #612277;
+
+  /* Signature gradients */
+  --lucky-gradient: linear-gradient(135deg, #ffe126 0%, #ffc20a 50%, #f16f28 100%);
+  --riot-gradient: linear-gradient(110deg, #fa0597 0%, #e805b7 35%, #7a238f 62%, #18c8f2 100%);
+  --electric-gradient: linear-gradient(135deg, #18c8f2 0%, #2175d7 100%);
+  --dark-surface-gradient: linear-gradient(145deg, #141b24 0%, #080a0d 100%);
+
+  --max-container: 80rem;
+}
+
+@layer base {
+  * {
+    border-color: theme("colors.riot.border");
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: theme("colors.riot.black");
+    color: theme("colors.riot.text");
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+    text-wrap: balance;
+  }
+
+  /* Accessible visible focus states — Electric Cyan */
+  :focus-visible {
+    outline: 2px solid theme("colors.riot.cyan");
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    max-width: var(--max-container);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+
+  /* Predominantly dark section backdrop with a restrained gold/cyan wash */
+  .surface-gradient {
+    background:
+      radial-gradient(120% 80% at 50% -10%, rgba(255, 194, 10, 0.08), transparent 60%),
+      radial-gradient(70% 60% at 92% 8%, rgba(24, 200, 242, 0.06), transparent 55%),
+      theme("colors.riot.black");
+  }
+
+  /* Lucky gold gradient text for highlighted display words */
+  .text-gradient-lucky {
+    background: var(--lucky-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Full riot gradient — use sparingly for branded moments only */
+  .text-gradient-riot {
+    background: var(--riot-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .divider-riot {
+    height: 2px;
+    background: var(--riot-gradient);
+    border: 0;
+  }
+
+  .hairline {
+    border-top: 1px solid theme("colors.riot.border");
+  }
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 100;
+  background: var(--lucky-gold);
+  color: var(--riot-text-dark);
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  border-radius: 0 0 0.5rem 0;
+}
+.skip-link:focus {
+  left: 0;
+}

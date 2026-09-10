@@ -1,0 +1,14 @@
+{
+  "name": "Lucky Riot Games",
+  "short_name": "Lucky Riot",
+  "description": "Independent studio creating original online slots, video poker, roulette and distinctive new gaming experiences.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050609",
+  "theme_color": "#050609",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

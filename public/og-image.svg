@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Lucky Riot Games — Original Slots and Online Games">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0C1118"/>
+      <stop offset="100%" stop-color="#050609"/>
+    </linearGradient>
+    <radialGradient id="glowPink" cx="82%" cy="18%" r="55%">
+      <stop offset="0%" stop-color="#FA0597" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#FA0597" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowCyan" cx="12%" cy="90%" r="55%">
+      <stop offset="0%" stop-color="#18C8F2" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#18C8F2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lucky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE126"/>
+      <stop offset="50%" stop-color="#FFC20A"/>
+      <stop offset="100%" stop-color="#F16F28"/>
+    </linearGradient>
+    <linearGradient id="riot" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FA0597"/>
+      <stop offset="35%" stop-color="#E805B7"/>
+      <stop offset="62%" stop-color="#7A238F"/>
+      <stop offset="100%" stop-color="#18C8F2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glowPink)"/>
+  <rect width="1200" height="630" fill="url(#glowCyan)"/>
+  <g transform="translate(80,220)">
+    <circle cx="60" cy="60" r="54" fill="#0C1118" stroke="url(#lucky)" stroke-width="4"/>
+    <path d="M60 12 L73 48 L112 48 L81 72 L93 110 L60 87 L27 110 L39 72 L8 48 L47 48 Z" fill="url(#lucky)"/>
+    <circle cx="60" cy="60" r="10" fill="#050609" stroke="url(#riot)" stroke-width="3"/>
+  </g>
+  <text x="230" y="270" font-family="Sora, Arial, sans-serif" font-size="76" font-weight="800" fill="#FFFDF5" letter-spacing="1">LUCKY RIOT GAMES</text>
+  <text x="232" y="330" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="600" fill="#FFC20A">Original Slots and Online Games</text>
+  <text x="232" y="392" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="500" fill="#AEB7C2">Independent studio · Slots · Video Poker · Roulette</text>
+  <rect x="80" y="470" width="320" height="6" rx="3" fill="url(#riot)"/>
+</svg>

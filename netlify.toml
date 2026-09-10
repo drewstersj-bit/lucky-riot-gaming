@@ -1,0 +1,87 @@
+# Netlify configuration for Lucky Riot Games (static Next.js export).
+
+[build]
+  command = "pnpm build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
+  # Pin the package manager Netlify uses to match package.json.
+  PNPM_VERSION = "10.5.0"
+  # Netlify enables Corepack automatically when packageManager is set,
+  # but we set NPM_FLAGS to avoid an implicit npm install step.
+  NPM_FLAGS = "--version"
+
+# ---------------------------------------------------------------------------
+# Redirects
+# ---------------------------------------------------------------------------
+
+# Canonicalise the bare Netlify subdomain / apex handling is managed in the
+# Netlify dashboard. Below we handle a couple of friendly redirects.
+
+# Send /home to the root.
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+  force = true
+
+# SPA-style fallback is NOT used: this is a fully static multi-page export.
+# The custom 404 page is served automatically by Netlify from out/404.html.
+
+# ---------------------------------------------------------------------------
+# Security headers (applied to every route)
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    X-XSS-Protection = "1; mode=block"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://plausible.io; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
+
+# ---------------------------------------------------------------------------
+# Cache-control for immutable static assets
+# ---------------------------------------------------------------------------
+
+# Next.js build output (hashed filenames -> safe to cache forever).
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Fonts.
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Images and other static media.
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.avif"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# HTML documents should always be revalidated.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
