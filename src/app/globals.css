@@ -67,15 +67,18 @@
   h1, h2, h3, h4 {
     font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
     text-wrap: balance;
-    letter-spacing: 0.005em;
-    line-height: 1.02;
+    /* Anton is a tall, condensed face — give wrapped headings room to breathe
+       and a little tracking for legibility. */
+    letter-spacing: 0.01em;
+    line-height: 1.12;
   }
 
   /* Anton is a heavy display face; normalise its optical weight and casing. */
   .font-display {
     font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
     font-weight: 400 !important;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.015em;
+    line-height: 1.08;
   }
 
   /* Accessible visible focus states — Electric Cyan */

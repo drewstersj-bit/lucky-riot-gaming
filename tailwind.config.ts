@@ -59,9 +59,11 @@ const config: Config = {
         display: ["var(--font-display)", "var(--font-sans)", "system-ui", "sans-serif"],
       },
       fontSize: {
-        "display-xl": ["clamp(2.75rem, 7vw, 5.5rem)", { lineHeight: "1.02", letterSpacing: "-0.02em" }],
-        "display-lg": ["clamp(2.25rem, 5vw, 4rem)", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
-        "display-md": ["clamp(1.75rem, 3.5vw, 2.75rem)", { lineHeight: "1.1", letterSpacing: "-0.01em" }],
+        // Anton is condensed; use comfortable line-heights and slight positive
+        // tracking so multi-line display headings don't look squished.
+        "display-xl": ["clamp(2.75rem, 7vw, 5.5rem)", { lineHeight: "1.08", letterSpacing: "0.01em" }],
+        "display-lg": ["clamp(2.25rem, 5vw, 4rem)", { lineHeight: "1.1", letterSpacing: "0.01em" }],
+        "display-md": ["clamp(1.75rem, 3.5vw, 2.75rem)", { lineHeight: "1.14", letterSpacing: "0.01em" }],
       },
       maxWidth: {
         container: "80rem",
