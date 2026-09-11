@@ -53,15 +53,36 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* Base colour lives on html so the body's fixed brand-frame wash (::before)
+       remains visible. */
+    background-color: theme("colors.riot.black");
   }
 
   body {
-    background-color: theme("colors.riot.black");
+    background-color: transparent;
     color: theme("colors.riot.text");
     font-family: var(--font-sans), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
+  }
+
+  /* Subtle, heavily-darkened brand-frame wash behind the whole site. Uses the
+     intro poster as low-opacity atmosphere — never as a literal background
+     image over content. Fixed so it reads as ambience, not decoration. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to bottom, rgba(5, 6, 9, 0.92), rgba(5, 6, 9, 0.97)),
+      url("/video/Luck_Riot_Intro_Poster.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
   }
 
   h1, h2, h3, h4 {
@@ -113,12 +134,14 @@
     }
   }
 
-  /* Predominantly dark section backdrop with a restrained gold/cyan wash */
+  /* Predominantly dark section backdrop with a restrained gold/cyan wash.
+     The base is slightly translucent so the fixed brand-frame wash on the
+     body shows through as subtle atmosphere. */
   .surface-gradient {
     background:
       radial-gradient(120% 80% at 50% -10%, rgba(255, 194, 10, 0.08), transparent 60%),
       radial-gradient(70% 60% at 92% 8%, rgba(24, 200, 242, 0.06), transparent 55%),
-      theme("colors.riot.black");
+      rgba(5, 6, 9, 0.86);
   }
 
   /* Lucky gold gradient text for highlighted display words */

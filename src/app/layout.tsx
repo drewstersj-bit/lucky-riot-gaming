@@ -53,7 +53,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en-GB" className={`${sans.variable} ${display.variable}`}>
-      <body className="min-h-screen bg-riot-charcoal antialiased">
+      <body className="min-h-screen antialiased">
         <a href="#main" className="skip-link">
           Skip to content
         </a>

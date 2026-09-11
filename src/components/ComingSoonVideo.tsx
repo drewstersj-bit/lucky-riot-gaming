@@ -135,10 +135,12 @@ export function ComingSoonVideo() {
 
   return (
     <div className="absolute inset-0 bg-riot-black">
-      {/* Poster underneath — always present, prevents layout shift & broken icons */}
+      {/* Poster underneath — always present, prevents layout shift & broken icons.
+          On portrait mobile it anchors to the top so Lucky sits high, clear of
+          the lower overlay; centred on larger screens. */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-riot-black bg-contain bg-center bg-no-repeat md:bg-cover"
+        className="absolute inset-0 bg-riot-black bg-contain bg-top bg-no-repeat md:bg-cover md:bg-center"
         style={{ backgroundImage: `url(${POSTER})` }}
       />
 
@@ -158,7 +160,7 @@ export function ComingSoonVideo() {
           }}
           onPause={() => setPlaying(false)}
           onError={() => setFailed(true)}
-          className={`absolute inset-0 h-full w-full object-contain transition-opacity duration-700 md:object-cover ${
+          className={`absolute inset-0 h-full w-full object-contain object-top transition-opacity duration-700 md:object-cover md:object-center ${
             started ? "opacity-100" : "opacity-0"
           }`}
         >
