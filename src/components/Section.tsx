@@ -21,7 +21,9 @@ export function Section({
       id={id}
       className={[
         "py-16 md:py-24",
-        gradient ? "surface-gradient" : "",
+        // Plain sections get a light scrim for text legibility over the brand
+        // backdrop; `gradient` sections use the stronger surface wash instead.
+        gradient ? "surface-gradient" : "bg-riot-black/40",
         className,
       ]
         .filter(Boolean)
