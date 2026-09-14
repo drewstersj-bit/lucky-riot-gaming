@@ -1,0 +1,4 @@
+98c097b Phase 8.3: prepare Cluckus PLAYTEST integration (drop-in path, manifest-driven registry, embed, Netlify edge Basic Auth, scoped CSP)
+98c097ba00f5e51593abb064406618016a3246b2	refs/heads/main
+ M commit_log.txt
+?? state8.txt
