@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Section } from "@/components/Section";
+import { MaturityBadge } from "@/components/MaturityBadge";
 import { GameEmbed } from "@/components/GameEmbed";
 import { getDeployment } from "@/content/game-deployments";
 import { buildProfiles } from "@/content/games";
@@ -14,19 +15,19 @@ export const metadata: Metadata = {
 /**
  * INTERNAL PLAYTEST ROUTE — /games/cluckus-maximus/dev/
  *
- * This page is the website-side shell for the protected PLAYTEST build. It
- * intentionally does NOT implement authentication in client-side JavaScript
- * (that would be insecure and trivially bypassed). Real access control must be
- * enforced at the hosting/edge layer BEFORE this page is served — see the
- * checkpoint "SECURITY / ACCESS CONTROL" section (Netlify Identity / role-based
- * access, Basic Auth via an edge function, or an authenticating proxy).
+ * Website-side shell that embeds the PLAYTEST artefact hosted beneath
+ * /games/cluckus-maximus/dev/game/. It does NOT implement authentication in
+ * client-side JavaScript (insecure). Real access control is enforced at the
+ * hosting/edge layer (Netlify Edge Function Basic Auth — see netlify/edge-
+ * functions/playtest-auth.ts and README "Access control").
  *
- * The embedded artefact (when wired) is the PLAYTEST profile build, which may
- * contain the Developer Console, scenario library, replay and playtest tools.
+ * The wrapper never exposes CORE 750 configuration. The Developer Console,
+ * scenario library and replay tools live INSIDE the artefact.
  */
 export default function CluckusDevPlaytestPage() {
   const manifest = getDeployment("cluckus-maximus", "PLAYTEST");
   const policy = buildProfiles.PLAYTEST;
+  const meta = manifest?.buildMetadata ?? {};
 
   return (
     <Section aria-labelledby="dev-heading">
@@ -46,28 +47,78 @@ export default function CluckusDevPlaytestPage() {
         <Link href="/games/cluckus-maximus/" className="text-sm font-semibold text-riot-text-muted hover:text-riot-cyan">
           ← Cluckus product page
         </Link>
-        <h1 id="dev-heading" className="mt-4 font-display text-3xl uppercase text-riot-white md:text-4xl">
-          Cluckus Maximus — Dev Playtest
-        </h1>
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <h1 id="dev-heading" className="font-display text-3xl uppercase text-riot-white md:text-4xl">
+            Cluckus Maximus: Eggspander
+          </h1>
+          <MaturityBadge maturity="PLAYTEST" />
+        </div>
       </div>
 
-      {/* Access-control boundary notice (no client-side password) */}
+      {/* Build information (from the artefact manifest — never CORE 750 config) */}
       <div className="mt-6 rounded-xl2 border border-riot-border bg-riot-surface p-6">
+        <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-riot-text">Build information</h2>
+        {manifest?.available ? (
+          <dl className="mt-3 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+            <div className="flex justify-between border-b border-riot-border pb-2">
+              <dt className="text-sm text-riot-text-muted">Build type</dt>
+              <dd className="text-sm font-semibold text-riot-white">{manifest.buildType}</dd>
+            </div>
+            <div className="flex justify-between border-b border-riot-border pb-2">
+              <dt className="text-sm text-riot-text-muted">Version</dt>
+              <dd className="text-sm font-semibold text-riot-white">{manifest.version}</dd>
+            </div>
+            {meta.buildId && (
+              <div className="flex justify-between border-b border-riot-border pb-2">
+                <dt className="text-sm text-riot-text-muted">Build identifier</dt>
+                <dd className="text-sm font-semibold text-riot-white">{meta.buildId}</dd>
+              </div>
+            )}
+            {meta.commit && (
+              <div className="flex justify-between border-b border-riot-border pb-2">
+                <dt className="text-sm text-riot-text-muted">Commit</dt>
+                <dd className="text-sm font-semibold text-riot-white">{meta.commit}</dd>
+              </div>
+            )}
+            {meta.buildDate && (
+              <div className="flex justify-between border-b border-riot-border pb-2">
+                <dt className="text-sm text-riot-text-muted">Build date</dt>
+                <dd className="text-sm font-semibold text-riot-white">{meta.buildDate}</dd>
+              </div>
+            )}
+            {meta.channel && (
+              <div className="flex justify-between border-b border-riot-border pb-2">
+                <dt className="text-sm text-riot-text-muted">Channel</dt>
+                <dd className="text-sm font-semibold text-riot-white">{meta.channel}</dd>
+              </div>
+            )}
+          </dl>
+        ) : (
+          <p className="mt-2 text-sm leading-relaxed text-riot-text-muted">
+            No PLAYTEST artefact is currently present. Drop the compiled build into{" "}
+            <code className="text-riot-cyan">public/games/cluckus-maximus/dev/game/</code> and
+            rebuild — build details will appear here from its manifest.
+          </p>
+        )}
+      </div>
+
+      {/* Playtest game embed (tall viewport sizing; no double scrollbars) */}
+      <div className="mt-8">
+        <GameEmbed manifest={manifest} title="Cluckus Maximus (Playtest)" sizing="viewport" />
+      </div>
+
+      {/* Access-control reminder (protection is at the edge, not here) */}
+      <div className="mt-8 rounded-xl2 border border-riot-border bg-riot-surface p-6">
         <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-riot-text">Access control</h2>
         <p className="mt-2 text-sm leading-relaxed text-riot-text-muted">
-          Access to this route is expected to be enforced at the hosting/edge layer before the page
-          loads. No credentials or secrets are held in this frontend. If you can see this page in
-          production without having authenticated, the hosting-layer protection is not yet
+          This route and all nested game assets are protected at the hosting/edge layer (Netlify
+          Edge Function Basic Auth). No credentials or secrets are held in this frontend. If you can
+          reach this page in production without authenticating, the edge protection is not yet
           configured — see the deployment documentation.
         </p>
       </div>
 
-      {/* Playtest build embed slot */}
-      <div className="mt-8">
-        <GameEmbed manifest={manifest} title="Cluckus Maximus (Playtest)" />
-      </div>
-
-      {/* What this build profile is allowed to contain */}
+      {/* What this build profile may contain */}
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <div className="rounded-xl2 border border-riot-border bg-riot-surface p-6">
           <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-riot-cyan">May contain</h2>

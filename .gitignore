@@ -42,3 +42,21 @@ next-env.d.ts
 
 # netlify
 .netlify
+
+# ---------------------------------------------------------------------------
+# Game engine artefacts (Phase 8.3)
+# ---------------------------------------------------------------------------
+# Compiled game artefacts are produced by the Lucky Riot game-engine repo and
+# copied into these public paths at integration/build time. They must NEVER be
+# committed to the website repo (no game source, no large binaries in git).
+# Next.js copies public/ into out/ at build, so a locally-dropped artefact is
+# still deployed. The tracked README/.gitkeep files below are the exceptions.
+public/games/*/dev/game/**
+!public/games/*/dev/game/.gitkeep
+!public/games/*/dev/game/README.md
+public/games/*/play/game/**
+!public/games/*/play/game/.gitkeep
+!public/games/*/play/game/README.md
+public/customer/games/*/play/game/**
+!public/customer/games/*/play/game/.gitkeep
+!public/customer/games/*/play/game/README.md

@@ -17,23 +17,41 @@ import { CoinLoader } from "./brand/CoinLoader";
 export function GameEmbed({
   manifest,
   title,
+  /**
+   * Sizing. "aspect" keeps a 16:9 box (good for cards/previews). "viewport"
+   * uses a tall responsive height suited to an actual playable game, avoiding
+   * letterboxing while preventing page/iframe scroll conflicts.
+   */
+  sizing = "aspect",
 }: {
   manifest: GameDeploymentManifest | undefined;
   title: string;
+  sizing?: "aspect" | "viewport";
 }) {
   const available = manifest?.available && manifest.entryPoint;
 
+  const frameClass =
+    sizing === "viewport"
+      ? "relative w-full overflow-hidden rounded-xl2 border border-riot-border bg-riot-black h-[70vh] min-h-[420px] max-h-[900px]"
+      : "relative aspect-video w-full overflow-hidden rounded-xl2 border border-riot-border bg-riot-black";
+
   return (
-    <div className="relative aspect-video w-full overflow-hidden rounded-xl2 border border-riot-border bg-riot-black">
+    <div className={frameClass}>
       {available ? (
         <iframe
           src={manifest!.entryPoint}
           title={`${title} — ${manifest!.buildType.toLowerCase()} build`}
-          className="absolute inset-0 h-full w-full"
+          className="absolute inset-0 h-full w-full border-0"
           // Restrict what the embedded artefact can do. Loosen only as the
           // engine build genuinely requires (documented in the contract).
+          // - allow-scripts + allow-same-origin: the game runs and reads its
+          //   own same-origin assets (books.json, manifest.json, assets/).
           sandbox="allow-scripts allow-same-origin"
+          // Media + fullscreen permissions the game needs. `allowFullScreen`
+          // (boolean attr) is required alongside allow="fullscreen" for the
+          // game's own fullscreen button to work cross-browser.
           allow="autoplay; fullscreen"
+          allowFullScreen
           loading="lazy"
         />
       ) : (

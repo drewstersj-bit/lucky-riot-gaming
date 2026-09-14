@@ -40,6 +40,21 @@
   force = true
 
 # ---------------------------------------------------------------------------
+# Edge-enforced access control for the internal PLAYTEST route.
+# ---------------------------------------------------------------------------
+# The playtest-auth Edge Function runs BEFORE static files are served, so the
+# wrapper page and all nested game assets (/dev/game/*) require HTTP Basic Auth.
+# Credentials come from Netlify env vars PLAYTEST_AUTH_USER / PLAYTEST_AUTH_PASS
+# (never in the repo). The function fails closed if they are unset.
+[[edge_functions]]
+  function = "playtest-auth"
+  path = "/games/cluckus-maximus/dev"
+
+[[edge_functions]]
+  function = "playtest-auth"
+  path = "/games/cluckus-maximus/dev/*"
+
+# ---------------------------------------------------------------------------
 # Security headers (applied to every route)
 # ---------------------------------------------------------------------------
 [[headers]]
@@ -51,17 +66,32 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
     X-XSS-Protection = "1; mode=block"
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://plausible.io; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
+    # Site-wide CSP. `frame-src 'self'` is added so the playtest wrapper page can
+    # embed the same-origin game iframe; everything else stays strict.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://plausible.io; frame-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
+
+# ---------------------------------------------------------------------------
+# Game artefact CSP (scoped to the embedded PLAYTEST game only).
+# ---------------------------------------------------------------------------
+# Slot engines commonly need blob: URLs (audio buffers, workers) and WebAssembly.
+# Rather than weaken the whole-site CSP, we relax ONLY the game asset path. If
+# the real artefact turns out not to need these, tighten this block. Documented
+# as the single, scoped CSP change for Phase 8.3.
+[[headers]]
+  for = "/games/cluckus-maximus/dev/game/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
+    X-Robots-Tag = "noindex, nofollow, noarchive"
 
 # ---------------------------------------------------------------------------
 # Internal / customer areas — keep out of search indexes at the edge too
 # (individual pages also emit a noindex robots meta tag).
 # ---------------------------------------------------------------------------
-# NOTE: These headers stop indexing but do NOT provide access control. Real
-# protection for /customer/* and /games/*/dev/ must be added at the hosting/
-# auth layer (see README "Access control"): e.g. Netlify Identity + role-based
-# access, HTTP Basic Auth via an edge function, or an authenticating proxy.
-# Do NOT rely on client-side JavaScript for these.
+# NOTE: These headers stop indexing but do NOT provide access control.
+# /games/cluckus-maximus/dev/* IS access-controlled by the playtest-auth Edge
+# Function above (Basic Auth via PLAYTEST_AUTH_USER / PLAYTEST_AUTH_PASS env
+# vars). /customer/* still needs real auth before it holds sensitive data.
+# Do NOT rely on client-side JavaScript for access control.
 [[headers]]
   for = "/customer/*"
   [headers.values]
