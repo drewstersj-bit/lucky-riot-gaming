@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const flagship = getGameBySlug("cluckus-maximus-eggspander");
+  const flagship = getGameBySlug("cluckus-maximus");
 
   return (
     <>

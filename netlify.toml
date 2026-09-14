@@ -32,6 +32,13 @@
 # SPA-style fallback is NOT used: this is a fully static multi-page export.
 # The custom 404 page is served automatically by Netlify from out/404.html.
 
+# Redirect the previous Cluckus detail URL to the new product page.
+[[redirects]]
+  from = "/games/cluckus-maximus-eggspander/*"
+  to = "/games/cluckus-maximus/"
+  status = 301
+  force = true
+
 # ---------------------------------------------------------------------------
 # Security headers (applied to every route)
 # ---------------------------------------------------------------------------
@@ -45,6 +52,25 @@
     X-XSS-Protection = "1; mode=block"
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://plausible.io; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
+
+# ---------------------------------------------------------------------------
+# Internal / customer areas — keep out of search indexes at the edge too
+# (individual pages also emit a noindex robots meta tag).
+# ---------------------------------------------------------------------------
+# NOTE: These headers stop indexing but do NOT provide access control. Real
+# protection for /customer/* and /games/*/dev/ must be added at the hosting/
+# auth layer (see README "Access control"): e.g. Netlify Identity + role-based
+# access, HTTP Basic Auth via an edge function, or an authenticating proxy.
+# Do NOT rely on client-side JavaScript for these.
+[[headers]]
+  for = "/customer/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/games/*/dev/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
 
 # ---------------------------------------------------------------------------
 # Cache-control for immutable static assets

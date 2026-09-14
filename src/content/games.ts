@@ -10,6 +10,132 @@ export type GameCategory = "Online Slot" | "Video Poker" | "Roulette";
 
 export type GameStatus = "In Development" | "Coming Soon" | "Released" | "Concept";
 
+/**
+ * Game maturity / lifecycle state. This is the single source of truth used
+ * consistently across the games catalogue, product pages and customer area.
+ *
+ * Ordered from earliest to latest lifecycle stage:
+ *   CONCEPT              — idea only, NOT playable, no build exists
+ *   IN DEVELOPMENT       — being built, not yet playable
+ *   PLAYABLE DEVELOPMENT — a playable internal build exists (e.g. Cluckus now)
+ *   PLAYTEST             — a protected playtest build is available
+ *   CANDIDATE            — a clean release-candidate build is available
+ *   COMING SOON          — finished, awaiting public availability
+ *   LIVE                 — released and publicly available
+ */
+export type GameMaturity =
+  | "CONCEPT"
+  | "IN DEVELOPMENT"
+  | "PLAYABLE DEVELOPMENT"
+  | "PLAYTEST"
+  | "CANDIDATE"
+  | "COMING SOON"
+  | "LIVE";
+
+/** Presentation metadata for each maturity state (label + accent + playable flag). */
+export const maturityMeta: Record<
+  GameMaturity,
+  { label: string; playable: boolean; tone: "concept" | "dev" | "candidate" | "live" }
+> = {
+  CONCEPT: { label: "Concept", playable: false, tone: "concept" },
+  "IN DEVELOPMENT": { label: "In Development", playable: false, tone: "dev" },
+  "PLAYABLE DEVELOPMENT": { label: "Playable Development", playable: true, tone: "dev" },
+  PLAYTEST: { label: "Playtest", playable: true, tone: "dev" },
+  CANDIDATE: { label: "Candidate", playable: true, tone: "candidate" },
+  "COMING SOON": { label: "Coming Soon", playable: false, tone: "candidate" },
+  LIVE: { label: "Live", playable: true, tone: "live" },
+};
+
+/**
+ * Website build profiles. Each maps to a route target and defines what the
+ * embedded game is allowed to contain. The website only ever *hosts* the
+ * artefact produced by the game-engine repository for the matching profile.
+ */
+export type GameBuildProfile = "PLAYTEST" | "CUSTOMER" | "PUBLIC";
+
+export interface BuildProfilePolicy {
+  profile: GameBuildProfile;
+  /** Route pattern relative to site root (<game-id> is substituted). */
+  routePattern: string;
+  indexable: boolean;
+  /** Human-readable description of what the artefact MAY contain. */
+  mayContain: string[];
+  /** What the artefact MUST NOT contain. */
+  mustNotContain: string[];
+}
+
+export const buildProfiles: Record<GameBuildProfile, BuildProfilePolicy> = {
+  PLAYTEST: {
+    profile: "PLAYTEST",
+    routePattern: "/games/<game-id>/dev/",
+    indexable: false,
+    mayContain: [
+      "playable game",
+      "Lucky Riot Developer Console",
+      "scenario library",
+      "replay tools",
+      "playtest tools",
+      "build information",
+    ],
+    mustNotContain: ["public exposure without access control"],
+  },
+  CUSTOMER: {
+    profile: "CUSTOMER",
+    routePattern: "/customer/games/<game-id>/play/",
+    indexable: false,
+    mayContain: ["clean playable candidate", "candidate build/version information"],
+    mustNotContain: [
+      "Developer Console",
+      "internal maths inspector",
+      "scenario tools",
+      "internal notes",
+    ],
+  },
+  PUBLIC: {
+    profile: "PUBLIC",
+    routePattern: "/games/<game-id>/play/",
+    indexable: true, // SEO behaviour decided at release stage
+    mayContain: ["clean public demo"],
+    mustNotContain: [
+      "devtools",
+      "internal maths information",
+      "internal fixtures",
+      "debug controls",
+    ],
+  },
+};
+
+/**
+ * Generic game deployment contract.
+ *
+ * This is the ONLY thing the website needs to know about a game build. The
+ * Lucky Riot game-engine repository is authoritative for runtime, maths,
+ * replay, events, assets and the build itself; it should emit a manifest that
+ * satisfies this shape. The website never contains game implementation detail.
+ *
+ * See `src/content/game-deployments.ts` for the (currently placeholder)
+ * registry and `docs`/checkpoint for the exact engine-side requirement.
+ */
+export interface GameDeploymentManifest {
+  /** Canonical game id, e.g. "cluckus-maximus". */
+  gameId: string;
+  displayName: string;
+  /** Semantic-ish version string emitted by the engine build. */
+  version: string;
+  buildType: GameBuildProfile;
+  /**
+   * Entry point the website embeds (e.g. an index.html path under a base path
+   * the game artefact is deployed to). Empty when no build is wired yet.
+   */
+  entryPoint: string;
+  /** Base path where the artefact's assets live. */
+  assetsBasePath: string;
+  /** Opaque build metadata (commit, built-at, channel…). Not rendered raw publicly. */
+  buildMetadata?: Record<string, string>;
+  /** False until a real artefact is wired; UI shows a placeholder when false. */
+  available: boolean;
+}
+
 /** High-level filter buckets used on the /games page. */
 export type GameFilter =
   | "All"
@@ -72,11 +198,21 @@ export interface GamePassport {
 }
 
 export interface Game {
-  /** URL-safe unique identifier, also used for the detail page route. */
+  /**
+   * URL-safe canonical game identifier. Used for the product page route
+   * (/games/<slug>/) AND as the game id across dev/customer/deployment
+   * (e.g. "cluckus-maximus").
+   */
   slug: string;
   title: string;
   category: GameCategory;
+  /**
+   * Legacy short status (kept for the existing catalogue filters). Prefer
+   * `maturity` for lifecycle logic.
+   */
   status: GameStatus;
+  /** Canonical lifecycle state — single source of truth site-wide. */
+  maturity: GameMaturity;
   /** Short marketing description (1–2 sentences). */
   description: string;
   /** Optional longer summary shown on the detail page. */
@@ -101,18 +237,28 @@ export interface Game {
   release?: GameRelease;
   /** Commercial specification panel. Only supplied fields are shown. */
   passport?: GamePassport;
-  /** When true a dedicated /games/[slug] detail page is generated. */
+  /** When true a dedicated /games/[slug] detail (product) page is generated. */
   hasDetailPage: boolean;
+  /**
+   * When true this game has a dedicated hand-built product page at
+   * /games/<slug>/ (e.g. Cluckus) rather than the generic [slug] detail page.
+   * Kept separate so the generic detail route can skip games with a bespoke page.
+   */
+  hasProductPage?: boolean;
+  /** Optional development progress (0–100) shown on the product page. */
+  devProgress?: number;
   /** Concept cards render with a distinct "teaser" treatment. */
   isConcept?: boolean;
 }
 
 export const games: Game[] = [
   {
-    slug: "cluckus-maximus-eggspander",
+    slug: "cluckus-maximus",
     title: "CLUCKUS MAXIMUS: EGGSPANDER",
     category: "Online Slot",
     status: "In Development",
+    maturity: "PLAYABLE DEVELOPMENT",
+    devProgress: 65,
     description:
       "An empire-building slot adventure where the playing area expands and the rewards grow as players advance towards Maximus Mode.",
     summary:
@@ -153,33 +299,38 @@ export const games: Game[] = [
       featureSummary:
         "Expanding grid, persistent progression, character modifiers and the headline Maximus Mode.",
       maxWin: "5,000× potential (design target, subject to change)",
-      releaseStatus: "In development",
+      releaseStatus: "Playable development build",
       certificationStatus: "Not yet certified",
-      demoAvailability: "Not yet available",
+      demoAvailability: "In development",
     },
-    hasDetailPage: true,
+    // Cluckus has a bespoke product page at /games/cluckus-maximus/, so it does
+    // NOT use the generic [slug] detail route (avoids a route collision).
+    hasDetailPage: false,
+    hasProductPage: true,
   },
   {
     slug: "video-poker-concept",
-    title: "Video Poker — In Development",
+    title: "Video Poker — Concept",
     category: "Video Poker",
-    status: "In Development",
+    status: "Concept",
+    maturity: "CONCEPT",
     description:
-      "A fresh take on video poker in development: the clarity of a classic combined with new presentation, progression and feature ideas.",
+      "A fresh take on video poker, currently at concept stage: the clarity of a classic combined with new presentation, progression and feature ideas.",
     featureTags: ["Classic Clarity", "New Progression", "Modern Presentation"],
-    release: { label: "In development" },
+    release: { label: "Concept" },
     hasDetailPage: false,
     isConcept: true,
   },
   {
     slug: "roulette-concept",
-    title: "Roulette — In Development",
+    title: "Roulette — Concept",
     category: "Roulette",
-    status: "In Development",
+    status: "Concept",
+    maturity: "CONCEPT",
     description:
-      "A distinctive interpretation of roulette in development: familiar foundations developed into a visually exciting new experience.",
+      "A distinctive interpretation of roulette, currently at concept stage: familiar foundations developed into a visually exciting new experience.",
     featureTags: ["Familiar Foundations", "Distinctive Visuals", "Fresh Mechanics"],
-    release: { label: "In development" },
+    release: { label: "Concept" },
     hasDetailPage: false,
     isConcept: true,
   },
@@ -193,9 +344,19 @@ export function getGameBySlug(slug: string): Game | undefined {
   return games.find((game) => game.slug === slug);
 }
 
-/** All games that should generate a static detail page. */
+/** All games that should generate a static (generic) detail page. */
 export function getDetailPageGames(): Game[] {
   return games.filter((game) => game.hasDetailPage);
+}
+
+/** Canonical game id lookup (same value as slug). */
+export function getGameById(gameId: string): Game | undefined {
+  return games.find((game) => game.slug === gameId);
+}
+
+/** Games that have a bespoke product page at /games/<slug>/. */
+export function getProductPageGames(): Game[] {
+  return games.filter((game) => game.hasProductPage);
 }
 
 /** Map a high-level filter to a predicate. */

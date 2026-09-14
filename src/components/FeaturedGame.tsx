@@ -1,13 +1,14 @@
 import Image from "next/image";
 import type { Game } from "@/content/games";
-import { accentForCategory } from "@/content/games";
+import { accentForCategory, maturityMeta } from "@/content/games";
 import { accentClasses } from "@/lib/accents";
 import { ButtonLink } from "./Button";
 
 /** Large cinematic presentation of the flagship game. */
 export function FeaturedGame({ game }: { game: Game }) {
   const a = accentClasses[accentForCategory(game.category)];
-  const detailHref = game.hasDetailPage ? `/games/${game.slug}/` : undefined;
+  const detailHref =
+    game.hasProductPage || game.hasDetailPage ? `/games/${game.slug}/` : undefined;
 
   return (
     <div className="group relative overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface shadow-card">
@@ -28,7 +29,7 @@ export function FeaturedGame({ game }: { game: Game }) {
           )}
           <div className="absolute left-5 top-5 flex flex-wrap items-center gap-2">
             <span className={`inline-flex items-center rounded-full border ${a.border} ${a.bgSoft} px-3 py-1 text-xs font-semibold uppercase tracking-wider ${a.text}`}>
-              {game.status}
+              {maturityMeta[game.maturity].label}
             </span>
             <span className="inline-flex items-center rounded-full border border-riot-border bg-riot-black/60 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-riot-text-muted">
               Flagship

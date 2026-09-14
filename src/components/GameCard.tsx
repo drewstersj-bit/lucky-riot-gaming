@@ -1,22 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Game } from "@/content/games";
+import { maturityMeta } from "@/content/games";
 import { ButtonLink } from "./Button";
 
-function StatusBadge({ status }: { status: Game["status"] }) {
+function StatusBadge({ maturity }: { maturity: Game["maturity"] }) {
   // Status is always conveyed as a text label (never colour alone).
-  // Green: genuinely released. Pink: in development / coming soon. Gold: concept.
+  // Green: live. Cyan: candidate/coming soon. Pink: in development / playtest.
+  // Gold: concept.
+  const meta = maturityMeta[maturity];
   const tone =
-    status === "Released"
+    meta.tone === "live"
       ? "bg-state-success/15 text-state-success border-state-success/40"
-      : status === "Concept"
-        ? "bg-lucky-gold/15 text-lucky-yellow border-lucky-gold/30"
-        : "bg-riot-pink/15 text-riot-pink border-riot-pink/40";
+      : meta.tone === "candidate"
+        ? "bg-riot-cyan/15 text-riot-cyan border-riot-cyan/40"
+        : meta.tone === "concept"
+          ? "bg-lucky-gold/15 text-lucky-yellow border-lucky-gold/30"
+          : "bg-riot-pink/15 text-riot-pink border-riot-pink/40";
   return (
     <span
       className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wider ${tone}`}
     >
-      {status}
+      {meta.label}
     </span>
   );
 }
@@ -40,7 +45,7 @@ export function GameCard({ game }: { game: Game }) {
     slug,
     title,
     category,
-    status,
+    maturity,
     description,
     artworkLandscape,
     logo,
@@ -48,10 +53,14 @@ export function GameCard({ game }: { game: Game }) {
     trailerUrl,
     demoUrl,
     hasDetailPage,
+    hasProductPage,
     isConcept,
   } = game;
 
-  const detailHref = hasDetailPage ? `/games/${slug}` : undefined;
+  // Product page takes priority over the generic detail page. Never link the
+  // internal dev-build URL from the public catalogue.
+  const detailHref =
+    hasProductPage || hasDetailPage ? `/games/${slug}/` : undefined;
   const accent = cardAccent(category);
 
   return (
@@ -74,7 +83,7 @@ export function GameCard({ game }: { game: Game }) {
           <AbstractArt title={title} concept={isConcept} />
         )}
         <div className="absolute left-4 top-4 flex items-center gap-2">
-          <StatusBadge status={status} />
+          <StatusBadge maturity={maturity} />
         </div>
         {logo && (
           <div className="absolute bottom-4 left-4 h-12 w-24">

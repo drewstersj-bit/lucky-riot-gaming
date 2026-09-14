@@ -35,14 +35,14 @@ export const riotDropsIntro = {
 
 export const riotDrops: RiotDrop[] = [
   {
-    id: "cluckus-maximus-eggspander",
+    id: "cluckus-maximus",
     title: "CLUCKUS MAXIMUS: EGGSPANDER",
     category: "Online Slot",
     accent: "gold",
     status: "In Development",
     teaser:
       "An empire-building slot where the grid grows and rewards climb towards Maximus Mode.",
-    href: "/games/cluckus-maximus-eggspander",
+    href: "/games/cluckus-maximus/",
   },
   {
     id: "untitled-video-poker",
