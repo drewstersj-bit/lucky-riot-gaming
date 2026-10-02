@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Section } from "@/components/Section";
-import { Reveal } from "@/components/Reveal";
 import { GameEmbed } from "@/components/GameEmbed";
 import { getDeployment } from "@/content/game-deployments";
 import { buildMetadata } from "@/lib/seo";
@@ -24,28 +22,24 @@ export default function CluckusPublicPlayPage() {
   // no fixtures, no debug controls (enforced by the artefact + build profile).
   const manifest = getDeployment(GAME_ID, "PUBLIC");
 
+  // Near-native layout: a slim back bar, then the game fills the rest of the
+  // viewport edge-to-edge (no 16:9 box, no page padding) so mobile feels like
+  // the standalone build. The site header stays above for navigation.
   return (
-    <Section aria-labelledby="play-heading">
-      <Reveal>
-        <Link href={`/games/${GAME_ID}/`} className="text-sm font-semibold text-riot-text-muted hover:text-riot-cyan">
-          ← Back to Cluckus Maximus
+    <div className="flex flex-col">
+      <div className="flex items-center justify-between gap-3 border-b border-riot-border bg-riot-black/60 px-4 py-2">
+        <Link
+          href={`/games/${GAME_ID}/`}
+          className="text-sm font-semibold text-riot-text-muted hover:text-riot-cyan"
+        >
+          ← Back
         </Link>
-        <h1 id="play-heading" className="mt-4 font-display text-3xl uppercase text-riot-white md:text-4xl">
+        <h1 id="play-heading" className="truncate font-display text-sm uppercase tracking-wide text-riot-white">
           Cluckus Maximus — Demo
         </h1>
-        <p className="mt-3 max-w-2xl leading-relaxed text-riot-text-muted">
-          A clean public demonstration of Cluckus Maximus. This is a demo build for entertainment
-          and showcase purposes and does not accept wagers.
-        </p>
-      </Reveal>
-      <Reveal delay={0.06}>
-        <div className="mt-8">
-          <GameEmbed manifest={manifest} title="Cluckus Maximus" />
-        </div>
-        <p className="mt-4 text-xs uppercase tracking-[0.2em] text-riot-text-muted">
-          Public demo · 18+ · Please gamble responsibly
-        </p>
-      </Reveal>
-    </Section>
+        <span className="text-[10px] uppercase tracking-[0.18em] text-riot-text-muted">18+</span>
+      </div>
+      <GameEmbed manifest={manifest} title="Cluckus Maximus" sizing="fullscreen" />
+    </div>
   );
 }

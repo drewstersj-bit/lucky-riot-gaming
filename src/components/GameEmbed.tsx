@@ -18,25 +18,39 @@ export function GameEmbed({
   manifest,
   title,
   /**
-   * Sizing. "aspect" keeps a 16:9 box (good for cards/previews). "viewport"
-   * uses a tall responsive height suited to an actual playable game, avoiding
-   * letterboxing while preventing page/iframe scroll conflicts.
+   * Sizing.
+   *  - "aspect"     16:9 box (good for cards/previews).
+   *  - "viewport"   tall responsive height suited to a playable game.
+   *  - "fullscreen" fills the available viewport (minus any surrounding chrome)
+   *                 so a phone sees a near-native, edge-to-edge game. Uses the
+   *                 dynamic viewport unit (dvh) so mobile browser bars don't
+   *                 clip it.
    */
   sizing = "aspect",
 }: {
   manifest: GameDeploymentManifest | undefined;
   title: string;
-  sizing?: "aspect" | "viewport";
+  sizing?: "aspect" | "viewport" | "fullscreen";
 }) {
   const available = manifest?.available && manifest.entryPoint;
 
   const frameClass =
-    sizing === "viewport"
-      ? "relative w-full overflow-hidden rounded-xl2 border border-riot-border bg-riot-black h-[70vh] min-h-[420px] max-h-[900px]"
-      : "relative aspect-video w-full overflow-hidden rounded-xl2 border border-riot-border bg-riot-black";
+    sizing === "fullscreen"
+      ? "relative w-full overflow-hidden bg-riot-black"
+      : sizing === "viewport"
+        ? "relative w-full overflow-hidden rounded-xl2 border border-riot-border bg-riot-black h-[70vh] min-h-[420px] max-h-[900px]"
+        : "relative aspect-video w-full overflow-hidden rounded-xl2 border border-riot-border bg-riot-black";
+
+  // Fullscreen height is set with an inline style (not a Tailwind arbitrary
+  // class) so it always applies regardless of the content scanner. The subtracted
+  // 3.5rem accounts for the slim back-bar above the game; the site header sits
+  // above that. `100dvh` tracks the dynamic viewport so mobile browser chrome
+  // doesn't clip the game.
+  const frameStyle =
+    sizing === "fullscreen" ? { height: "calc(100dvh - 3.5rem)", minHeight: "420px" } : undefined;
 
   return (
-    <div className={frameClass}>
+    <div className={frameClass} style={frameStyle}>
       {available ? (
         <iframe
           src={manifest!.entryPoint}
