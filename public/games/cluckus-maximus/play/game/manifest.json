@@ -1,0 +1,14 @@
+{
+  "gameId": "cluckus-maximus",
+  "displayName": "CLUCKUS MAXIMUS: EGGSPANDER",
+  "version": "0.1.0",
+  "buildType": "PUBLIC",
+  "entryPoint": "index.html",
+  "assetsBasePath": "./",
+  "buildMetadata": {
+    "commit": "src-2cc717cfac",
+    "builtAt": "2026-10-02T20:23:18.586Z",
+    "channel": "public"
+  },
+  "available": true
+}

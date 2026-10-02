@@ -84,6 +84,17 @@
     X-Robots-Tag = "noindex, nofollow, noarchive"
 
 # ---------------------------------------------------------------------------
+# PUBLIC demo game artefact CSP (scoped to the public, non-auth play route).
+# ---------------------------------------------------------------------------
+# Same slot-engine relaxations as the playtest path (blob: + wasm for audio
+# buffers / workers), scoped ONLY to the public game asset path. This is a
+# public, indexable demo, so NO noindex tag here.
+[[headers]]
+  for = "/games/cluckus-maximus/play/game/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
+
+# ---------------------------------------------------------------------------
 # Internal / customer areas — keep out of search indexes at the edge too
 # (individual pages also emit a noindex robots meta tag).
 # ---------------------------------------------------------------------------

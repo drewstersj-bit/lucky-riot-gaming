@@ -1,0 +1,521 @@
+{
+  "schemaVersion": "1.0.0",
+  "gameId": "cluckus-maximus",
+  "version": "bbfad91937",
+  "assetsBasePath": "./",
+  "tiers": [
+    100,
+    75,
+    50,
+    35,
+    25
+  ],
+  "assets": {
+    "background.base.main": {
+      "type": "image",
+      "group": "BASE_GAME",
+      "source": {
+        "width": 1920,
+        "height": 1080
+      },
+      "variants": {
+        "25": {
+          "webp": {
+            "path": "generated/assets/25/graphics/backgrounds/background.base.main.webp",
+            "bytes": 27812,
+            "hash": "fc229081c4",
+            "format": "webp",
+            "width": 480,
+            "height": 270
+          },
+          "png": {
+            "path": "generated/assets/25/graphics/backgrounds/background.base.main.png",
+            "bytes": 66019,
+            "hash": "ef4dd471ff",
+            "format": "png",
+            "width": 480,
+            "height": 270
+          }
+        },
+        "35": {
+          "webp": {
+            "path": "generated/assets/35/graphics/backgrounds/background.base.main.webp",
+            "bytes": 49914,
+            "hash": "ddfc3f45a8",
+            "format": "webp",
+            "width": 672,
+            "height": 378
+          },
+          "png": {
+            "path": "generated/assets/35/graphics/backgrounds/background.base.main.png",
+            "bytes": 117528,
+            "hash": "44cd3b63a5",
+            "format": "png",
+            "width": 672,
+            "height": 378
+          }
+        },
+        "50": {
+          "webp": {
+            "path": "generated/assets/50/graphics/backgrounds/background.base.main.webp",
+            "bytes": 90474,
+            "hash": "1e26d3aaa0",
+            "format": "webp",
+            "width": 960,
+            "height": 540
+          },
+          "png": {
+            "path": "generated/assets/50/graphics/backgrounds/background.base.main.png",
+            "bytes": 223359,
+            "hash": "b4048421f5",
+            "format": "png",
+            "width": 960,
+            "height": 540
+          }
+        },
+        "75": {
+          "webp": {
+            "path": "generated/assets/75/graphics/backgrounds/background.base.main.webp",
+            "bytes": 161324,
+            "hash": "9337b0ab86",
+            "format": "webp",
+            "width": 1440,
+            "height": 810
+          },
+          "png": {
+            "path": "generated/assets/75/graphics/backgrounds/background.base.main.png",
+            "bytes": 451090,
+            "hash": "f065afe8a1",
+            "format": "png",
+            "width": 1440,
+            "height": 810
+          }
+        },
+        "100": {
+          "webp": {
+            "path": "generated/assets/100/graphics/backgrounds/background.base.main.webp",
+            "bytes": 232178,
+            "hash": "edf5e817cf",
+            "format": "webp",
+            "width": 1920,
+            "height": 1080
+          },
+          "png": {
+            "path": "generated/assets/100/graphics/backgrounds/background.base.main.png",
+            "bytes": 741909,
+            "hash": "32300aca53",
+            "format": "png",
+            "width": 1920,
+            "height": 1080
+          }
+        }
+      },
+      "tags": [
+        "production",
+        "background",
+        "landscape"
+      ]
+    },
+    "background.base.main.portrait": {
+      "type": "image",
+      "group": "BASE_GAME",
+      "source": {
+        "width": 1080,
+        "height": 1920
+      },
+      "variants": {
+        "25": {
+          "webp": {
+            "path": "generated/assets/25/graphics/backgrounds/background.base.main.portrait.webp",
+            "bytes": 35288,
+            "hash": "ac528f8a60",
+            "format": "webp",
+            "width": 270,
+            "height": 480
+          },
+          "png": {
+            "path": "generated/assets/25/graphics/backgrounds/background.base.main.portrait.png",
+            "bytes": 73727,
+            "hash": "f3f56f5423",
+            "format": "png",
+            "width": 270,
+            "height": 480
+          }
+        },
+        "35": {
+          "webp": {
+            "path": "generated/assets/35/graphics/backgrounds/background.base.main.portrait.webp",
+            "bytes": 65866,
+            "hash": "953900f62d",
+            "format": "webp",
+            "width": 378,
+            "height": 672
+          },
+          "png": {
+            "path": "generated/assets/35/graphics/backgrounds/background.base.main.portrait.png",
+            "bytes": 136253,
+            "hash": "237868dfd5",
+            "format": "png",
+            "width": 378,
+            "height": 672
+          }
+        },
+        "50": {
+          "webp": {
+            "path": "generated/assets/50/graphics/backgrounds/background.base.main.portrait.webp",
+            "bytes": 126732,
+            "hash": "fd5421765f",
+            "format": "webp",
+            "width": 540,
+            "height": 960
+          },
+          "png": {
+            "path": "generated/assets/50/graphics/backgrounds/background.base.main.portrait.png",
+            "bytes": 267357,
+            "hash": "2f9fab0a80",
+            "format": "png",
+            "width": 540,
+            "height": 960
+          }
+        },
+        "75": {
+          "webp": {
+            "path": "generated/assets/75/graphics/backgrounds/background.base.main.portrait.webp",
+            "bytes": 267336,
+            "hash": "69f4e929b2",
+            "format": "webp",
+            "width": 810,
+            "height": 1440
+          },
+          "png": {
+            "path": "generated/assets/75/graphics/backgrounds/background.base.main.portrait.png",
+            "bytes": 574652,
+            "hash": "ba38942240",
+            "format": "png",
+            "width": 810,
+            "height": 1440
+          }
+        },
+        "100": {
+          "webp": {
+            "path": "generated/assets/100/graphics/backgrounds/background.base.main.portrait.webp",
+            "bytes": 431460,
+            "hash": "59e271d9a2",
+            "format": "webp",
+            "width": 1080,
+            "height": 1920
+          },
+          "png": {
+            "path": "generated/assets/100/graphics/backgrounds/background.base.main.portrait.png",
+            "bytes": 973334,
+            "hash": "100835c68e",
+            "format": "png",
+            "width": 1080,
+            "height": 1920
+          }
+        }
+      },
+      "tags": [
+        "production",
+        "background",
+        "portrait"
+      ]
+    },
+    "logo.test-boot": {
+      "type": "image",
+      "group": "BOOT",
+      "source": {
+        "width": 256,
+        "height": 256
+      },
+      "variants": {
+        "25": {
+          "webp": {
+            "path": "generated/assets/25/graphics/symbols/test-coin.webp",
+            "bytes": 1880,
+            "hash": "9c94118d43",
+            "format": "webp",
+            "width": 64,
+            "height": 64
+          },
+          "png": {
+            "path": "generated/assets/25/graphics/symbols/test-coin.png",
+            "bytes": 3800,
+            "hash": "b28fed414c",
+            "format": "png",
+            "width": 64,
+            "height": 64
+          }
+        },
+        "35": {
+          "webp": {
+            "path": "generated/assets/35/graphics/symbols/test-coin.webp",
+            "bytes": 2922,
+            "hash": "d5f9dcb97c",
+            "format": "webp",
+            "width": 90,
+            "height": 90
+          },
+          "png": {
+            "path": "generated/assets/35/graphics/symbols/test-coin.png",
+            "bytes": 5230,
+            "hash": "25c63a4009",
+            "format": "png",
+            "width": 90,
+            "height": 90
+          }
+        },
+        "50": {
+          "webp": {
+            "path": "generated/assets/50/graphics/symbols/test-coin.webp",
+            "bytes": 3672,
+            "hash": "ad10078d94",
+            "format": "webp",
+            "width": 128,
+            "height": 128
+          },
+          "png": {
+            "path": "generated/assets/50/graphics/symbols/test-coin.png",
+            "bytes": 8256,
+            "hash": "6cea5aa6dc",
+            "format": "png",
+            "width": 128,
+            "height": 128
+          }
+        },
+        "75": {
+          "webp": {
+            "path": "generated/assets/75/graphics/symbols/test-coin.webp",
+            "bytes": 5698,
+            "hash": "008f5a20c8",
+            "format": "webp",
+            "width": 192,
+            "height": 192
+          },
+          "png": {
+            "path": "generated/assets/75/graphics/symbols/test-coin.png",
+            "bytes": 11054,
+            "hash": "9937bfecaf",
+            "format": "png",
+            "width": 192,
+            "height": 192
+          }
+        },
+        "100": {
+          "webp": {
+            "path": "generated/assets/100/graphics/symbols/test-coin.webp",
+            "bytes": 3098,
+            "hash": "2ea7388dc2",
+            "format": "webp",
+            "width": 256,
+            "height": 256
+          },
+          "png": {
+            "path": "generated/assets/100/graphics/symbols/test-coin.png",
+            "bytes": 7300,
+            "hash": "4afa112e7e",
+            "format": "png",
+            "width": 256,
+            "height": 256
+          }
+        }
+      },
+      "tags": [
+        "reference",
+        "boot"
+      ]
+    },
+    "symbol.test-coin": {
+      "type": "image",
+      "group": "BASE_GAME",
+      "source": {
+        "width": 256,
+        "height": 256
+      },
+      "variants": {
+        "25": {
+          "webp": {
+            "path": "generated/assets/25/graphics/symbols/test-coin.webp",
+            "bytes": 1880,
+            "hash": "9c94118d43",
+            "format": "webp",
+            "width": 64,
+            "height": 64
+          },
+          "png": {
+            "path": "generated/assets/25/graphics/symbols/test-coin.png",
+            "bytes": 3800,
+            "hash": "b28fed414c",
+            "format": "png",
+            "width": 64,
+            "height": 64
+          }
+        },
+        "35": {
+          "webp": {
+            "path": "generated/assets/35/graphics/symbols/test-coin.webp",
+            "bytes": 2922,
+            "hash": "d5f9dcb97c",
+            "format": "webp",
+            "width": 90,
+            "height": 90
+          },
+          "png": {
+            "path": "generated/assets/35/graphics/symbols/test-coin.png",
+            "bytes": 5230,
+            "hash": "25c63a4009",
+            "format": "png",
+            "width": 90,
+            "height": 90
+          }
+        },
+        "50": {
+          "webp": {
+            "path": "generated/assets/50/graphics/symbols/test-coin.webp",
+            "bytes": 3672,
+            "hash": "ad10078d94",
+            "format": "webp",
+            "width": 128,
+            "height": 128
+          },
+          "png": {
+            "path": "generated/assets/50/graphics/symbols/test-coin.png",
+            "bytes": 8256,
+            "hash": "6cea5aa6dc",
+            "format": "png",
+            "width": 128,
+            "height": 128
+          }
+        },
+        "75": {
+          "webp": {
+            "path": "generated/assets/75/graphics/symbols/test-coin.webp",
+            "bytes": 5698,
+            "hash": "008f5a20c8",
+            "format": "webp",
+            "width": 192,
+            "height": 192
+          },
+          "png": {
+            "path": "generated/assets/75/graphics/symbols/test-coin.png",
+            "bytes": 11054,
+            "hash": "9937bfecaf",
+            "format": "png",
+            "width": 192,
+            "height": 192
+          }
+        },
+        "100": {
+          "webp": {
+            "path": "generated/assets/100/graphics/symbols/test-coin.webp",
+            "bytes": 3098,
+            "hash": "2ea7388dc2",
+            "format": "webp",
+            "width": 256,
+            "height": 256
+          },
+          "png": {
+            "path": "generated/assets/100/graphics/symbols/test-coin.png",
+            "bytes": 7300,
+            "hash": "4afa112e7e",
+            "format": "png",
+            "width": 256,
+            "height": 256
+          }
+        }
+      },
+      "tags": [
+        "reference",
+        "symbol"
+      ]
+    },
+    "sfx.test-blip": {
+      "type": "audio",
+      "group": "AUDIO",
+      "category": "SFX",
+      "formats": {
+        "ogg": {
+          "path": "generated/assets/audio/test-blip.ogg",
+          "bytes": 4824,
+          "hash": "81238d2bfd"
+        },
+        "m4a": {
+          "path": "generated/assets/audio/test-blip.m4a",
+          "bytes": 5418,
+          "hash": "124a047fb7"
+        },
+        "mp3": {
+          "path": "generated/assets/audio/test-blip.mp3",
+          "bytes": 2276,
+          "hash": "44a23e7e84"
+        }
+      },
+      "durationMs": 250,
+      "channels": 1,
+      "defaultVolume": 0.8,
+      "tags": [
+        "reference"
+      ]
+    },
+    "spine.test-caesar": {
+      "type": "spine",
+      "group": "FEATURE",
+      "spineVersion": "4.2",
+      "skeleton": {
+        "path": "generated/assets/spine/spine.test-caesar/test-caesar.json",
+        "bytes": 552,
+        "hash": "13f5b2ab46",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/spine.test-caesar/test-caesar.atlas",
+            "bytes": 169,
+            "hash": "f510494d0a"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/spine.test-caesar/test-caesar.png",
+              "bytes": 266,
+              "hash": "0fea175c32"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "default"
+      ],
+      "animations": [
+        "idle"
+      ],
+      "tags": [
+        "reference"
+      ]
+    },
+    "bmfont.test-numbers": {
+      "type": "bitmapFont",
+      "group": "BASE_GAME",
+      "data": {
+        "path": "generated/assets/fonts/bitmap/test-numbers.fnt",
+        "bytes": 323,
+        "hash": "714230c9ce",
+        "dataFormat": "fnt"
+      },
+      "pages": [
+        {
+          "path": "generated/assets/fonts/bitmap/test-numbers.png",
+          "bytes": 262,
+          "hash": "02f11c2d41"
+        }
+      ],
+      "tags": [
+        "reference"
+      ]
+    }
+  },
+  "buildMetadata": {
+    "builtAt": "2026-10-02T19:20:31.446Z",
+    "pipelineVersion": "0.1.0"
+  }
+}

@@ -60,6 +60,22 @@ const PLAYTEST_MANIFEST_DISK = path.join(
 );
 
 /**
+ * Public demo artefact location. Mirrors the PLAYTEST drop-in, but served at a
+ * public, indexable, NON-auth route (/games/cluckus-maximus/play/). The clean
+ * PUBLIC build profile guarantees no devtools / internal data.
+ */
+const PUBLIC_PUBLIC_BASE = "/games/cluckus-maximus/play/game/";
+const PUBLIC_MANIFEST_DISK = path.join(
+  process.cwd(),
+  "public",
+  "games",
+  "cluckus-maximus",
+  "play",
+  "game",
+  "manifest.json",
+);
+
+/**
  * Attempt to read + validate the PLAYTEST artefact manifest at build time.
  * Returns a fully-populated manifest with `available: true` only when the
  * artefact and a valid manifest are actually present.
@@ -115,6 +131,59 @@ function readPlaytestManifest(): GameDeploymentManifest {
   }
 }
 
+/**
+ * Read + validate the PUBLIC demo artefact manifest at build time. Returns a
+ * manifest with `available: true` only when the artefact + a valid PUBLIC
+ * manifest are actually present on disk. Identical safety posture to PLAYTEST,
+ * but requires `buildType === "PUBLIC"` and serves a public, non-auth route.
+ */
+function readPublicManifest(): GameDeploymentManifest {
+  const fallback: GameDeploymentManifest = {
+    gameId: "cluckus-maximus",
+    displayName: "Cluckus Maximus: Eggspander",
+    version: "0.0.0-placeholder",
+    buildType: "PUBLIC",
+    entryPoint: "",
+    assetsBasePath: PUBLIC_PUBLIC_BASE,
+    available: false,
+  };
+
+  try {
+    if (!fs.existsSync(PUBLIC_MANIFEST_DISK)) return fallback;
+    const raw = fs.readFileSync(PUBLIC_MANIFEST_DISK, "utf8");
+    const m = JSON.parse(raw) as EngineManifest;
+
+    const okGame = m.gameId === "cluckus-maximus";
+    const okType = (m.buildType ?? "").toUpperCase() === "PUBLIC";
+    const okAvailable = m.available !== false;
+    if (!okGame || !okType || !okAvailable) return fallback;
+
+    const entryFile = m.entryPoint && m.entryPoint.trim() ? m.entryPoint : "index.html";
+    const entryDisk = path.join(path.dirname(PUBLIC_MANIFEST_DISK), entryFile);
+    if (!fs.existsSync(entryDisk)) return fallback;
+
+    const buildMetadata: Record<string, string> = { ...(m.buildMetadata ?? {}) };
+    if (m.buildId) buildMetadata.buildId = m.buildId;
+    if (m.commit) buildMetadata.commit = m.commit;
+    if (m.channel) buildMetadata.channel = m.channel;
+    const buildDate = m.buildDate ?? m.builtAt;
+    if (buildDate) buildMetadata.buildDate = buildDate;
+
+    return {
+      gameId: "cluckus-maximus",
+      displayName: m.displayName?.trim() || fallback.displayName,
+      version: m.version?.trim() || "unknown",
+      buildType: "PUBLIC",
+      entryPoint: `${PUBLIC_PUBLIC_BASE}${entryFile}`,
+      assetsBasePath: PUBLIC_PUBLIC_BASE,
+      buildMetadata: Object.keys(buildMetadata).length ? buildMetadata : undefined,
+      available: true,
+    };
+  } catch {
+    return fallback;
+  }
+}
+
 const registry: Record<string, GameDeploymentManifest> = {
   [key("cluckus-maximus", "PLAYTEST")]: readPlaytestManifest(),
   // CUSTOMER build is NOT activated in this phase.
@@ -127,16 +196,8 @@ const registry: Record<string, GameDeploymentManifest> = {
     assetsBasePath: "/customer/games/cluckus-maximus/play/",
     available: false,
   },
-  // PUBLIC demo is NOT activated in this phase.
-  [key("cluckus-maximus", "PUBLIC")]: {
-    gameId: "cluckus-maximus",
-    displayName: "Cluckus Maximus: Eggspander",
-    version: "0.0.0-placeholder",
-    buildType: "PUBLIC",
-    entryPoint: "",
-    assetsBasePath: "/games/cluckus-maximus/play/",
-    available: false,
-  },
+  // PUBLIC demo: wired to read the dropped-in public artefact manifest.
+  [key("cluckus-maximus", "PUBLIC")]: readPublicManifest(),
 };
 
 /** Look up a deployment manifest, or undefined if none is registered. */

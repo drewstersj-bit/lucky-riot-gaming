@@ -1,0 +1,41 @@
+{
+  "skeleton": {
+    "spine": "4.2.00",
+    "hash": "ref",
+    "x": 0,
+    "y": 0,
+    "width": 64,
+    "height": 64,
+    "images": "./"
+  },
+  "bones": [
+    {
+      "name": "root"
+    }
+  ],
+  "slots": [
+    {
+      "name": "body",
+      "bone": "root",
+      "attachment": "body"
+    }
+  ],
+  "skins": [
+    {
+      "name": "default",
+      "attachments": {
+        "body": {
+          "body": {
+            "width": 64,
+            "height": 64
+          }
+        }
+      }
+    }
+  ],
+  "animations": {
+    "idle": {
+      "slots": {}
+    }
+  }
+}

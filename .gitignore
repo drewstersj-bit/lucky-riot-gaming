@@ -57,6 +57,11 @@ public/games/*/dev/game/**
 public/games/*/play/game/**
 !public/games/*/play/game/.gitkeep
 !public/games/*/play/game/README.md
+# Exception: the Cluckus PUBLIC demo artefact IS committed so a GitHub-push /
+# Netlify-from-git build serves the playable game (the artefact is produced by
+# the engine repo, not built here). Revert this block when CI artefact
+# retrieval is wired, to go back to not committing built game files.
+!public/games/cluckus-maximus/play/game/**
 public/customer/games/*/play/game/**
 !public/customer/games/*/play/game/.gitkeep
 !public/customer/games/*/play/game/README.md
