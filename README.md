@@ -209,8 +209,8 @@ The site can be gated behind a login screen until you're ready to go public.
 Edit `src/content/site.ts`:
 
 ```ts
-email: "hello@luckyriotgames.co.uk",  // displayed contact email
-emailConfirmed: false,                 // set true once the mailbox is verified
+email: "andy@luckyriotgames.co.uk",  // displayed contact email
+emailConfirmed: true,                  // set true once the mailbox is verified
 social: {
   linkedin: "",                        // set the LinkedIn company URL to show the link
 },

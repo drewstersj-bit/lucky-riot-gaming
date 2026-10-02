@@ -26,14 +26,13 @@ export const siteConfig = {
     jurisdiction: "England & Wales",
   },
   /**
-   * Primary business contact email.
-   *
-   * NOTE: This address has NOT been confirmed as active in the project.
-   * It is provided here as editable configuration. Confirm the mailbox exists
-   * before publishing, or replace with a verified address.
+   * Primary business contact email, shown everywhere the site displays a
+   * contact address (footer, contact page, legal pages, structured data).
+   * Set `emailConfirmed` to true once the mailbox is confirmed active, which
+   * removes the "confirm the mailbox" note on the contact page.
    */
-  email: "hello@luckyriotgames.co.uk",
-  emailConfirmed: false,
+  email: "andy@luckyriotgames.co.uk",
+  emailConfirmed: true,
   social: {
     /** Configurable LinkedIn company URL. Leave empty to hide the link. */
     linkedin: "",
