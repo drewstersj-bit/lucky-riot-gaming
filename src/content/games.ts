@@ -316,37 +316,37 @@ export const games: Game[] = [
     maturity: "PLAYABLE DEVELOPMENT",
     devProgress: 40,
     description:
-      "A bold, high-energy bars slot with 10 paylines and a free spins feature. An early playable development build.",
+      "A clean, classic-style bars slot: 5 reels, 10 lines, a stripped-back symbol set and a free spins feature. An early playable development build.",
     summary:
-      "MegaBars is a classic-inspired slot turned up: 10 paylines, scatter-triggered free spins and a high-volatility maths model built for big, memorable moments. Currently an early playable development build.",
-    featureTags: ["10 Paylines", "Free Spins", "Scatter Pays", "High Volatility"],
+      "MegaBars is a pared-back classic slot — 5 reels, 3 rows, 10 lines and just a handful of symbols (bars, blanks and a free-spins trigger). Wins pay on 3 or more adjacent symbols from the left, with a scaling free spins feature. Currently an early playable development build.",
+    featureTags: ["5×3 Reels", "10 Lines", "Free Spins", "Adjacent Pays"],
     featureBreakdown: [
       {
-        title: "10 Paylines",
+        title: "10 Lines, Adjacent Pays",
         description:
-          "A focused ten-line layout that keeps the action clear and readable while leaving room for big wins.",
+          "Wins land on 3 or more adjacent symbols from the left across 10 lines, with the highest win paid on each line.",
+      },
+      {
+        title: "Stripped-Back Symbol Set",
+        description:
+          "A deliberately minimal set — two paying symbols, a blank and a free-spins trigger — for clear, readable play.",
       },
       {
         title: "Free Spins Feature",
         description:
-          "Scatters trigger a free games round that contributes a meaningful slice of the overall return.",
-      },
-      {
-        title: "High Volatility",
-        description:
-          "A high-variance maths model tuned for standout moments rather than frequent small wins.",
+          "Three or more adjacent free-spins symbols trigger the feature; the number of free spins scales with the bet tier and can retrigger.",
       },
     ],
     release: { label: "In development" },
     passport: {
       gameType: "Video slot",
-      gridFormat: "5-reel, 10 paylines",
+      gridFormat: "5 reels × 3 rows, 10 lines",
       orientation: "Landscape and portrait",
-      volatility: "High (volatility index ~30)",
-      // Published, verified from the maths simulation (100M rounds).
+      volatility: "Low",
+      // Published, from the maths simulation (100M rounds).
       rtpConfigurations: ["~93.08% (base ~70.0% + free spins ~23.07%)"],
       featureSummary:
-        "10 paylines with scatter pays and a scatter-triggered free spins feature (hit rate ~1 in 95).",
+        "Two paying symbols plus a free-spins trigger; wins on 3+ adjacent symbols across 10 lines, with a scaling free spins feature.",
       releaseStatus: "Playable development build",
       certificationStatus: "Not yet certified",
       demoAvailability: "In development",

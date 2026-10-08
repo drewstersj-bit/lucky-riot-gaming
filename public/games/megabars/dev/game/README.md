@@ -1,39 +1,39 @@
-# MegaBars — PLAYTEST artefact drop-in
+# MegaBars — dev game artefact
 
-This folder hosts the **compiled** MegaBars PLAYTEST artefact at:
+Hosted at `/games/megabars/dev/game/` and embedded by the dev playtest wrapper
+(`/games/megabars/dev/`).
 
-```
-/games/megabars/dev/game/
-```
+## ⚠ Current contents are a WEBSITE-SIDE VISUAL DEMO
 
-## ⚠ Current contents are a PLACEHOLDER
+`index.html` is a small self-contained slot built **on the website side** purely
+to show the correct MegaBars look-and-feel:
 
-Right now this folder contains a **copy of the Cluckus Maximus client/front-end**,
-used only to validate the website integration pipeline (manifest read → embed →
-edge auth) before the real MegaBars build exists. The embedded game will visibly
-be Cluckus until replaced.
+- 5 reels × 3 rows, 10 lines
+- the four real symbols: **BAR** (top pay), **O** (pay), **0** blank (no pay),
+  **FREE SPINS** trigger
+- wins on 3+ adjacent symbols from the left, highest paid per line
+- a simple free-spins feature (3+ adjacent FS triggers; auto-plays; can retrigger)
 
-The maths profile for MegaBars lives in the game-engine project
-(`C:\stake_engine\games\Megabars`) — maths/source never belongs in the website
-repo. When the engine produces a real MegaBars PLAYTEST artefact, replace this
-folder's contents with it.
+**It is NOT the certified engine maths.** The reel strips and pay values in
+`index.html` are illustrative for presentation only. The authoritative maths
+(RTP, reel construction, paytable, feature maths) lives in the game-engine
+project at `C:\stake_engine\games\Megabars` and must never be copied here.
 
-## Rules
+## Replace with the real engine build
 
-- **Only compiled artefacts** go here. Never place game-engine source or maths.
-- Contents are **git-ignored** (see root `.gitignore`); only `README.md` and
-  `.gitkeep` are tracked. The artefact is copied to `out/` at build time.
-- `manifest.json` must have `gameId: "megabars"` and `buildType: "PLAYTEST"` or
-  the website registry will treat the build as unavailable.
-
-## Replace with the real build
+When the engine produces a real MegaBars PLAYTEST artefact, delete the demo and
+drop the compiled artefact in (keep `README.md` / `.gitkeep`):
 
 ```powershell
-# from the website repo root, once the engine emits the real artefact:
 Remove-Item -Recurse -Force .\public\games\megabars\dev\game\* -Exclude README.md,.gitkeep
-Copy-Item -Recurse -Force `
-  C:\stake_engine\games\Megabars\dist\deploy\megabars\playtest\* `
-  .\public\games\megabars\dev\game\
+Copy-Item -Recurse -Force C:\stake_engine\games\Megabars\dist\deploy\megabars\playtest\* .\public\games\megabars\dev\game\
 ```
 
-Then rebuild (`pnpm build`) and redeploy.
+Then rebuild (`pnpm build`). The registry reads `manifest.json`; it requires
+`gameId: "megabars"` and `buildType: "PLAYTEST"`.
+
+## Git
+
+The artefact contents are git-ignored (root `.gitignore`); only this `README.md`
+and `.gitkeep` are tracked. Next.js copies `public/` into `out/` at build so the
+demo deploys without being committed as source.
