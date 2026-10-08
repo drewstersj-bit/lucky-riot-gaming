@@ -309,6 +309,52 @@ export const games: Game[] = [
     hasProductPage: true,
   },
   {
+    slug: "megabars",
+    title: "MEGABARS",
+    category: "Online Slot",
+    status: "In Development",
+    maturity: "PLAYABLE DEVELOPMENT",
+    devProgress: 40,
+    description:
+      "A bold, high-energy bars slot with 10 paylines and a free spins feature. An early playable development build.",
+    summary:
+      "MegaBars is a classic-inspired slot turned up: 10 paylines, scatter-triggered free spins and a high-volatility maths model built for big, memorable moments. Currently an early playable development build.",
+    featureTags: ["10 Paylines", "Free Spins", "Scatter Pays", "High Volatility"],
+    featureBreakdown: [
+      {
+        title: "10 Paylines",
+        description:
+          "A focused ten-line layout that keeps the action clear and readable while leaving room for big wins.",
+      },
+      {
+        title: "Free Spins Feature",
+        description:
+          "Scatters trigger a free games round that contributes a meaningful slice of the overall return.",
+      },
+      {
+        title: "High Volatility",
+        description:
+          "A high-variance maths model tuned for standout moments rather than frequent small wins.",
+      },
+    ],
+    release: { label: "In development" },
+    passport: {
+      gameType: "Video slot",
+      gridFormat: "5-reel, 10 paylines",
+      orientation: "Landscape and portrait",
+      volatility: "High (volatility index ~30)",
+      // Published, verified from the maths simulation (100M rounds).
+      rtpConfigurations: ["~93.08% (base ~70.0% + free spins ~23.07%)"],
+      featureSummary:
+        "10 paylines with scatter pays and a scatter-triggered free spins feature (hit rate ~1 in 95).",
+      releaseStatus: "Playable development build",
+      certificationStatus: "Not yet certified",
+      demoAvailability: "In development",
+    },
+    hasDetailPage: false,
+    hasProductPage: true,
+  },
+  {
     slug: "video-poker-concept",
     title: "Video Poker — Concept",
     category: "Video Poker",

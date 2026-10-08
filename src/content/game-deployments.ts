@@ -9,11 +9,13 @@ import type { GameBuildProfile, GameDeploymentManifest } from "./games";
  * game-engine repository. It NEVER contains game implementation detail, maths,
  * fixtures or source.
  *
- * PLAYTEST is wired to read the artefact's own `manifest.json` at BUILD TIME
- * from the drop-in folder (`public/games/cluckus-maximus/dev/game/`). If a valid
- * manifest is present it is consumed (version/build id/date are NOT hard-coded).
- * If the folder is empty, PLAYTEST stays `available: false` and the UI shows a
- * clean placeholder. CUSTOMER and PUBLIC remain unavailable in this phase.
+ * PLAYTEST and PUBLIC builds are wired to read the artefact's own
+ * `manifest.json` at BUILD TIME from the drop-in folders:
+ *   PLAYTEST → public/games/<gameId>/dev/game/
+ *   PUBLIC   → public/games/<gameId>/play/game/
+ * If a valid manifest is present it is consumed (version/build id/date are NOT
+ * hard-coded). If the folder is empty, the profile stays `available: false` and
+ * the UI shows a clean placeholder. CUSTOMER remains unavailable in this phase.
  *
  * This module is only evaluated on the server during the static export/build,
  * so the synchronous filesystem read is safe and deterministic.
@@ -44,67 +46,57 @@ interface EngineManifest {
   [k: string]: unknown;
 }
 
-/**
- * Public URL path where the PLAYTEST artefact is hosted, and the on-disk path
- * of its manifest (inside public/, copied to out/ at build).
- */
-const PLAYTEST_PUBLIC_BASE = "/games/cluckus-maximus/dev/game/";
-const PLAYTEST_MANIFEST_DISK = path.join(
-  process.cwd(),
-  "public",
-  "games",
-  "cluckus-maximus",
-  "dev",
-  "game",
-  "manifest.json",
-);
+/** Public URL base + on-disk manifest path for a game's artefact drop-in. */
+function artefactPaths(gameId: string, profile: "PLAYTEST" | "PUBLIC") {
+  const segment = profile === "PLAYTEST" ? "dev" : "play";
+  const publicBase = `/games/${gameId}/${segment}/game/`;
+  const manifestDisk = path.join(
+    process.cwd(),
+    "public",
+    "games",
+    gameId,
+    segment,
+    "game",
+    "manifest.json",
+  );
+  return { publicBase, manifestDisk };
+}
 
 /**
- * Public demo artefact location. Mirrors the PLAYTEST drop-in, but served at a
- * public, indexable, NON-auth route (/games/cluckus-maximus/play/). The clean
- * PUBLIC build profile guarantees no devtools / internal data.
+ * Read + validate an artefact manifest at build time. Returns a manifest with
+ * `available: true` only when the artefact AND a valid manifest of the matching
+ * build type are actually present on disk (entry HTML must exist too).
  */
-const PUBLIC_PUBLIC_BASE = "/games/cluckus-maximus/play/game/";
-const PUBLIC_MANIFEST_DISK = path.join(
-  process.cwd(),
-  "public",
-  "games",
-  "cluckus-maximus",
-  "play",
-  "game",
-  "manifest.json",
-);
+function readManifest(
+  gameId: string,
+  displayName: string,
+  profile: "PLAYTEST" | "PUBLIC",
+): GameDeploymentManifest {
+  const { publicBase, manifestDisk } = artefactPaths(gameId, profile);
 
-/**
- * Attempt to read + validate the PLAYTEST artefact manifest at build time.
- * Returns a fully-populated manifest with `available: true` only when the
- * artefact and a valid manifest are actually present.
- */
-function readPlaytestManifest(): GameDeploymentManifest {
   const fallback: GameDeploymentManifest = {
-    gameId: "cluckus-maximus",
-    displayName: "Cluckus Maximus: Eggspander",
+    gameId,
+    displayName,
     version: "0.0.0-placeholder",
-    buildType: "PLAYTEST",
+    buildType: profile,
     entryPoint: "",
-    assetsBasePath: PLAYTEST_PUBLIC_BASE,
+    assetsBasePath: publicBase,
     available: false,
   };
 
   try {
-    if (!fs.existsSync(PLAYTEST_MANIFEST_DISK)) return fallback;
-    const raw = fs.readFileSync(PLAYTEST_MANIFEST_DISK, "utf8");
+    if (!fs.existsSync(manifestDisk)) return fallback;
+    const raw = fs.readFileSync(manifestDisk, "utf8");
     const m = JSON.parse(raw) as EngineManifest;
 
-    // Validate the required invariants before marking available.
-    const okGame = m.gameId === "cluckus-maximus";
-    const okType = (m.buildType ?? "").toUpperCase() === "PLAYTEST";
+    const okGame = m.gameId === gameId;
+    const okType = (m.buildType ?? "").toUpperCase() === profile;
     const okAvailable = m.available !== false; // treat missing as available
     if (!okGame || !okType || !okAvailable) return fallback;
 
-    // Also require the entry HTML to actually exist on disk.
+    // Require the entry HTML to actually exist on disk.
     const entryFile = m.entryPoint && m.entryPoint.trim() ? m.entryPoint : "index.html";
-    const entryDisk = path.join(path.dirname(PLAYTEST_MANIFEST_DISK), entryFile);
+    const entryDisk = path.join(path.dirname(manifestDisk), entryFile);
     if (!fs.existsSync(entryDisk)) return fallback;
 
     const buildMetadata: Record<string, string> = { ...(m.buildMetadata ?? {}) };
@@ -115,13 +107,13 @@ function readPlaytestManifest(): GameDeploymentManifest {
     if (buildDate) buildMetadata.buildDate = buildDate;
 
     return {
-      gameId: "cluckus-maximus",
+      gameId,
       displayName: m.displayName?.trim() || fallback.displayName,
       version: m.version?.trim() || "unknown",
-      buildType: "PLAYTEST",
+      buildType: profile,
       // Served as a same-origin relative URL from the wrapper page.
-      entryPoint: `${PLAYTEST_PUBLIC_BASE}${entryFile}`,
-      assetsBasePath: PLAYTEST_PUBLIC_BASE,
+      entryPoint: `${publicBase}${entryFile}`,
+      assetsBasePath: publicBase,
       buildMetadata: Object.keys(buildMetadata).length ? buildMetadata : undefined,
       available: true,
     };
@@ -131,73 +123,40 @@ function readPlaytestManifest(): GameDeploymentManifest {
   }
 }
 
-/**
- * Read + validate the PUBLIC demo artefact manifest at build time. Returns a
- * manifest with `available: true` only when the artefact + a valid PUBLIC
- * manifest are actually present on disk. Identical safety posture to PLAYTEST,
- * but requires `buildType === "PUBLIC"` and serves a public, non-auth route.
- */
-function readPublicManifest(): GameDeploymentManifest {
-  const fallback: GameDeploymentManifest = {
-    gameId: "cluckus-maximus",
-    displayName: "Cluckus Maximus: Eggspander",
-    version: "0.0.0-placeholder",
-    buildType: "PUBLIC",
-    entryPoint: "",
-    assetsBasePath: PUBLIC_PUBLIC_BASE,
-    available: false,
-  };
-
-  try {
-    if (!fs.existsSync(PUBLIC_MANIFEST_DISK)) return fallback;
-    const raw = fs.readFileSync(PUBLIC_MANIFEST_DISK, "utf8");
-    const m = JSON.parse(raw) as EngineManifest;
-
-    const okGame = m.gameId === "cluckus-maximus";
-    const okType = (m.buildType ?? "").toUpperCase() === "PUBLIC";
-    const okAvailable = m.available !== false;
-    if (!okGame || !okType || !okAvailable) return fallback;
-
-    const entryFile = m.entryPoint && m.entryPoint.trim() ? m.entryPoint : "index.html";
-    const entryDisk = path.join(path.dirname(PUBLIC_MANIFEST_DISK), entryFile);
-    if (!fs.existsSync(entryDisk)) return fallback;
-
-    const buildMetadata: Record<string, string> = { ...(m.buildMetadata ?? {}) };
-    if (m.buildId) buildMetadata.buildId = m.buildId;
-    if (m.commit) buildMetadata.commit = m.commit;
-    if (m.channel) buildMetadata.channel = m.channel;
-    const buildDate = m.buildDate ?? m.builtAt;
-    if (buildDate) buildMetadata.buildDate = buildDate;
-
-    return {
-      gameId: "cluckus-maximus",
-      displayName: m.displayName?.trim() || fallback.displayName,
-      version: m.version?.trim() || "unknown",
-      buildType: "PUBLIC",
-      entryPoint: `${PUBLIC_PUBLIC_BASE}${entryFile}`,
-      assetsBasePath: PUBLIC_PUBLIC_BASE,
-      buildMetadata: Object.keys(buildMetadata).length ? buildMetadata : undefined,
-      available: true,
-    };
-  } catch {
-    return fallback;
-  }
-}
-
-const registry: Record<string, GameDeploymentManifest> = {
-  [key("cluckus-maximus", "PLAYTEST")]: readPlaytestManifest(),
-  // CUSTOMER build is NOT activated in this phase.
-  [key("cluckus-maximus", "CUSTOMER")]: {
-    gameId: "cluckus-maximus",
-    displayName: "Cluckus Maximus: Eggspander",
+/** CUSTOMER placeholder (not activated yet). */
+function customerUnavailable(gameId: string, displayName: string): GameDeploymentManifest {
+  return {
+    gameId,
+    displayName,
     version: "0.0.0-placeholder",
     buildType: "CUSTOMER",
     entryPoint: "",
-    assetsBasePath: "/customer/games/cluckus-maximus/play/",
+    assetsBasePath: `/customer/games/${gameId}/play/`,
     available: false,
-  },
-  // PUBLIC demo: wired to read the dropped-in public artefact manifest.
-  [key("cluckus-maximus", "PUBLIC")]: readPublicManifest(),
+  };
+}
+
+const registry: Record<string, GameDeploymentManifest> = {
+  // --- Cluckus Maximus ---------------------------------------------------
+  [key("cluckus-maximus", "PLAYTEST")]: readManifest(
+    "cluckus-maximus",
+    "Cluckus Maximus: Eggspander",
+    "PLAYTEST",
+  ),
+  [key("cluckus-maximus", "CUSTOMER")]: customerUnavailable(
+    "cluckus-maximus",
+    "Cluckus Maximus: Eggspander",
+  ),
+  [key("cluckus-maximus", "PUBLIC")]: readManifest(
+    "cluckus-maximus",
+    "Cluckus Maximus: Eggspander",
+    "PUBLIC",
+  ),
+
+  // --- MegaBars ----------------------------------------------------------
+  [key("megabars", "PLAYTEST")]: readManifest("megabars", "MegaBars", "PLAYTEST"),
+  [key("megabars", "CUSTOMER")]: customerUnavailable("megabars", "MegaBars"),
+  [key("megabars", "PUBLIC")]: readManifest("megabars", "MegaBars", "PUBLIC"),
 };
 
 /** Look up a deployment manifest, or undefined if none is registered. */

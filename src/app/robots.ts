@@ -11,7 +11,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       // Keep internal/customer areas out of crawlers. Individual pages also set
       // a noindex robots meta tag; these Disallow rules are belt-and-braces.
-      disallow: ["/customer/", "/games/cluckus-maximus/dev/"],
+      disallow: ["/customer/", "/games/cluckus-maximus/dev/", "/games/megabars/dev/"],
     },
     sitemap: `${base}/sitemap.xml`,
     host: base,
