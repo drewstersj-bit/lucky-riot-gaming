@@ -45,6 +45,16 @@ export const riotDrops: RiotDrop[] = [
     href: "/games/cluckus-maximus/",
   },
   {
+    id: "megabars",
+    title: "MEGABARS",
+    category: "Online Slot",
+    accent: "gold",
+    status: "In Development",
+    teaser:
+      "A bold bars slot turned up: 10 paylines, scatter pays and a free spins feature on a high-volatility model.",
+    href: "/games/megabars/",
+  },
+  {
     id: "untitled-video-poker",
     title: "Untitled Video Poker",
     category: "Video Poker",

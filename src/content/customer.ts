@@ -28,6 +28,13 @@ export const customerGames: CustomerGameSummary[] = [
     maturity: "PLAYABLE DEVELOPMENT",
     candidateAvailable: false,
   },
+  {
+    gameId: "megabars",
+    displayName: "MegaBars",
+    category: "Online Slot",
+    maturity: "PLAYABLE DEVELOPMENT",
+    candidateAvailable: false,
+  },
 ];
 
 /** Section tabs available on a customer game page. */
@@ -79,6 +86,36 @@ export const customerGameDetails: Record<string, CustomerGameDetail> = {
     integrationStatus: "Not yet available. Integration details will be published at candidate stage.",
     releaseNotes: [
       { version: "0.0.0", note: "Placeholder — release notes will appear here once builds are published to the portal." },
+    ],
+    documentation: [
+      { label: "Rules / paytable", note: "Available at candidate stage." },
+      { label: "Technical documentation", note: "Available at candidate stage." },
+    ],
+    marketingAssets: [
+      { label: "Logo pack", note: "Available at candidate stage." },
+      { label: "Key art", note: "Available at candidate stage." },
+    ],
+  },
+  megabars: {
+    gameId: "megabars",
+    displayName: "MegaBars",
+    category: "Online Slot",
+    maturity: "PLAYABLE DEVELOPMENT",
+    overview:
+      "MegaBars is an early playable development build. A clean release candidate will be published to this portal when available. Figures below are from the current maths model and remain provisional until certification.",
+    spec: [
+      { label: "Game type", value: "Video slot" },
+      { label: "Reels / lines", value: "5 reels, 10 paylines" },
+      { label: "Orientation", value: "Landscape and portrait" },
+      { label: "RTP", value: "~93.08% (base ~70.0% + free spins ~23.07%) — provisional" },
+      { label: "Volatility", value: "High (index ~30)" },
+      { label: "Features", value: "Scatter pays, free spins (hit rate ~1 in 95)" },
+      { label: "Max win", value: "To be confirmed" },
+      { label: "Supported markets", value: "To be confirmed" },
+    ],
+    integrationStatus: "Not yet available. Integration details will be published at candidate stage.",
+    releaseNotes: [
+      { version: "0.0.1", note: "Early playable development build. Public release notes will appear here once candidate builds are published." },
     ],
     documentation: [
       { label: "Rules / paytable", note: "Available at candidate stage." },
