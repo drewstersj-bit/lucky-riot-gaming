@@ -62,6 +62,8 @@ public/games/*/play/game/**
 # the engine repo, not built here). Revert this block when CI artefact
 # retrieval is wired, to go back to not committing built game files.
 !public/games/cluckus-maximus/play/game/**
+# Same exception for the MegaBars PUBLIC demo artefact.
+!public/games/megabars/play/game/**
 public/customer/games/*/play/game/**
 !public/customer/games/*/play/game/.gitkeep
 !public/customer/games/*/play/game/README.md
