@@ -448,6 +448,59 @@ export const games: Game[] = [
     hasDetailPage: false,
     hasProductPage: true,
   },
+  {
+    slug: "farmyard-frenzy",
+    title: "FARMYARD FRENZY",
+    category: "Online Slot",
+    status: "In Development",
+    maturity: "PLAYABLE DEVELOPMENT",
+    devProgress: 35,
+    description:
+      "A 5×3, 10-line farmyard slot: collect eggs during free spins, chase the Golden Egg and bank the barn. An early playable development build.",
+    summary:
+      "Farmyard Frenzy is a 5-reel, 3-row, 10-line slot with farm animals and card ranks. Three or more Barn scatters award free spins, where every Barn in view collects all the Egg cash values on the board. A Golden Egg adds a bonus to the collect, and Wilds substitute for the line symbols. Currently an early playable development build.",
+    featureTags: ["5×3 Reels", "10 Lines", "Egg Collect", "Golden Free Spins"],
+    featureBreakdown: [
+      {
+        title: "10 Lines, Adjacent Pays",
+        description:
+          "Wins land on matching symbols from the left across 10 lines, with the highest win paid on each line. Wilds substitute for the farm and card symbols.",
+      },
+      {
+        title: "Barn Scatter Free Spins",
+        description:
+          "Three, four or five Barn scatters anywhere award 10, 15 or 20 free spins played on dedicated reels.",
+      },
+      {
+        title: "Egg Collect",
+        description:
+          "During free spins every Barn scatter in view collects all the Egg cash values on the board, paid as a multiple of the total bet.",
+      },
+      {
+        title: "Golden Egg",
+        description:
+          "Landing a Golden Egg during free spins adds a bonus multiplier to the collected eggs for the game's biggest moments.",
+      },
+    ],
+    release: { label: "In development" },
+    passport: {
+      gameType: "Video slot",
+      gridFormat: "5 reels × 3 rows, 10 lines",
+      orientation: "Landscape and portrait",
+      volatility: "Medium-high",
+      // Measured from the maths simulation (1M rounds, seed 42). Base is ~2pp
+      // under the workbook target and is a documented development-stage variance.
+      rtpConfigurations: ["~94.04% (base ~37.0% + free spins ~57.0%)"],
+      featureSummary:
+        "10-line slot with a Barn-scatter free-spins feature, egg-collect mechanic and a Golden Egg bonus; 3/4/5 scatters award 10/15/20 free spins.",
+      maxWin: "5,000× potential (design target, subject to change)",
+      releaseStatus: "Playable development build",
+      certificationStatus: "Not yet certified",
+      demoAvailability: "In development",
+    },
+    hasDetailPage: false,
+    hasProductPage: true,
+  },
 ];
 
 /** Games flagged for the "Featured" section on the home page. */

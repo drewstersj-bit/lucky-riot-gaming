@@ -78,6 +78,14 @@
   function = "playtest-auth"
   path = "/games/video-poker-pro/dev/*"
 
+[[edge_functions]]
+  function = "playtest-auth"
+  path = "/games/farmyard-frenzy/dev"
+
+[[edge_functions]]
+  function = "playtest-auth"
+  path = "/games/farmyard-frenzy/dev/*"
+
 # ---------------------------------------------------------------------------
 # Security headers (applied to every route)
 # ---------------------------------------------------------------------------
@@ -154,6 +162,19 @@
 # Video Poker Pro PUBLIC demo game assets (public, indexable — no noindex tag).
 [[headers]]
   for = "/games/video-poker-pro/play/game/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
+
+# Farmyard Frenzy PLAYTEST game assets (same slot-engine relaxations, scoped).
+[[headers]]
+  for = "/games/farmyard-frenzy/dev/game/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
+# Farmyard Frenzy PUBLIC demo game assets (public, indexable — no noindex tag).
+[[headers]]
+  for = "/games/farmyard-frenzy/play/game/*"
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
 

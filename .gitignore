@@ -69,6 +69,8 @@ public/games/*/play/game/**
 
 # Same exception for the Video Poker Pro PUBLIC demo artefact.
 !public/games/video-poker-pro/play/game/**
+# Same exception for the Farmyard Frenzy PUBLIC demo artefact.
+!public/games/farmyard-frenzy/play/game/**
 public/customer/games/*/play/game/**
 !public/customer/games/*/play/game/.gitkeep
 !public/customer/games/*/play/game/README.md

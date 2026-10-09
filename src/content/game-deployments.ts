@@ -167,6 +167,11 @@ const registry: Record<string, GameDeploymentManifest> = {
   [key("video-poker-pro", "PLAYTEST")]: readManifest("video-poker-pro", "Video Poker Pro", "PLAYTEST"),
   [key("video-poker-pro", "CUSTOMER")]: customerUnavailable("video-poker-pro", "Video Poker Pro"),
   [key("video-poker-pro", "PUBLIC")]: readManifest("video-poker-pro", "Video Poker Pro", "PUBLIC"),
+
+  // --- Farmyard Frenzy ---------------------------------------------------
+  [key("farmyard-frenzy", "PLAYTEST")]: readManifest("farmyard-frenzy", "Farmyard Frenzy", "PLAYTEST"),
+  [key("farmyard-frenzy", "CUSTOMER")]: customerUnavailable("farmyard-frenzy", "Farmyard Frenzy"),
+  [key("farmyard-frenzy", "PUBLIC")]: readManifest("farmyard-frenzy", "Farmyard Frenzy", "PUBLIC"),
 };
 
 /** Look up a deployment manifest, or undefined if none is registered. */
