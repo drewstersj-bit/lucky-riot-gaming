@@ -1,0 +1,94 @@
+{
+  "game": {
+    "id": "video-poker-pro",
+    "version": "0.1.0",
+    "name": "Video Poker Pro",
+    "profile": "videopokerpro-production-candidate"
+  },
+  "config": {
+    "type": "video-poker",
+    "numHands": 100,
+    "defaultVariant": "tens_or_better",
+    "variants": {
+      "tens_or_better": {
+        "title": "Tens or Better",
+        "deck": 52,
+        "wild": "none",
+        "minPairRank": 10,
+        "paytable": {
+          "natural_royal_flush": 800,
+          "straight_flush": 50,
+          "four_of_a_kind": 25,
+          "full_house": 6,
+          "flush": 5,
+          "straight": 4,
+          "three_of_a_kind": 3,
+          "two_pair": 2,
+          "pair_tens_or_better": 1
+        },
+        "theoreticalRtp": 0.9914
+      },
+      "deuces_wild": {
+        "title": "Deuces Wild",
+        "deck": 52,
+        "wild": "deuces",
+        "minPairRank": null,
+        "paytable": {
+          "natural_royal_flush": 800,
+          "four_deuces": 200,
+          "wild_royal_flush": 25,
+          "five_of_a_kind": 15,
+          "straight_flush": 9,
+          "four_of_a_kind": 5,
+          "full_house": 3,
+          "flush": 2,
+          "straight": 2,
+          "three_of_a_kind": 1
+        },
+        "theoreticalRtp": 1.0076
+      },
+      "deuces_joker": {
+        "title": "Deuces and Joker",
+        "deck": 53,
+        "wild": "deuces_joker",
+        "minPairRank": null,
+        "paytable": {
+          "natural_royal_flush": 800,
+          "four_deuces": 25,
+          "wild_royal_flush": 12,
+          "five_of_a_kind": 9,
+          "straight_flush": 6,
+          "four_of_a_kind": 3,
+          "full_house": 3,
+          "flush": 3,
+          "straight": 2,
+          "three_of_a_kind": 1
+        },
+        "theoreticalRtp": 0.9907
+      }
+    },
+    "rankNames": {
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "T",
+      "11": "J",
+      "12": "Q",
+      "13": "K",
+      "14": "A"
+    },
+    "maxWin": 5000,
+    "doubleWinCapXTotalBet": 500,
+    "rtp": 0.9914
+  },
+  "outcomes": {
+    "count": 0,
+    "file": "outcomes.zst",
+    "lookup": "lookup.json"
+  }
+}

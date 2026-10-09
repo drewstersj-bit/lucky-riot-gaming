@@ -1,0 +1,15 @@
+{
+  "gameId": "video-poker-pro",
+  "displayName": "Video Poker Pro",
+  "version": "0.1.0",
+  "buildType": "PUBLIC",
+  "entryPoint": "index.html",
+  "assetsBasePath": "./",
+  "buildMetadata": {
+    "commit": "engine-video-poker-pro-0.1.0",
+    "builtAt": "2026-09-14T00:00:00.000Z",
+    "channel": "public",
+    "note": "Public demo: clean Svelte 5 + Pixi 8 build (dev tools excluded). Pro 100-hand video poker with three variants (Tens or Better, Deuces Wild, Deuces and Joker) read from index.json, plus a double-or-nothing gamble. Theoretical optimal-play returns ~99.14% / ~100.76% / ~99.07%."
+  },
+  "available": true
+}

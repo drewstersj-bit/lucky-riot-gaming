@@ -162,6 +162,11 @@ const registry: Record<string, GameDeploymentManifest> = {
   [key("bison-fury", "PLAYTEST")]: readManifest("bison-fury", "Bison Fury", "PLAYTEST"),
   [key("bison-fury", "CUSTOMER")]: customerUnavailable("bison-fury", "Bison Fury"),
   [key("bison-fury", "PUBLIC")]: readManifest("bison-fury", "Bison Fury", "PUBLIC"),
+
+  // --- Video Poker Pro ---------------------------------------------------
+  [key("video-poker-pro", "PLAYTEST")]: readManifest("video-poker-pro", "Video Poker Pro", "PLAYTEST"),
+  [key("video-poker-pro", "CUSTOMER")]: customerUnavailable("video-poker-pro", "Video Poker Pro"),
+  [key("video-poker-pro", "PUBLIC")]: readManifest("video-poker-pro", "Video Poker Pro", "PUBLIC"),
 };
 
 /** Look up a deployment manifest, or undefined if none is registered. */

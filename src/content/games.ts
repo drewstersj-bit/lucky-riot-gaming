@@ -398,17 +398,55 @@ export const games: Game[] = [
     hasProductPage: true,
   },
   {
-    slug: "video-poker-concept",
-    title: "Video Poker — Concept",
+    slug: "video-poker-pro",
+    title: "VIDEO POKER PRO",
     category: "Video Poker",
-    status: "Concept",
-    maturity: "CONCEPT",
+    status: "In Development",
+    maturity: "PLAYABLE DEVELOPMENT",
+    devProgress: 40,
     description:
-      "A fresh take on video poker, currently at concept stage: the clarity of a classic combined with new presentation, progression and feature ideas.",
-    featureTags: ["Classic Clarity", "New Progression", "Modern Presentation"],
-    release: { label: "Concept" },
+      "Pro-style 100-hand video poker with three variants — Tens or Better, Deuces Wild and Deuces and Joker — plus a double-or-nothing gamble. An early playable development build.",
+    summary:
+      "Video Poker Pro deals one hand, you hold, and your held cards play across 100 independent hands at once. Three selectable variants share one engine and differ only in paytable and wild rules: Tens or Better (no wild), Deuces Wild (2s wild) and Deuces and Joker (2s plus a joker, 53-card deck). Each win can be gambled in a double-or-nothing feature. Currently an early playable development build.",
+    featureTags: ["100 Hands", "3 Variants", "Wilds", "Double Feature"],
+    featureBreakdown: [
+      {
+        title: "100 Hands at Once",
+        description:
+          "Deal and hold once; your held cards carry into 100 hands, each drawing its own fresh replacements for 100 independent results per round.",
+      },
+      {
+        title: "Three Variants, One Engine",
+        description:
+          "Tens or Better, Deuces Wild and Deuces and Joker share the same look and feel and differ only in their paytable and wild rules — switch from the paytable screen.",
+      },
+      {
+        title: "Double or Nothing",
+        description:
+          "After any win, gamble it in the double feature: pick a card higher than the dealer's to double, with collect and collect-half options and a per-level win cap.",
+      },
+    ],
+    release: { label: "In development" },
+    passport: {
+      gameType: "Video poker",
+      gridFormat: "100 hands, 5-card draw",
+      orientation: "Portrait and landscape",
+      volatility: "Medium",
+      // Theoretical optimal-play returns per variant (standard full-pay tables);
+      // measured returns from the maths simulation are recorded in the engine repo.
+      rtpConfigurations: [
+        "Tens or Better ~99.14%",
+        "Deuces Wild ~100.76%",
+        "Deuces and Joker ~99.07%",
+      ],
+      featureSummary:
+        "Pro 100-hand draw poker across three variants (no-wild / deuces / deuces+joker) with a double-or-nothing gamble.",
+      releaseStatus: "Playable development build",
+      certificationStatus: "Not yet certified",
+      demoAvailability: "In development",
+    },
     hasDetailPage: false,
-    isConcept: true,
+    hasProductPage: true,
   },
 ];
 
