@@ -1,0 +1,15 @@
+{
+  "gameId": "farmyard-frenzy",
+  "displayName": "FARMYARD FRENZY",
+  "version": "0.1.0",
+  "buildType": "PUBLIC",
+  "entryPoint": "index.html",
+  "assetsBasePath": "./",
+  "buildMetadata": {
+    "commit": "engine-farmyard-frenzy-0.1.0",
+    "builtAt": "2026-09-14T00:00:00.000Z",
+    "channel": "public",
+    "note": "Public demo: clean Svelte 5 + Pixi 8 build (dev tools excluded) playing the authoritative books.json. 5x3, 10 lines, farm animals + card ranks, Barn-scatter free spins with egg-collect and a Golden Egg bonus. Overall RTP ~94.04% (base ~37.0% + free ~57.0%, 1M-spin sim, seed 42; base is ~2pp under the workbook target, a documented development-stage variance). Maths authority lives in the game-engine repo and is never copied here."
+  },
+  "available": true
+}
