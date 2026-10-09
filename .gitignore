@@ -64,6 +64,8 @@ public/games/*/play/game/**
 !public/games/cluckus-maximus/play/game/**
 # Same exception for the MegaBars PUBLIC demo artefact.
 !public/games/megabars/play/game/**
+# Same exception for the Bison Fury PUBLIC demo artefact.
+!public/games/bison-fury/play/game/**
 public/customer/games/*/play/game/**
 !public/customer/games/*/play/game/.gitkeep
 !public/customer/games/*/play/game/README.md

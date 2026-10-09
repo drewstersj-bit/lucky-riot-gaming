@@ -26,15 +26,13 @@ function StatusBadge({ maturity }: { maturity: Game["maturity"] }) {
   );
 }
 
-/** Per-card accent: gold for slots, pink for video poker, cyan for roulette. */
+/** Per-card accent: gold for slots, pink for video poker. */
 function cardAccent(category: Game["category"]): { border: string; label: string } {
   switch (category) {
     case "Online Slot":
       return { border: "hover:border-lucky-gold/50", label: "text-lucky-gold" };
     case "Video Poker":
       return { border: "hover:border-riot-pink/50", label: "text-riot-pink" };
-    case "Roulette":
-      return { border: "hover:border-riot-cyan/50", label: "text-riot-cyan" };
     default:
       return { border: "hover:border-lucky-gold/50", label: "text-lucky-gold" };
   }

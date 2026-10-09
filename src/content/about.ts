@@ -10,7 +10,7 @@ export const aboutSections: { heading: string; body: string }[] = [
   },
   {
     heading: "Slots and alternative casino games",
-    body: "Our focus spans feature-rich original slots alongside fresh interpretations of video poker and roulette. We are interested in the space where classic casino foundations meet new presentation, progression and mechanics.",
+    body: "Our focus spans feature-rich original slots alongside fresh interpretations of video poker. We are interested in the space where classic casino foundations meet new presentation, progression and mechanics.",
   },
   {
     heading: "Efficient modern production",

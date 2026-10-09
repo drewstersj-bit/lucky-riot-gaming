@@ -6,7 +6,7 @@
  * are only rendered in the UI when present, so partial entries are safe.
  */
 
-export type GameCategory = "Online Slot" | "Video Poker" | "Roulette";
+export type GameCategory = "Online Slot" | "Video Poker";
 
 export type GameStatus = "In Development" | "Coming Soon" | "Released" | "Concept";
 
@@ -141,7 +141,6 @@ export type GameFilter =
   | "All"
   | "Slots"
   | "Video Poker"
-  | "Roulette"
   | "In Development"
   | "Released";
 
@@ -166,8 +165,6 @@ export function accentForCategory(category: GameCategory): CategoryAccentKey {
       return "gold";
     case "Video Poker":
       return "pink";
-    case "Roulette":
-      return "cyan";
     default:
       return "gold";
   }
@@ -355,6 +352,52 @@ export const games: Game[] = [
     hasProductPage: true,
   },
   {
+    slug: "bison-fury",
+    title: "BISON FURY",
+    category: "Online Slot",
+    status: "In Development",
+    maturity: "PLAYABLE DEVELOPMENT",
+    devProgress: 45,
+    description:
+      "A thundering 1024-ways slot inspired by the buffalo greats: stacked beasts, a wild stampede and sticky-wild free spins. An early playable development build.",
+    summary:
+      "Bison Fury is a 5×4, 1024-ways slot with 11 symbols, wilds on the middle reels and a free spins feature built around sticky wilds. Each wild that lands in free spins locks in place for a run of respins while the free-spin count holds — stacking wilds and respins into the game's biggest moments. Currently an early playable development build.",
+    featureTags: ["1024 Ways", "Sticky Wilds", "Free Spins", "5×4 Reels"],
+    featureBreakdown: [
+      {
+        title: "1024 Ways",
+        description:
+          "Wins pay for matching symbols on adjacent reels from the left across all 1024 ways — no fixed paylines.",
+      },
+      {
+        title: "Stampede Wilds",
+        description:
+          "Wilds land on the middle three reels and substitute for all regular symbols to complete more ways.",
+      },
+      {
+        title: "Sticky-Wild Free Spins",
+        description:
+          "Every wild that lands in free spins sticks for a run of respins; while sticky wilds are in play the free-spin counter holds and retriggers are possible.",
+      },
+    ],
+    release: { label: "In development" },
+    passport: {
+      gameType: "Video slot",
+      gridFormat: "5 reels × 4 rows, 1024 ways",
+      orientation: "Landscape",
+      volatility: "High",
+      // Published, from the maths simulation.
+      rtpConfigurations: ["~93.88% (base ~71.98% + free spins ~21.91%)"],
+      featureSummary:
+        "1024 ways with middle-reel wilds and a sticky-wild free-spins feature (3/4/5 scatters award 8/20/50 free spins).",
+      releaseStatus: "Playable development build",
+      certificationStatus: "Not yet certified",
+      demoAvailability: "In development",
+    },
+    hasDetailPage: false,
+    hasProductPage: true,
+  },
+  {
     slug: "video-poker-concept",
     title: "Video Poker — Concept",
     category: "Video Poker",
@@ -363,19 +406,6 @@ export const games: Game[] = [
     description:
       "A fresh take on video poker, currently at concept stage: the clarity of a classic combined with new presentation, progression and feature ideas.",
     featureTags: ["Classic Clarity", "New Progression", "Modern Presentation"],
-    release: { label: "Concept" },
-    hasDetailPage: false,
-    isConcept: true,
-  },
-  {
-    slug: "roulette-concept",
-    title: "Roulette — Concept",
-    category: "Roulette",
-    status: "Concept",
-    maturity: "CONCEPT",
-    description:
-      "A distinctive interpretation of roulette, currently at concept stage: familiar foundations developed into a visually exciting new experience.",
-    featureTags: ["Familiar Foundations", "Distinctive Visuals", "Fresh Mechanics"],
     release: { label: "Concept" },
     hasDetailPage: false,
     isConcept: true,
@@ -414,8 +444,6 @@ export function matchesFilter(game: Game, filter: GameFilter): boolean {
       return game.category === "Online Slot";
     case "Video Poker":
       return game.category === "Video Poker";
-    case "Roulette":
-      return game.category === "Roulette";
     case "In Development":
       return game.status === "In Development" || game.status === "Coming Soon" || game.status === "Concept";
     case "Released":
@@ -429,7 +457,6 @@ export const gameFilters: GameFilter[] = [
   "All",
   "Slots",
   "Video Poker",
-  "Roulette",
   "In Development",
   "Released",
 ];

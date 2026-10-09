@@ -4,7 +4,7 @@ export const heroContent = {
   headline: "BUILT TO BREAK THE PATTERN.",
   supportingLine: "Serious maths. Beautiful chaos.",
   description:
-    "Lucky Riot Games creates original slots, video poker and roulette experiences for players who expect more than another familiar spin.",
+    "Lucky Riot Games creates original slots and video poker experiences for players who expect more than another familiar spin.",
   primaryCta: { label: "Meet the Games", href: "/games" },
   secondaryCta: { label: "Start a Riot With Us", href: "/contact" },
 };
@@ -17,7 +17,7 @@ export const brandPhrases = {
   builtPlayed: "Built properly. Played loudly.",
   unfamiliar: "Familiar games deserve unfamiliar ideas.",
   noiseThinking: "The noise gets the attention. The thinking keeps players engaged.",
-  turnedUp: "Slots. Poker. Roulette. Turned up.",
+  turnedUp: "Slots & video poker. Turned up.",
   neverJustASpin: "Never just another spin.",
 };
 
@@ -43,16 +43,10 @@ export const gameCategories: {
     accent: "pink",
     href: "/games",
   },
-  {
-    title: "Roulette With a Twist",
-    description: "Familiar foundations transformed into distinctive new game experiences.",
-    accent: "cyan",
-    href: "/games",
-  },
 ];
 
 export const studioIntro = {
-  heading: "Slots. Poker. Roulette. Turned Up.",
+  heading: "Slots & Video Poker. Turned Up.",
   copy: "Lucky Riot combines disciplined game design, dependable mathematics and modern production with bold characters, original mechanics and high-energy presentation. Familiar games deserve unfamiliar ideas.",
 };
 
@@ -90,13 +84,6 @@ export const insideTheRiot = {
       accent: "gold" as CategoryAccent,
       description:
         "Readable, high-anticipation features designed around clear moments worth remembering.",
-    },
-    {
-      title: "Roulette Variations",
-      kind: "Concept",
-      accent: "cyan" as CategoryAccent,
-      description:
-        "Familiar foundations reworked into distinctive presentations. Early concepts in development.",
     },
     {
       title: "Video-Poker Mechanics",

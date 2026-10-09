@@ -55,21 +55,22 @@ export const riotDrops: RiotDrop[] = [
     href: "/games/megabars/",
   },
   {
+    id: "bison-fury",
+    title: "BISON FURY",
+    category: "Online Slot",
+    accent: "gold",
+    status: "In Development",
+    teaser:
+      "A 1024-ways stampede with middle-reel wilds and a sticky-wild free spins feature.",
+    href: "/games/bison-fury/",
+  },
+  {
     id: "untitled-video-poker",
     title: "Untitled Video Poker",
     category: "Video Poker",
     accent: "pink",
     status: "In Development",
     teaser: "A classic, rebuilt with progression and personality. Details under wraps.",
-    classified: true,
-  },
-  {
-    id: "untitled-roulette",
-    title: "Untitled Roulette",
-    category: "Roulette",
-    accent: "cyan",
-    status: "Concept",
-    teaser: "Familiar foundations, turned up. Early concept — more to come.",
     classified: true,
   },
 ];

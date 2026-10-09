@@ -12,7 +12,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://luckyriotgames.co.uk",
   tagline: "Original Slots and Online Games",
   description:
-    "Lucky Riot Games is an independent studio creating original online slots, video poker, roulette and distinctive new gaming experiences.",
+    "Lucky Riot Games is an independent studio creating original online slots, video poker and distinctive new gaming experiences.",
   /**
    * Verified legal entity details (source: UK Companies House, company 12884658).
    * "Lucky Riot Games" is the studio/trading brand; the registered company is

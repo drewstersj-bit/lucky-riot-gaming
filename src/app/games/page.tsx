@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Games Portfolio",
   description:
-    "Explore the Lucky Riot Games portfolio of original online slots, video poker and roulette titles, including games currently in development.",
+    "Explore the Lucky Riot Games portfolio of original online slots and video poker titles, including games currently in development.",
   path: "/games",
 });
 
@@ -19,7 +19,7 @@ export default function GamesPage() {
         <SectionHeading
           id="games-heading"
           eyebrow="Portfolio"
-          title="Slots. Poker. Roulette. Turned Up."
+          title="Slots & Video Poker. Turned Up."
           intro="Original slots and fresh takes on classic casino games. Use the filters to explore by category or development status."
         />
       </Reveal>

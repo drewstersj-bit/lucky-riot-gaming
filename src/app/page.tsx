@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   ...buildMetadata({
     title: "Lucky Riot Games | Built to Break the Pattern",
     description:
-      "Lucky Riot Games creates original online slots, video poker and roulette. Serious maths. Beautiful chaos.",
+      "Lucky Riot Games creates original online slots and video poker. Serious maths. Beautiful chaos.",
     path: "/",
   }),
 };
@@ -64,7 +64,7 @@ export default function HomePage() {
           <SectionHeading
             id="categories-heading"
             eyebrow="What we make"
-            title="Slots. Poker. Roulette. Turned Up."
+            title="Slots & Video Poker. Turned Up."
             intro={studioIntro.copy}
           />
         </Reveal>

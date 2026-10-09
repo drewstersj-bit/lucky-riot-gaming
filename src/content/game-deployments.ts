@@ -157,6 +157,11 @@ const registry: Record<string, GameDeploymentManifest> = {
   [key("megabars", "PLAYTEST")]: readManifest("megabars", "MegaBars", "PLAYTEST"),
   [key("megabars", "CUSTOMER")]: customerUnavailable("megabars", "MegaBars"),
   [key("megabars", "PUBLIC")]: readManifest("megabars", "MegaBars", "PUBLIC"),
+
+  // --- Bison Fury --------------------------------------------------------
+  [key("bison-fury", "PLAYTEST")]: readManifest("bison-fury", "Bison Fury", "PLAYTEST"),
+  [key("bison-fury", "CUSTOMER")]: customerUnavailable("bison-fury", "Bison Fury"),
+  [key("bison-fury", "PUBLIC")]: readManifest("bison-fury", "Bison Fury", "PUBLIC"),
 };
 
 /** Look up a deployment manifest, or undefined if none is registered. */

@@ -15,7 +15,7 @@ export function Footer() {
               <Logo className="h-9 w-auto text-riot-white" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-riot-text-muted">
-              An independent studio creating original online slots, video poker, roulette and
+              An independent studio creating original online slots, video poker and
               distinctive new gaming experiences.
             </p>
             {siteConfig.social.linkedin && (
