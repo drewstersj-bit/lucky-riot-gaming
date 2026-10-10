@@ -78,15 +78,15 @@ export function GameCard({ game }: { game: Game }) {
             className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
           />
         ) : logo ? (
-          // No full key art yet: feature the LOGO as the centrepiece on a
-          // themed backdrop so branding reads strongly in the catalogue.
-          <div className="absolute inset-0 flex items-center justify-center surface-gradient p-8">
+          // No full key art yet: the LOGO IS the hero of the card — fill the
+          // frame on a themed backdrop so branding reads loudly in the lobby.
+          <div className="absolute inset-0 flex items-center justify-center surface-gradient">
             <Image
               src={logo}
               alt={`${title} logo`}
               fill
               sizes="(max-width: 768px) 100vw, 33vw"
-              className="object-contain p-8 drop-shadow-[0_0_24px_rgba(255,193,10,0.25)] transition-transform duration-500 group-hover:scale-[1.05]"
+              className="object-contain p-3 drop-shadow-[0_0_32px_rgba(255,193,10,0.45)] transition-transform duration-500 group-hover:scale-[1.08]"
             />
           </div>
         ) : (

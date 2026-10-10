@@ -164,7 +164,7 @@ function PlaceholderArt({ title, logo }: { title: string; logo?: string }) {
               alt={`${title} logo`}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="relative object-contain p-10 drop-shadow-[0_0_28px_rgba(255,193,10,0.3)]"
+              className="relative object-contain p-5 drop-shadow-[0_0_40px_rgba(255,193,10,0.45)]"
               priority
             />
             <span className="relative mt-auto text-[10px] font-semibold uppercase tracking-[0.25em] text-riot-text-muted">Key art in development</span>

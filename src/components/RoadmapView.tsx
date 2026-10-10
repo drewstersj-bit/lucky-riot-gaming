@@ -14,6 +14,8 @@ export interface RoadmapEntry {
   statusLabel: string;
   statusTone: "concept" | "dev" | "candidate" | "live";
   hasPage: boolean;
+  /** Optional logo path; when present it headlines the roadmap card. */
+  logo?: string;
 }
 
 export interface RoadmapQuarterData {
@@ -114,18 +116,33 @@ export function RoadmapView({ years }: { years: RoadmapYearData[] }) {
             <ul className="mt-6 grid list-none gap-4 md:grid-cols-2 lg:grid-cols-3">
               {q.entries.map((e) => {
                 const Card = (
-                  <article className="group flex h-full flex-col rounded-xl2 border border-riot-border bg-riot-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:border-lucky-gold/50 hover:shadow-card-hover">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-riot-text-muted">{e.monthLabel}</span>
-                      <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${toneClasses(e.statusTone)}`}>
+                  <article className="group flex h-full flex-col overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface transition-all duration-300 hover:-translate-y-1 hover:border-lucky-gold/50 hover:shadow-card-hover">
+                    {/* Logo headline panel (branded title text when no logo yet). */}
+                    <div className="relative aspect-[16/9] w-full overflow-hidden surface-gradient">
+                      {e.logo ? (
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img
+                          src={e.logo}
+                          alt={`${e.title} logo`}
+                          className="absolute inset-0 h-full w-full object-contain p-4 drop-shadow-[0_0_24px_rgba(255,193,10,0.4)] transition-transform duration-500 group-hover:scale-[1.06]"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center p-4 text-center">
+                          <span className="font-display text-base uppercase tracking-wide text-riot-white/80">{e.title}</span>
+                        </div>
+                      )}
+                      <span className={`absolute right-3 top-3 inline-flex items-center rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${toneClasses(e.statusTone)}`}>
                         {e.statusLabel}
                       </span>
                     </div>
-                    <h3 className="mt-3 text-lg font-bold leading-tight text-riot-white group-hover:text-lucky-gold">{e.title}</h3>
-                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-riot-cyan">
-                      {e.gameType === "video-poker" ? "Video Poker" : "Online Slot"}
-                    </p>
-                    <p className="mt-2 text-sm leading-relaxed text-riot-text-muted">{e.theme}</p>
+                    <div className="flex flex-1 flex-col p-5">
+                      <span className="text-xs font-semibold uppercase tracking-[0.18em] text-riot-text-muted">{e.monthLabel}</span>
+                      <h3 className="mt-2 text-lg font-bold leading-tight text-riot-white group-hover:text-lucky-gold">{e.title}</h3>
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-riot-cyan">
+                        {e.gameType === "video-poker" ? "Video Poker" : "Online Slot"}
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-riot-text-muted">{e.theme}</p>
+                    </div>
                   </article>
                 );
                 return (

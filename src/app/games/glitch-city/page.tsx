@@ -87,7 +87,7 @@ export default function GlitchCityProductPage() {
                       alt={`${game.title} logo`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-contain p-12 drop-shadow-[0_0_28px_rgba(24,200,242,0.35)]"
+                      className="object-contain p-5 drop-shadow-[0_0_40px_rgba(24,200,242,0.5)]"
                       priority
                     />
                   </div>

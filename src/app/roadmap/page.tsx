@@ -39,6 +39,7 @@ function buildYears(): RoadmapYearData[] {
           monthLabel: `${MONTHS[r.targetReleaseMonth - 1]} ${year}`,
           statusLabel: s.label,
           statusTone: s.tone,
+          logo: r.logo,
           // Existing games have bespoke pages; planned games have the generic
           // detail route. Both resolve under /games/<slug>/.
           hasPage: true,
