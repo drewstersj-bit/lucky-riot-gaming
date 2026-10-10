@@ -68,15 +68,17 @@ export function ContactForm() {
       payload[key] = value.toString();
     });
 
-    // Submit to the Netlify Forms endpoint. On a static site Netlify intercepts
-    // a POST whose body carries a registered `form-name`. We post to the
-    // contact page's own path (a real static file on the trailing-slash export)
-    // rather than "/" so the request always resolves to an existing document.
-    // On any failure we fall back to a NATIVE browser submit — the most
-    // reliable path Netlify Forms supports — which navigates and lets Netlify
-    // record the submission and redirect to the success page.
+    // Submit to Netlify Forms via AJAX. On a static site Netlify intercepts a
+    // POST to the site root whose body carries a registered `form-name` and
+    // returns 200. We only advance to the success page when the POST genuinely
+    // succeeds. If Netlify Forms is not processing the submission (e.g. not
+    // enabled, or the form was not detected at deploy), the request fails or
+    // returns a non-2xx — we show an inline error with an email fallback rather
+    // than navigating the user to a page that 404s. We deliberately do NOT do a
+    // native submit to a static path, because a POST to a static file 404s when
+    // Netlify Forms is not intercepting it.
     try {
-      const res = await fetch("/contact/", {
+      const res = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode(payload),
@@ -84,9 +86,10 @@ export function ContactForm() {
       if (!res.ok) throw new Error(`Request failed with status ${res.status}`);
       router.push("/contact/success/");
     } catch {
-      form.setAttribute("action", "/contact/success/");
-      form.setAttribute("method", "POST");
-      form.submit();
+      setSubmitError(
+        `We couldn't submit your enquiry just now. Please email us directly at ${contactContent.fallbackEmail} and we'll come straight back to you.`,
+      );
+      setSubmitting(false);
     }
   }
 

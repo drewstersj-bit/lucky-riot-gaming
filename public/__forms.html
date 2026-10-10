@@ -1,0 +1,31 @@
+<!--
+  Netlify Forms detection file.
+
+  Next.js renders the contact form inside a client component, which Netlify's
+  build-time form parser does not reliably detect. This plain static HTML file
+  is copied verbatim into the deploy (public/ -> out/), guaranteeing Netlify
+  registers the `partnership-enquiry` form at deploy time. The interactive React
+  form on /contact/ submits to the same form name via AJAX.
+
+  The field set here MUST match the fields the real form submits:
+  name, company, email, interest, message, consent, bot-field.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Netlify form detection</title>
+  </head>
+  <body>
+    <form name="partnership-enquiry" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="partnership-enquiry" />
+      <input type="text" name="name" />
+      <input type="text" name="company" />
+      <input type="email" name="email" />
+      <input type="text" name="interest" />
+      <textarea name="message"></textarea>
+      <input type="checkbox" name="consent" />
+      <input name="bot-field" />
+    </form>
+  </body>
+</html>
