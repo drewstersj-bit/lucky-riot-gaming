@@ -405,6 +405,11 @@ function toGame(r: GameRecord): Game {
     featureBreakdown: p.featureBreakdown,
     release: { label: r.roadmapYear > 0 ? `Target ${r.targetReleaseMonth}/${r.roadmapYear}` : "In development" },
     passport: p.passport,
+    // Media: passed through from the registry. Set these on a record ONLY once
+    // the file actually exists at /games/<slug>/… — the UI renders a branded
+    // placeholder whenever they are absent, so leaving them undefined is safe.
+    logo: r.logo,
+    artworkLandscape: r.heroImage,
     // Existing projects have bespoke product pages; planned games use the
     // generic /games/[slug] detail route.
     hasDetailPage: !r.existingProject,

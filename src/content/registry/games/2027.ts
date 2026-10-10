@@ -76,6 +76,7 @@ export const games2027: GameRecord[] = [
     description:
       "A neon cyberpunk slot of bold reels and digital corruption — a stripped-back, high-clarity machine with a free-spins surge.",
     shortDescription: "Cyberpunk 10-line slot with a free-spins surge.",
+    logo: "/games/glitch-city/logo.png",
     roadmapYear: 2027,
     roadmapQuarter: 1,
     targetReleaseMonth: 3,
