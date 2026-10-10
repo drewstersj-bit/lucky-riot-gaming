@@ -8,6 +8,7 @@
  */
 
 import type { GameRecord, RoadmapQuarter } from "./schema";
+import { validateRegistry as validateRegistryInternal } from "./schema";
 import { games2027 } from "./games/2027";
 import { gamesExisting } from "./games/existing";
 
@@ -23,6 +24,20 @@ export const allGames: GameRecord[] = [
   ...games2027,
   ...gamesExisting,
 ];
+
+// Build-time integrity gate: fail fast on duplicate ids/slugs, bad months,
+// missing project paths, orphaned franchise refs, etc. Errors throw (so the
+// Next build fails); warnings are logged. This runs at module load during the
+// static export, making the build itself the registry validation step.
+{
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const issues = validateRegistryInternal(allGames);
+  const errors = issues.filter((i) => i.level === "error");
+  if (errors.length > 0) {
+    const detail = errors.map((e) => `  - [${e.gameId ?? "?"}${e.field ? "." + e.field : ""}] ${e.message}`).join("\n");
+    throw new Error(`Game registry has ${errors.length} error(s):\n${detail}`);
+  }
+}
 
 // ─── Lookups ──────────────────────────────────────────────────────────────
 
