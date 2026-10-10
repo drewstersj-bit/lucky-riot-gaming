@@ -68,8 +68,15 @@ export function ContactForm() {
       payload[key] = value.toString();
     });
 
+    // Submit to the Netlify Forms endpoint. On a static site Netlify intercepts
+    // a POST whose body carries a registered `form-name`. We post to the
+    // contact page's own path (a real static file on the trailing-slash export)
+    // rather than "/" so the request always resolves to an existing document.
+    // On any failure we fall back to a NATIVE browser submit — the most
+    // reliable path Netlify Forms supports — which navigates and lets Netlify
+    // record the submission and redirect to the success page.
     try {
-      const res = await fetch("/", {
+      const res = await fetch("/contact/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode(payload),
@@ -77,10 +84,9 @@ export function ContactForm() {
       if (!res.ok) throw new Error(`Request failed with status ${res.status}`);
       router.push("/contact/success/");
     } catch {
-      setSubmitError(
-        "Something went wrong sending your enquiry. Please try again, or email us directly.",
-      );
-      setSubmitting(false);
+      form.setAttribute("action", "/contact/success/");
+      form.setAttribute("method", "POST");
+      form.submit();
     }
   }
 
