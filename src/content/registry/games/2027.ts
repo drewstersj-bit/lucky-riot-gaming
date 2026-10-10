@@ -99,6 +99,7 @@ export const games2027: GameRecord[] = [
   {
     id: "scarab-syndicate",
     slug: "scarab-syndicate",
+    logo: "/games/scarab-syndicate/logo.png",
     title: "Scarab Syndicate",
     gameType: "slot",
     theme: "Egyptian Treasure / Tomb Robbers",
@@ -149,6 +150,7 @@ export const games2027: GameRecord[] = [
   {
     id: "yokai-nights",
     slug: "yokai-nights",
+    logo: "/games/yokai-nights/logo.png",
     title: "Yokai Nights",
     gameType: "slot",
     theme: "Japanese Supernatural Folklore",
@@ -172,6 +174,7 @@ export const games2027: GameRecord[] = [
     id: "bison-fury",
     projectPath: "games/bison-fury",
     slug: "ragnarok-riot",
+    logo: "/games/ragnarok-riot/logo.png",
     title: "Ragnarok Riot",
     subtitle: "Stampede of Gold",
     previousNames: ["Bison Fury"],
@@ -242,6 +245,7 @@ export const games2027: GameRecord[] = [
   {
     id: "mutant-mayhem",
     slug: "mutant-mayhem",
+    logo: "/games/mutant-mayhem/logo.png",
     title: "Mutant Mayhem",
     gameType: "slot",
     theme: "Mad Science / B-Movie Horror",
@@ -262,6 +266,7 @@ export const games2027: GameRecord[] = [
   {
     id: "santas-naughty-list",
     slug: "santas-naughty-list",
+    logo: "/games/santas-naughty-list/logo.png",
     title: "Santa's Naughty List",
     gameType: "slot",
     theme: "Christmas Crime Comedy",

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/Section";
 import { Reveal } from "@/components/Reveal";
@@ -72,7 +73,7 @@ export default function GameDetailPage({ params }: { params: { slug: string } })
             </Reveal>
 
             <Reveal delay={0.1}>
-              <PlaceholderArt title={rec.title} />
+              <PlaceholderArt title={rec.title} logo={rec.logo} />
             </Reveal>
           </div>
         </div>
@@ -135,13 +136,16 @@ export default function GameDetailPage({ params }: { params: { slug: string } })
   );
 }
 
-/** Branded placeholder art for titles without approved key art. */
-function PlaceholderArt({ title }: { title: string }) {
+/**
+ * Hero art. If the game has a logo, feature it prominently on a themed backdrop;
+ * otherwise fall back to a branded placeholder with the title text.
+ */
+function PlaceholderArt({ title, logo }: { title: string; logo?: string }) {
   const gradId = `pa-${title.replace(/[^a-z0-9]/gi, "").toLowerCase()}`;
   return (
-    <div className="relative aspect-[16/10] overflow-hidden rounded-xl2 border border-dashed border-riot-border bg-riot-surface shadow-card">
+    <div className="relative aspect-[16/10] overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface shadow-card">
       <div className="absolute inset-0 flex flex-col items-center justify-center surface-gradient p-6 text-center">
-        <svg viewBox="0 0 200 120" className="absolute inset-0 h-full w-full opacity-70" aria-hidden="true">
+        <svg viewBox="0 0 200 120" className="absolute inset-0 h-full w-full opacity-60" aria-hidden="true">
           <defs>
             <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stopColor="#FFC20A" stopOpacity="0.4" />
@@ -149,12 +153,28 @@ function PlaceholderArt({ title }: { title: string }) {
             </linearGradient>
           </defs>
           {[40, 100, 160].map((x, i) => (
-            <rect key={x} x={x - 22} y={20 + i * 4} width="44" height="80" rx="8" fill={`url(#${gradId})`} fillOpacity={0.15 + i * 0.05} stroke="#293543" />
+            <rect key={x} x={x - 22} y={20 + i * 4} width="44" height="80" rx="8" fill={`url(#${gradId})`} fillOpacity={0.12 + i * 0.04} stroke="#293543" />
           ))}
           <circle cx="100" cy="60" r="18" fill="none" stroke="#18C8F2" strokeWidth="1.5" strokeDasharray="3 6" />
         </svg>
-        <span className="relative font-display text-2xl uppercase tracking-wide text-riot-white">{title}</span>
-        <span className="relative mt-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-riot-text-muted">Artwork in development</span>
+        {logo ? (
+          <>
+            <Image
+              src={logo}
+              alt={`${title} logo`}
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="relative object-contain p-10 drop-shadow-[0_0_28px_rgba(255,193,10,0.3)]"
+              priority
+            />
+            <span className="relative mt-auto text-[10px] font-semibold uppercase tracking-[0.25em] text-riot-text-muted">Key art in development</span>
+          </>
+        ) : (
+          <>
+            <span className="relative font-display text-2xl uppercase tracking-wide text-riot-white">{title}</span>
+            <span className="relative mt-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-riot-text-muted">Artwork in development</span>
+          </>
+        )}
       </div>
     </div>
   );

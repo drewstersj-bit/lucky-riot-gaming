@@ -67,7 +67,7 @@ export function GameCard({ game }: { game: Game }) {
         isConcept ? "border-dashed" : ""
       }`}
     >
-      {/* Artwork / abstract fallback */}
+      {/* Artwork / logo centrepiece / abstract fallback */}
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-riot-surface-raised">
         {artworkLandscape ? (
           <Image
@@ -77,13 +77,26 @@ export function GameCard({ game }: { game: Game }) {
             sizes="(max-width: 768px) 100vw, 33vw"
             className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
           />
+        ) : logo ? (
+          // No full key art yet: feature the LOGO as the centrepiece on a
+          // themed backdrop so branding reads strongly in the catalogue.
+          <div className="absolute inset-0 flex items-center justify-center surface-gradient p-8">
+            <Image
+              src={logo}
+              alt={`${title} logo`}
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-contain p-8 drop-shadow-[0_0_24px_rgba(255,193,10,0.25)] transition-transform duration-500 group-hover:scale-[1.05]"
+            />
+          </div>
         ) : (
           <AbstractArt title={title} concept={isConcept} />
         )}
         <div className="absolute left-4 top-4 flex items-center gap-2">
           <StatusBadge maturity={maturity} />
         </div>
-        {logo && (
+        {/* When full artwork exists, keep the logo as a small corner lockup. */}
+        {logo && artworkLandscape && (
           <div className="absolute bottom-4 left-4 h-12 w-24">
             <Image src={logo} alt={`${title} logo`} fill className="object-contain object-left" />
           </div>

@@ -54,6 +54,10 @@ export default function RagnarokRiotProductPage() {
               <div className="relative aspect-[16/10] overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface shadow-card">
                 {game.artworkLandscape ? (
                   <Image src={game.artworkLandscape} alt={`${game.title} key artwork`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" priority />
+                ) : game.logo ? (
+                  <div className="absolute inset-0 flex items-center justify-center surface-gradient">
+                    <Image src={game.logo} alt={`${game.title} logo`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain p-12 drop-shadow-[0_0_28px_rgba(242,183,5,0.35)]" priority />
+                  </div>
                 ) : (
                   <ArtworkPlaceholder />
                 )}
