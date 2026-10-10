@@ -6,6 +6,7 @@ export interface NavItem {
 /** Primary header navigation (the "Work With Us" CTA is rendered separately). */
 export const primaryNav: NavItem[] = [
   { label: "Games", href: "/games" },
+  { label: "Roadmap", href: "/roadmap" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -16,6 +17,7 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
     title: "Studio",
     items: [
       { label: "Games", href: "/games" },
+      { label: "Roadmap", href: "/roadmap" },
       { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" },
     ],

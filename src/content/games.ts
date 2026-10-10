@@ -248,260 +248,177 @@ export interface Game {
   isConcept?: boolean;
 }
 
-export const games: Game[] = [
-  {
-    slug: "cluckus-maximus",
-    title: "CLUCKUS MAXIMUS: EGGSPANDER",
-    category: "Online Slot",
-    status: "In Development",
-    maturity: "PLAYABLE DEVELOPMENT",
+// ─── Registry-derived catalogue ──────────────────────────────────────────────
+// The authoritative source of game identity + roadmap data is the registry
+// (src/content/registry). This `games` array is an ADAPTER that projects the
+// registry's `GameRecord`s into the `Game` shape the existing pages/components
+// consume, so there is a single source of truth and no duplicated game list.
+//
+// Rich marketing detail (summary, passport, orientation, verified RTP copy)
+// that is not yet modelled in the registry schema lives in PRESENTATION, keyed
+// by the immutable registry `id`. This keeps technical identity in the registry
+// and expressive copy here, without a second list of games.
+
+import {
+  websiteGames as registryWebsiteGames,
+  type GameRecord,
+} from "./registry";
+
+interface Presentation {
+  summary?: string;
+  passport?: GamePassport;
+  featureBreakdown?: { title: string; description: string }[];
+  devProgress?: number;
+}
+
+/** Expressive copy keyed by immutable registry id (NOT by public slug). */
+const PRESENTATION: Record<string, Presentation> = {
+  "cluckus-maximus": {
     devProgress: 65,
-    description:
-      "An empire-building slot adventure where the playing area expands and the rewards grow as players advance towards Maximus Mode.",
     summary:
       "Cluckus Maximus: Eggspander is a character-led slot built around persistent progression. As players advance, the grid physically grows and new modifiers come into play, building anticipation towards the headline Maximus Mode.",
-    featureTags: [
-      "Expanding Grid",
-      "Persistent Progression",
-      "Character Modifiers",
-      "5,000× Potential",
-    ],
     featureBreakdown: [
-      {
-        title: "Expanding Grid",
-        description:
-          "The playable area grows as players progress, opening up more ways to land wins and keeping momentum building.",
-      },
-      {
-        title: "Persistent Progression",
-        description:
-          "Advancement carries forward, giving each session a sense of building towards something larger.",
-      },
-      {
-        title: "Character Modifiers",
-        description:
-          "Distinct characters introduce their own modifiers, changing how features behave and rewarding experimentation.",
-      },
-      {
-        title: "Maximus Mode",
-        description:
-          "The headline feature that everything builds towards — the destination that gives the whole game its shape.",
-      },
+      { title: "Expanding Grid", description: "The playable area grows as players progress, opening up more ways to land wins and keeping momentum building." },
+      { title: "Persistent Progression", description: "Advancement carries forward, giving each session a sense of building towards something larger." },
+      { title: "Character Modifiers", description: "Distinct characters introduce their own modifiers, changing how features behave and rewarding experimentation." },
+      { title: "Maximus Mode", description: "The headline feature that everything builds towards — the destination that gives the whole game its shape." },
     ],
-    release: { label: "In development" },
     passport: {
       gameType: "Video slot",
       gridFormat: "Expanding grid (from 5×5 towards 7×7)",
       orientation: "Landscape and portrait",
-      featureSummary:
-        "Expanding grid, persistent progression, character modifiers and the headline Maximus Mode.",
+      featureSummary: "Expanding grid, persistent progression, character modifiers and the headline Maximus Mode.",
       maxWin: "5,000× potential (design target, subject to change)",
       releaseStatus: "Playable development build",
       certificationStatus: "Not yet certified",
       demoAvailability: "In development",
     },
-    // Cluckus has a bespoke product page at /games/cluckus-maximus/, so it does
-    // NOT use the generic [slug] detail route (avoids a route collision).
-    hasDetailPage: false,
-    hasProductPage: true,
   },
-  {
-    slug: "megabars",
-    title: "MEGABARS",
-    category: "Online Slot",
-    status: "In Development",
-    maturity: "PLAYABLE DEVELOPMENT",
+  // Megabars engine → Glitch City (cyberpunk re-theme, same mechanics).
+  "mega-bars": {
     devProgress: 40,
-    description:
-      "A clean, classic-style bars slot: 5 reels, 10 lines, a stripped-back symbol set and a free spins feature. An early playable development build.",
     summary:
-      "MegaBars is a pared-back classic slot — 5 reels, 3 rows, 10 lines and just a handful of symbols (bars, blanks and a free-spins trigger). Wins pay on 3 or more adjacent symbols from the left, with a scaling free spins feature. Currently an early playable development build.",
-    featureTags: ["5×3 Reels", "10 Lines", "Free Spins", "Adjacent Pays"],
+      "Glitch City is a neon cyberpunk slot — 5 reels, 3 rows, 10 lines and a clean, high-clarity symbol set. Wins pay on 3 or more adjacent symbols from the left, with a scaling free-spins surge. Currently an early playable development build.",
     featureBreakdown: [
-      {
-        title: "10 Lines, Adjacent Pays",
-        description:
-          "Wins land on 3 or more adjacent symbols from the left across 10 lines, with the highest win paid on each line.",
-      },
-      {
-        title: "Stripped-Back Symbol Set",
-        description:
-          "A deliberately minimal set — two paying symbols, a blank and a free-spins trigger — for clear, readable play.",
-      },
-      {
-        title: "Free Spins Feature",
-        description:
-          "Three or more adjacent free-spins symbols trigger the feature; the number of free spins scales with the bet tier and can retrigger.",
-      },
+      { title: "10 Lines, Adjacent Pays", description: "Wins land on 3 or more adjacent symbols from the left across 10 lines, with the highest win paid on each line." },
+      { title: "Clean Symbol Set", description: "A deliberately minimal set for clear, readable play on a neon grid." },
+      { title: "Free Spins Surge", description: "Three or more adjacent trigger symbols launch a free-spins run that scales with the bet tier and can retrigger." },
     ],
-    release: { label: "In development" },
     passport: {
       gameType: "Video slot",
       gridFormat: "5 reels × 3 rows, 10 lines",
       orientation: "Landscape and portrait",
-      volatility: "Low",
-      // Published, from the maths simulation (100M rounds).
-      rtpConfigurations: ["~93.08% (base ~70.0% + free spins ~23.07%)"],
-      featureSummary:
-        "Two paying symbols plus a free-spins trigger; wins on 3+ adjacent symbols across 10 lines, with a scaling free spins feature.",
+      featureSummary: "A clean symbol set across 10 lines with a scaling free-spins surge.",
       releaseStatus: "Playable development build",
       certificationStatus: "Not yet certified",
       demoAvailability: "In development",
     },
-    hasDetailPage: false,
-    hasProductPage: true,
   },
-  {
-    slug: "bison-fury",
-    title: "BISON FURY",
-    category: "Online Slot",
-    status: "In Development",
-    maturity: "PLAYABLE DEVELOPMENT",
+  // Bison Fury engine → Ragnarok Riot (Viking/metal re-theme, same mechanics).
+  "bison-fury": {
     devProgress: 45,
-    description:
-      "A thundering 1024-ways slot inspired by the buffalo greats: stacked beasts, a wild stampede and sticky-wild free spins. An early playable development build.",
     summary:
-      "Bison Fury is a 5×4, 1024-ways slot with 11 symbols, wilds on the middle reels and a free spins feature built around sticky wilds. Each wild that lands in free spins locks in place for a run of respins while the free-spin count holds — stacking wilds and respins into the game's biggest moments. Currently an early playable development build.",
-    featureTags: ["1024 Ways", "Sticky Wilds", "Free Spins", "5×4 Reels"],
+      "Ragnarok Riot is a 5×4, 1024-ways slot where Viking myth meets heavy metal — stacked beasts, wilds on the middle reels and a free-spins feature built around sticky wilds. Each wild that lands in free spins locks in place for a run of respins while the free-spin count holds. Currently an early playable development build.",
     featureBreakdown: [
-      {
-        title: "1024 Ways",
-        description:
-          "Wins pay for matching symbols on adjacent reels from the left across all 1024 ways — no fixed paylines.",
-      },
-      {
-        title: "Stampede Wilds",
-        description:
-          "Wilds land on the middle three reels and substitute for all regular symbols to complete more ways.",
-      },
-      {
-        title: "Sticky-Wild Free Spins",
-        description:
-          "Every wild that lands in free spins sticks for a run of respins; while sticky wilds are in play the free-spin counter holds and retriggers are possible.",
-      },
+      { title: "1024 Ways", description: "Wins pay for matching symbols on adjacent reels from the left across all 1024 ways — no fixed paylines." },
+      { title: "Stampede Wilds", description: "Wilds land on the middle three reels and substitute for all regular symbols to complete more ways." },
+      { title: "Sticky-Wild Free Spins", description: "Every wild that lands in free spins sticks for a run of respins; while sticky wilds are in play the free-spin counter holds and retriggers are possible." },
     ],
-    release: { label: "In development" },
     passport: {
       gameType: "Video slot",
       gridFormat: "5 reels × 4 rows, 1024 ways",
       orientation: "Landscape",
-      volatility: "High",
-      // Published, from the maths simulation.
-      rtpConfigurations: ["~93.88% (base ~71.98% + free spins ~21.91%)"],
-      featureSummary:
-        "1024 ways with middle-reel wilds and a sticky-wild free-spins feature (3/4/5 scatters award 8/20/50 free spins).",
+      featureSummary: "1024 ways with middle-reel wilds and a sticky-wild free-spins feature (3/4/5 scatters award 8/20/50 free spins).",
       releaseStatus: "Playable development build",
       certificationStatus: "Not yet certified",
       demoAvailability: "In development",
     },
-    hasDetailPage: false,
-    hasProductPage: true,
   },
-  {
-    slug: "video-poker-pro",
-    title: "VIDEO POKER PRO",
-    category: "Video Poker",
-    status: "In Development",
-    maturity: "PLAYABLE DEVELOPMENT",
+  "video-poker-pro": {
     devProgress: 40,
-    description:
-      "Pro-style 100-hand video poker with three variants — Tens or Better, Deuces Wild and Deuces and Joker — plus a double-or-nothing gamble. An early playable development build.",
     summary:
-      "Video Poker Pro deals one hand, you hold, and your held cards play across 100 independent hands at once. Three selectable variants share one engine and differ only in paytable and wild rules: Tens or Better (no wild), Deuces Wild (2s wild) and Deuces and Joker (2s plus a joker, 53-card deck). Each win can be gambled in a double-or-nothing feature. Currently an early playable development build.",
-    featureTags: ["100 Hands", "3 Variants", "Wilds", "Double Feature"],
+      "Video Poker Pro deals one hand, you hold, and your held cards play across 100 independent hands at once. Three selectable variants share one engine and differ only in paytable and wild rules. Each win can be gambled in a double-or-nothing feature. Currently an early playable development build.",
     featureBreakdown: [
-      {
-        title: "100 Hands at Once",
-        description:
-          "Deal and hold once; your held cards carry into 100 hands, each drawing its own fresh replacements for 100 independent results per round.",
-      },
-      {
-        title: "Three Variants, One Engine",
-        description:
-          "Tens or Better, Deuces Wild and Deuces and Joker share the same look and feel and differ only in their paytable and wild rules — switch from the paytable screen.",
-      },
-      {
-        title: "Double or Nothing",
-        description:
-          "After any win, gamble it in the double feature: pick a card higher than the dealer's to double, with collect and collect-half options and a per-level win cap.",
-      },
+      { title: "100 Hands at Once", description: "Deal and hold once; your held cards carry into 100 hands, each drawing its own fresh replacements for 100 independent results per round." },
+      { title: "Three Variants, One Engine", description: "Tens or Better, Deuces Wild and Deuces and Joker share the same look and feel and differ only in their paytable and wild rules." },
+      { title: "Double or Nothing", description: "After any win, gamble it in the double feature: pick a card higher than the dealer's to double, with collect and collect-half options and a per-level win cap." },
     ],
-    release: { label: "In development" },
     passport: {
       gameType: "Video poker",
       gridFormat: "100 hands, 5-card draw",
       orientation: "Portrait and landscape",
-      volatility: "Medium",
-      // Theoretical optimal-play returns per variant (standard full-pay tables);
-      // measured returns from the maths simulation are recorded in the engine repo.
-      rtpConfigurations: [
-        "Tens or Better ~99.14%",
-        "Deuces Wild ~100.76%",
-        "Deuces and Joker ~99.07%",
-      ],
-      featureSummary:
-        "Pro 100-hand draw poker across three variants (no-wild / deuces / deuces+joker) with a double-or-nothing gamble.",
+      featureSummary: "Pro 100-hand draw poker across three variants (no-wild / deuces / deuces+joker) with a double-or-nothing gamble.",
       releaseStatus: "Playable development build",
       certificationStatus: "Not yet certified",
       demoAvailability: "In development",
     },
-    hasDetailPage: false,
-    hasProductPage: true,
   },
-  {
-    slug: "farmyard-frenzy",
-    title: "FARMYARD FRENZY",
-    category: "Online Slot",
-    status: "In Development",
-    maturity: "PLAYABLE DEVELOPMENT",
+  // Farmyard Frenzy engine → Trash Pandas (raccoon re-theme, same mechanics).
+  "farmyard-frenzy": {
     devProgress: 35,
-    description:
-      "A 5×3, 10-line farmyard slot: collect eggs during free spins, chase the Golden Egg and bank the barn. An early playable development build.",
     summary:
-      "Farmyard Frenzy is a 5-reel, 3-row, 10-line slot with farm animals and card ranks. Three or more Barn scatters award free spins, where every Barn in view collects all the Egg cash values on the board. A Golden Egg adds a bonus to the collect, and Wilds substitute for the line symbols. Currently an early playable development build.",
-    featureTags: ["5×3 Reels", "10 Lines", "Egg Collect", "Golden Free Spins"],
+      "Trash Pandas is a 5-reel, 3-row, 10-line slot where mischievous urban raccoons raid the junkyard. Three or more scatters award free spins, where every scatter in view collects the valuable cash symbols on the board. A golden collectible adds a bonus, and wilds substitute for the line symbols. Currently an early playable development build.",
     featureBreakdown: [
-      {
-        title: "10 Lines, Adjacent Pays",
-        description:
-          "Wins land on matching symbols from the left across 10 lines, with the highest win paid on each line. Wilds substitute for the farm and card symbols.",
-      },
-      {
-        title: "Barn Scatter Free Spins",
-        description:
-          "Three, four or five Barn scatters anywhere award 10, 15 or 20 free spins played on dedicated reels.",
-      },
-      {
-        title: "Egg Collect",
-        description:
-          "During free spins every Barn scatter in view collects all the Egg cash values on the board, paid as a multiple of the total bet.",
-      },
-      {
-        title: "Golden Egg",
-        description:
-          "Landing a Golden Egg during free spins adds a bonus multiplier to the collected eggs for the game's biggest moments.",
-      },
+      { title: "10 Lines, Adjacent Pays", description: "Wins land on matching symbols from the left across 10 lines, with the highest win paid on each line. Wilds substitute for the line symbols." },
+      { title: "Scatter Free Spins", description: "Three, four or five scatters anywhere award 10, 15 or 20 free spins played on dedicated reels." },
+      { title: "Collect Bonus", description: "During free spins every scatter in view collects all the valuable cash symbols on the board, paid as a multiple of the total bet." },
+      { title: "Golden Haul", description: "Landing the golden collectible during free spins adds a bonus multiplier to the collected loot for the game's biggest moments." },
     ],
-    release: { label: "In development" },
     passport: {
       gameType: "Video slot",
       gridFormat: "5 reels × 3 rows, 10 lines",
       orientation: "Landscape and portrait",
-      volatility: "Medium-high",
-      // Measured from the maths simulation (1M rounds, seed 42). Base is ~2pp
-      // under the workbook target and is a documented development-stage variance.
-      rtpConfigurations: ["~94.04% (base ~37.0% + free spins ~57.0%)"],
-      featureSummary:
-        "10-line slot with a Barn-scatter free-spins feature, egg-collect mechanic and a Golden Egg bonus; 3/4/5 scatters award 10/15/20 free spins.",
+      featureSummary: "10-line slot with a scatter free-spins feature, a collect bonus and a golden-haul multiplier; 3/4/5 scatters award 10/15/20 free spins.",
       maxWin: "5,000× potential (design target, subject to change)",
       releaseStatus: "Playable development build",
       certificationStatus: "Not yet certified",
       demoAvailability: "In development",
     },
-    hasDetailPage: false,
-    hasProductPage: true,
   },
-];
+};
+
+function toCategory(t: GameRecord["gameType"]): GameCategory {
+  return t === "video-poker" ? "Video Poker" : "Online Slot";
+}
+
+/** Map a registry record to the legacy `Game` shape used by the UI. */
+function toGame(r: GameRecord): Game {
+  const p = PRESENTATION[r.id] ?? {};
+  const playable = r.playable && r.publicVisibility === "published";
+  const isConcept = r.developmentStatus === "concept";
+  return {
+    slug: r.slug,
+    title: r.title.toUpperCase(),
+    category: toCategory(r.gameType),
+    status: playable
+      ? "In Development"
+      : r.developmentStatus === "released"
+        ? "Released"
+        : isConcept
+          ? "Coming Soon"
+          : "Coming Soon",
+    maturity: playable ? "PLAYABLE DEVELOPMENT" : isConcept ? "CONCEPT" : "IN DEVELOPMENT",
+    devProgress: p.devProgress,
+    description: r.description,
+    summary: p.summary ?? r.description,
+    featureTags: r.featureTags,
+    featureBreakdown: p.featureBreakdown,
+    release: { label: r.roadmapYear > 0 ? `Target ${r.targetReleaseMonth}/${r.roadmapYear}` : "In development" },
+    passport: p.passport,
+    // Existing projects have bespoke product pages; planned games use the
+    // generic /games/[slug] detail route.
+    hasDetailPage: !r.existingProject,
+    hasProductPage: r.existingProject,
+    isConcept: !r.existingProject,
+  };
+}
+
+/**
+ * The catalogue, derived from the authoritative registry. Includes every
+ * website-enabled game (existing + planned) so the public portfolio shows the
+ * full lineup; planned games render as coming-soon cards with no Play action.
+ */
+export const games: Game[] = registryWebsiteGames().map(toGame);
 
 /** Games flagged for the "Featured" section on the home page. */
 export const featuredGames: Game[] = games;
@@ -516,7 +433,7 @@ export function getDetailPageGames(): Game[] {
   return games.filter((game) => game.hasDetailPage);
 }
 
-/** Canonical game id lookup (same value as slug). */
+/** Lookup by current public slug (kept name for back-compat with pages). */
 export function getGameById(gameId: string): Game | undefined {
   return games.find((game) => game.slug === gameId);
 }

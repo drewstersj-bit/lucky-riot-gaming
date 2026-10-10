@@ -39,6 +39,26 @@
   status = 301
   force = true
 
+# Rebranded games: redirect the former public slugs to the new themed slugs.
+# Technical/engine IDs are unchanged; only the public URL moved.
+[[redirects]]
+  from = "/games/megabars/*"
+  to = "/games/glitch-city/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/games/bison-fury/*"
+  to = "/games/ragnarok-riot/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/games/farmyard-frenzy/*"
+  to = "/games/trash-pandas/:splat"
+  status = 301
+  force = true
+
 # ---------------------------------------------------------------------------
 # Edge-enforced access control for the internal PLAYTEST route.
 # ---------------------------------------------------------------------------
@@ -56,19 +76,19 @@
 
 [[edge_functions]]
   function = "playtest-auth"
-  path = "/games/megabars/dev"
+  path = "/games/glitch-city/dev"
 
 [[edge_functions]]
   function = "playtest-auth"
-  path = "/games/megabars/dev/*"
+  path = "/games/glitch-city/dev/*"
 
 [[edge_functions]]
   function = "playtest-auth"
-  path = "/games/bison-fury/dev"
+  path = "/games/ragnarok-riot/dev"
 
 [[edge_functions]]
   function = "playtest-auth"
-  path = "/games/bison-fury/dev/*"
+  path = "/games/ragnarok-riot/dev/*"
 
 [[edge_functions]]
   function = "playtest-auth"
@@ -80,11 +100,11 @@
 
 [[edge_functions]]
   function = "playtest-auth"
-  path = "/games/farmyard-frenzy/dev"
+  path = "/games/trash-pandas/dev"
 
 [[edge_functions]]
   function = "playtest-auth"
-  path = "/games/farmyard-frenzy/dev/*"
+  path = "/games/trash-pandas/dev/*"
 
 # ---------------------------------------------------------------------------
 # Security headers (applied to every route)
@@ -126,29 +146,29 @@
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
 
-# MegaBars PLAYTEST game assets (same slot-engine relaxations, scoped).
+# Glitch City PLAYTEST game assets (engine project mega-bars; same relaxations).
 [[headers]]
-  for = "/games/megabars/dev/game/*"
+  for = "/games/glitch-city/dev/game/*"
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
     X-Robots-Tag = "noindex, nofollow, noarchive"
 
-# MegaBars PUBLIC demo game assets (public, indexable — no noindex tag).
+# Glitch City PUBLIC demo game assets (public, indexable — no noindex tag).
 [[headers]]
-  for = "/games/megabars/play/game/*"
+  for = "/games/glitch-city/play/game/*"
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
 
-# Bison Fury PLAYTEST game assets (same slot-engine relaxations, scoped).
+# Ragnarok Riot PLAYTEST game assets (engine project bison-fury; same relaxations).
 [[headers]]
-  for = "/games/bison-fury/dev/game/*"
+  for = "/games/ragnarok-riot/dev/game/*"
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
     X-Robots-Tag = "noindex, nofollow, noarchive"
 
-# Bison Fury PUBLIC demo game assets (public, indexable — no noindex tag).
+# Ragnarok Riot PUBLIC demo game assets (public, indexable — no noindex tag).
 [[headers]]
-  for = "/games/bison-fury/play/game/*"
+  for = "/games/ragnarok-riot/play/game/*"
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
 
@@ -165,16 +185,16 @@
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
 
-# Farmyard Frenzy PLAYTEST game assets (same slot-engine relaxations, scoped).
+# Trash Pandas PLAYTEST game assets (engine project farmyard-frenzy; same relaxations).
 [[headers]]
-  for = "/games/farmyard-frenzy/dev/game/*"
+  for = "/games/trash-pandas/dev/game/*"
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
     X-Robots-Tag = "noindex, nofollow, noarchive"
 
-# Farmyard Frenzy PUBLIC demo game assets (public, indexable — no noindex tag).
+# Trash Pandas PUBLIC demo game assets (public, indexable — no noindex tag).
 [[headers]]
-  for = "/games/farmyard-frenzy/play/game/*"
+  for = "/games/trash-pandas/play/game/*"
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
 

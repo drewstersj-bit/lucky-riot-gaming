@@ -153,25 +153,25 @@ const registry: Record<string, GameDeploymentManifest> = {
     "PUBLIC",
   ),
 
-  // --- MegaBars ----------------------------------------------------------
-  [key("megabars", "PLAYTEST")]: readManifest("megabars", "MegaBars", "PLAYTEST"),
-  [key("megabars", "CUSTOMER")]: customerUnavailable("megabars", "MegaBars"),
-  [key("megabars", "PUBLIC")]: readManifest("megabars", "MegaBars", "PUBLIC"),
+  // --- Glitch City (engine project: mega-bars) ---------------------------
+  [key("glitch-city", "PLAYTEST")]: readManifest("glitch-city", "Glitch City", "PLAYTEST"),
+  [key("glitch-city", "CUSTOMER")]: customerUnavailable("glitch-city", "Glitch City"),
+  [key("glitch-city", "PUBLIC")]: readManifest("glitch-city", "Glitch City", "PUBLIC"),
 
-  // --- Bison Fury --------------------------------------------------------
-  [key("bison-fury", "PLAYTEST")]: readManifest("bison-fury", "Bison Fury", "PLAYTEST"),
-  [key("bison-fury", "CUSTOMER")]: customerUnavailable("bison-fury", "Bison Fury"),
-  [key("bison-fury", "PUBLIC")]: readManifest("bison-fury", "Bison Fury", "PUBLIC"),
+  // --- Ragnarok Riot (engine project: bison-fury) ------------------------
+  [key("ragnarok-riot", "PLAYTEST")]: readManifest("ragnarok-riot", "Ragnarok Riot", "PLAYTEST"),
+  [key("ragnarok-riot", "CUSTOMER")]: customerUnavailable("ragnarok-riot", "Ragnarok Riot"),
+  [key("ragnarok-riot", "PUBLIC")]: readManifest("ragnarok-riot", "Ragnarok Riot", "PUBLIC"),
 
   // --- Video Poker Pro ---------------------------------------------------
   [key("video-poker-pro", "PLAYTEST")]: readManifest("video-poker-pro", "Video Poker Pro", "PLAYTEST"),
   [key("video-poker-pro", "CUSTOMER")]: customerUnavailable("video-poker-pro", "Video Poker Pro"),
   [key("video-poker-pro", "PUBLIC")]: readManifest("video-poker-pro", "Video Poker Pro", "PUBLIC"),
 
-  // --- Farmyard Frenzy ---------------------------------------------------
-  [key("farmyard-frenzy", "PLAYTEST")]: readManifest("farmyard-frenzy", "Farmyard Frenzy", "PLAYTEST"),
-  [key("farmyard-frenzy", "CUSTOMER")]: customerUnavailable("farmyard-frenzy", "Farmyard Frenzy"),
-  [key("farmyard-frenzy", "PUBLIC")]: readManifest("farmyard-frenzy", "Farmyard Frenzy", "PUBLIC"),
+  // --- Trash Pandas (engine project: farmyard-frenzy) --------------------
+  [key("trash-pandas", "PLAYTEST")]: readManifest("trash-pandas", "Trash Pandas", "PLAYTEST"),
+  [key("trash-pandas", "CUSTOMER")]: customerUnavailable("trash-pandas", "Trash Pandas"),
+  [key("trash-pandas", "PUBLIC")]: readManifest("trash-pandas", "Trash Pandas", "PUBLIC"),
 };
 
 /** Look up a deployment manifest, or undefined if none is registered. */

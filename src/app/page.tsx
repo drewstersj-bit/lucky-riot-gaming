@@ -121,8 +121,30 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* 6b. 2027 roadmap teaser */}
+      <Section gradient aria-labelledby="roadmap-teaser-heading">
+        <Reveal>
+          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lucky-gold">The pipeline</p>
+              <h2 id="roadmap-teaser-heading" className="mt-3 font-display text-3xl uppercase text-riot-white md:text-4xl">
+                A Full Year of Riots
+              </h2>
+              <p className="mt-4 text-lg leading-relaxed text-riot-text">
+                Twelve original titles across 2027 — slots and video poker, quarter by quarter. See
+                the complete release pipeline, with launch periods and development status for every
+                game.
+              </p>
+            </div>
+            <ButtonLink href="/roadmap/" size="lg" variant="secondary">
+              View the 2027 Roadmap
+            </ButtonLink>
+          </div>
+        </Reveal>
+      </Section>
+
       {/* 7. Commercial partnership CTA */}
-      <Section gradient aria-labelledby="partner-heading">
+      <Section aria-labelledby="partner-heading">
         <Reveal>
           <div className="group relative overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface p-8 md:p-14">
             <span className="light-sweep pointer-events-none absolute inset-0" aria-hidden="true" />

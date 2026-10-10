@@ -62,15 +62,15 @@ public/games/*/play/game/**
 # the engine repo, not built here). Revert this block when CI artefact
 # retrieval is wired, to go back to not committing built game files.
 !public/games/cluckus-maximus/play/game/**
-# Same exception for the MegaBars PUBLIC demo artefact.
-!public/games/megabars/play/game/**
-# Same exception for the Bison Fury PUBLIC demo artefact.
-!public/games/bison-fury/play/game/**
+# Same exception for the Glitch City PUBLIC demo artefact (engine: mega-bars).
+!public/games/glitch-city/play/game/**
+# Same exception for the Ragnarok Riot PUBLIC demo artefact (engine: bison-fury).
+!public/games/ragnarok-riot/play/game/**
 
 # Same exception for the Video Poker Pro PUBLIC demo artefact.
 !public/games/video-poker-pro/play/game/**
-# Same exception for the Farmyard Frenzy PUBLIC demo artefact.
-!public/games/farmyard-frenzy/play/game/**
+# Same exception for the Trash Pandas PUBLIC demo artefact (engine: farmyard-frenzy).
+!public/games/trash-pandas/play/game/**
 public/customer/games/*/play/game/**
 !public/customer/games/*/play/game/.gitkeep
 !public/customer/games/*/play/game/README.md

@@ -45,24 +45,34 @@ export const riotDrops: RiotDrop[] = [
     href: "/games/cluckus-maximus/",
   },
   {
-    id: "megabars",
-    title: "MEGABARS",
+    id: "glitch-city",
+    title: "GLITCH CITY",
     category: "Online Slot",
-    accent: "gold",
+    accent: "cyan",
     status: "In Development",
     teaser:
-      "A bold bars slot turned up: 10 paylines, scatter pays and a free spins feature on a high-volatility model.",
-    href: "/games/megabars/",
+      "A neon cyberpunk slot: 10 paylines, a clean symbol set and a free-spins surge through the digital underground.",
+    href: "/games/glitch-city/",
   },
   {
-    id: "bison-fury",
-    title: "BISON FURY",
+    id: "ragnarok-riot",
+    title: "RAGNAROK RIOT",
     category: "Online Slot",
     accent: "gold",
     status: "In Development",
     teaser:
-      "A 1024-ways stampede with middle-reel wilds and a sticky-wild free spins feature.",
-    href: "/games/bison-fury/",
+      "Viking myth meets heavy metal: a 1024-ways stampede with middle-reel wilds and a sticky-wild free spins feature.",
+    href: "/games/ragnarok-riot/",
+  },
+  {
+    id: "trash-pandas",
+    title: "TRASH PANDAS",
+    category: "Online Slot",
+    accent: "gold",
+    status: "In Development",
+    teaser:
+      "Mischievous urban raccoons raid the junkyard: a 10-line slot with a collect-bonus free spins feature.",
+    href: "/games/trash-pandas/",
   },
   {
     id: "untitled-video-poker",

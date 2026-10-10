@@ -29,8 +29,8 @@ export const customerGames: CustomerGameSummary[] = [
     candidateAvailable: false,
   },
   {
-    gameId: "megabars",
-    displayName: "MegaBars",
+    gameId: "glitch-city",
+    displayName: "Glitch City",
     category: "Online Slot",
     maturity: "PLAYABLE DEVELOPMENT",
     candidateAvailable: false,
@@ -96,13 +96,13 @@ export const customerGameDetails: Record<string, CustomerGameDetail> = {
       { label: "Key art", note: "Available at candidate stage." },
     ],
   },
-  megabars: {
-    gameId: "megabars",
-    displayName: "MegaBars",
+  "glitch-city": {
+    gameId: "glitch-city",
+    displayName: "Glitch City",
     category: "Online Slot",
     maturity: "PLAYABLE DEVELOPMENT",
     overview:
-      "MegaBars is an early playable development build. A clean release candidate will be published to this portal when available. Figures below are from the current maths model and remain provisional until certification.",
+      "Glitch City is an early playable development build. A clean release candidate will be published to this portal when available. Figures below are from the current maths model and remain provisional until certification.",
     spec: [
       { label: "Game type", value: "Video slot" },
       { label: "Reels / lines", value: "5 reels, 10 paylines" },
