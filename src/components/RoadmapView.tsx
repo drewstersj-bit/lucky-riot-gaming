@@ -139,10 +139,10 @@ export function RoadmapView({ years }: { years: RoadmapYearData[] }) {
                         <img
                           src={e.logo}
                           alt={`${e.title} logo`}
-                          className={`absolute inset-0 h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-[1.06] ${
+                          className={`absolute inset-0 h-full w-full object-contain p-4 transition-transform duration-500 ${
                             e.cardBackground
-                              ? "drop-shadow-[0_4px_20px_rgba(0,0,0,0.55)]"
-                              : "drop-shadow-[0_0_24px_rgba(255,193,10,0.4)]"
+                              ? "scale-[1.9] drop-shadow-[0_4px_20px_rgba(0,0,0,0.55)] group-hover:scale-[2]"
+                              : "drop-shadow-[0_0_24px_rgba(255,193,10,0.4)] group-hover:scale-[1.06]"
                           }`}
                         />
                       ) : (
