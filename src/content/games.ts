@@ -422,8 +422,21 @@ function toGame(r: GameRecord): Game {
  * The catalogue, derived from the authoritative registry. Includes every
  * website-enabled game (existing + planned) so the public portfolio shows the
  * full lineup; planned games render as coming-soon cards with no Play action.
+ *
+ * Ordered to match the public ROADMAP: by roadmap year then target month, so
+ * the portfolio reads in release order (Tycoon Lagoon first, then Feb, Mar…).
+ * Off-roadmap titles (roadmapYear 0, e.g. Video Poker Pro) sort to the end.
  */
-export const games: Game[] = registryWebsiteGames().map(toGame);
+function roadmapRank(r: GameRecord): number {
+  // Year 0 means "off the public roadmap" — push those to the back.
+  const year = r.roadmapYear > 0 ? r.roadmapYear : 9999;
+  return year * 100 + r.targetReleaseMonth;
+}
+
+export const games: Game[] = registryWebsiteGames()
+  .slice()
+  .sort((a, b) => roadmapRank(a) - roadmapRank(b))
+  .map(toGame);
 
 /** Games flagged for the "Featured" section on the home page. */
 export const featuredGames: Game[] = games;
