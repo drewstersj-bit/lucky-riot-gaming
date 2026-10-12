@@ -65,14 +65,14 @@ export const riotDrops: RiotDrop[] = [
     href: "/games/ragnarok-riot/",
   },
   {
-    id: "trash-pandas",
-    title: "TRASH PANDAS",
+    id: "tycoon-lagoon",
+    title: "TYCOON LAGOON",
     category: "Online Slot",
     accent: "gold",
     status: "In Development",
     teaser:
-      "Mischievous urban raccoons raid the junkyard: a 10-line slot with a collect-bonus free spins feature.",
-    href: "/games/trash-pandas/",
+      "Cast off for the big catch: a 10-line fishing slot with a boat-scatter collect bonus and a golden trophy fish.",
+    href: "/games/tycoon-lagoon/",
   },
   {
     id: "untitled-video-poker",

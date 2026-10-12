@@ -116,19 +116,19 @@ export const games2027: GameRecord[] = [
     playable: false,
   },
 
-  // May — existing project (Farmyard Frenzy → Trash Pandas).
+  // May — existing project (Farmyard Frenzy → Trash Pandas → Tycoon Lagoon).
   {
     id: "farmyard-frenzy",
-    projectPath: "games/farmyard-frenzy",
-    slug: "trash-pandas",
-    title: "Trash Pandas",
-    subtitle: "Junkyard Chaos",
-    previousNames: ["Farmyard Frenzy"],
+    projectPath: "games/tycoon-lagoon",
+    slug: "tycoon-lagoon",
+    title: "Tycoon Lagoon",
+    subtitle: "Big-Catch Fishing",
+    previousNames: ["Farmyard Frenzy", "Trash Pandas"],
     gameType: "slot",
-    theme: "Urban Raccoon Comedy",
+    theme: "Tropical Fishing Adventure",
     description:
-      "A character-led comedy slot where mischievous urban raccoons raid the junkyard, collecting valuables through a free-spins bonus.",
-    shortDescription: "Raccoon junkyard comedy slot with a collect-value free-spins bonus.",
+      "A big-catch fishing slot where every free spin reels in valuable fish — a 10-line grid with a boat-scatter collect bonus and a golden trophy fish.",
+    shortDescription: "Tropical fishing slot with a catch-value free-spins collect bonus.",
     roadmapYear: 2027,
     roadmapQuarter: 2,
     targetReleaseMonth: 5,
@@ -138,9 +138,9 @@ export const games2027: GameRecord[] = [
     featureTags: ["5×3 Reels", "10 Lines", "Collect Bonus", "Free Spins"],
     mechanics: [
       { title: "10 Lines, Adjacent Pays", description: "Wins land on matching symbols from the left across 10 lines; wilds substitute for the line symbols." },
-      { title: "Scatter Free Spins", description: "Three, four or five scatters anywhere award 10, 15 or 20 free spins played on dedicated reels." },
-      { title: "Collect Bonus", description: "During free spins every scatter in view collects all the valuable cash symbols on the board." },
-      { title: "Golden Haul", description: "Landing the golden collectible during free spins adds a bonus multiplier to the collected loot." },
+      { title: "Scatter Free Spins", description: "Three, four or five boat scatters anywhere award 10, 15 or 20 free spins played on dedicated reels." },
+      { title: "Big-Catch Collect", description: "During free spins every boat scatter in view reels in all the valuable fish on the board, paid as a multiple of the total bet." },
+      { title: "Golden Trophy Fish", description: "Landing the golden fish during free spins adds a bonus multiplier to the catch for the game's biggest hauls." },
     ],
     websiteEnabled: true,
     playable: true,

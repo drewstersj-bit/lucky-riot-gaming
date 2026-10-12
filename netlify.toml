@@ -55,7 +55,13 @@
 
 [[redirects]]
   from = "/games/farmyard-frenzy/*"
-  to = "/games/trash-pandas/:splat"
+  to = "/games/tycoon-lagoon/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/games/trash-pandas/*"
+  to = "/games/tycoon-lagoon/:splat"
   status = 301
   force = true
 
@@ -100,11 +106,11 @@
 
 [[edge_functions]]
   function = "playtest-auth"
-  path = "/games/trash-pandas/dev"
+  path = "/games/tycoon-lagoon/dev"
 
 [[edge_functions]]
   function = "playtest-auth"
-  path = "/games/trash-pandas/dev/*"
+  path = "/games/tycoon-lagoon/dev/*"
 
 # ---------------------------------------------------------------------------
 # Security headers (applied to every route)
@@ -185,16 +191,16 @@
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
 
-# Trash Pandas PLAYTEST game assets (engine project farmyard-frenzy; same relaxations).
+# Tycoon Lagoon PLAYTEST game assets (engine project farmyard-frenzy; same relaxations).
 [[headers]]
-  for = "/games/trash-pandas/dev/game/*"
+  for = "/games/tycoon-lagoon/dev/game/*"
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
     X-Robots-Tag = "noindex, nofollow, noarchive"
 
-# Trash Pandas PUBLIC demo game assets (public, indexable — no noindex tag).
+# Tycoon Lagoon PUBLIC demo game assets (public, indexable — no noindex tag).
 [[headers]]
-  for = "/games/trash-pandas/play/game/*"
+  for = "/games/tycoon-lagoon/play/game/*"
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
 

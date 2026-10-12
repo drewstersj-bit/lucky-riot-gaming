@@ -353,22 +353,22 @@ const PRESENTATION: Record<string, Presentation> = {
       demoAvailability: "In development",
     },
   },
-  // Farmyard Frenzy engine → Trash Pandas (raccoon re-theme, same mechanics).
+  // Farmyard Frenzy engine → Trash Pandas → Tycoon Lagoon (fishing re-theme, same mechanics).
   "farmyard-frenzy": {
     devProgress: 35,
     summary:
-      "Trash Pandas is a 5-reel, 3-row, 10-line slot where mischievous urban raccoons raid the junkyard. Three or more scatters award free spins, where every scatter in view collects the valuable cash symbols on the board. A golden collectible adds a bonus, and wilds substitute for the line symbols. Currently an early playable development build.",
+      "Tycoon Lagoon is a 5-reel, 3-row, 10-line fishing slot. Three or more boat scatters award free spins, where every boat in view reels in the valuable fish on the board. A golden trophy fish adds a bonus, and wilds substitute for the line symbols. Currently an early playable development build.",
     featureBreakdown: [
       { title: "10 Lines, Adjacent Pays", description: "Wins land on matching symbols from the left across 10 lines, with the highest win paid on each line. Wilds substitute for the line symbols." },
-      { title: "Scatter Free Spins", description: "Three, four or five scatters anywhere award 10, 15 or 20 free spins played on dedicated reels." },
-      { title: "Collect Bonus", description: "During free spins every scatter in view collects all the valuable cash symbols on the board, paid as a multiple of the total bet." },
-      { title: "Golden Haul", description: "Landing the golden collectible during free spins adds a bonus multiplier to the collected loot for the game's biggest moments." },
+      { title: "Scatter Free Spins", description: "Three, four or five boat scatters anywhere award 10, 15 or 20 free spins played on dedicated reels." },
+      { title: "Big-Catch Collect", description: "During free spins every boat scatter in view reels in all the valuable fish on the board, paid as a multiple of the total bet." },
+      { title: "Golden Trophy Fish", description: "Landing the golden fish during free spins adds a bonus multiplier to the catch for the game's biggest hauls." },
     ],
     passport: {
       gameType: "Video slot",
       gridFormat: "5 reels × 3 rows, 10 lines",
       orientation: "Landscape and portrait",
-      featureSummary: "10-line slot with a scatter free-spins feature, a collect bonus and a golden-haul multiplier; 3/4/5 scatters award 10/15/20 free spins.",
+      featureSummary: "10-line fishing slot with a boat-scatter free-spins feature, a big-catch collect bonus and a golden trophy-fish multiplier; 3/4/5 scatters award 10/15/20 free spins.",
       maxWin: "5,000× potential (design target, subject to change)",
       releaseStatus: "Playable development build",
       certificationStatus: "Not yet certified",

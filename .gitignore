@@ -69,8 +69,8 @@ public/games/*/play/game/**
 
 # Same exception for the Video Poker Pro PUBLIC demo artefact.
 !public/games/video-poker-pro/play/game/**
-# Same exception for the Trash Pandas PUBLIC demo artefact (engine: farmyard-frenzy).
-!public/games/trash-pandas/play/game/**
+# Same exception for the Tycoon Lagoon PUBLIC demo artefact (engine: farmyard-frenzy).
+!public/games/tycoon-lagoon/play/game/**
 public/customer/games/*/play/game/**
 !public/customer/games/*/play/game/.gitkeep
 !public/customer/games/*/play/game/README.md

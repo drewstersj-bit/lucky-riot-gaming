@@ -11,18 +11,18 @@ import { GamePassport } from "@/components/GamePassport";
 import { getGameById } from "@/content/games";
 import { buildMetadata } from "@/lib/seo";
 
-const GAME_SLUG = "trash-pandas";
+const GAME_SLUG = "tycoon-lagoon";
 
 const game = getGameById(GAME_SLUG);
 
 export const metadata: Metadata = buildMetadata({
-  title: "Trash Pandas",
+  title: "Tycoon Lagoon",
   description:
-    "Trash Pandas — an original Lucky Riot slot: mischievous urban raccoons raid the junkyard for valuables across a 10-line grid with a collect-bonus free spins feature. Early playable development build.",
+    "Tycoon Lagoon — an original Lucky Riot fishing slot: reel in the big catch across a 10-line grid with a boat-scatter collect bonus and a golden trophy fish. Early playable development build.",
   path: `/games/${GAME_SLUG}`,
 });
 
-export default function TrashPandasProductPage() {
+export default function TycoonLagoonProductPage() {
   if (!game) notFound();
 
   return (
@@ -93,7 +93,7 @@ export default function TrashPandasProductPage() {
             <div className="mt-8 max-w-2xl">
               <div className="flex items-center justify-between text-sm text-riot-text-muted"><span>Towards release candidate</span><span className="font-semibold text-lucky-gold">{game.devProgress}%</span></div>
               <div className="mt-3 h-3 w-full overflow-hidden rounded-full bg-riot-charcoal ring-1 ring-riot-border"><div className="h-full rounded-full bg-lucky-gradient" style={{ width: `${game.devProgress}%` }} /></div>
-              <p className="mt-4 text-sm leading-relaxed text-riot-text-muted">Trash Pandas is an early playable development build. Progress is indicative and subject to change as the game moves towards a release candidate.</p>
+              <p className="mt-4 text-sm leading-relaxed text-riot-text-muted">Tycoon Lagoon is an early playable development build. Progress is indicative and subject to change as the game moves towards a release candidate.</p>
             </div>
           </Reveal>
         </Section>
@@ -116,7 +116,7 @@ export default function TrashPandasProductPage() {
             <div className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-riot-pink/20 blur-3xl" />
             <div className="relative max-w-2xl">
               <h2 id="cta-heading" className="font-display text-3xl uppercase text-riot-white md:text-4xl">Start a Riot With Us.</h2>
-              <p className="mt-4 text-lg leading-relaxed text-riot-text">We work with operators, aggregators and platform providers. Get in touch to talk about Trash Pandas and the wider Lucky Riot portfolio.</p>
+              <p className="mt-4 text-lg leading-relaxed text-riot-text">We work with operators, aggregators and platform providers. Get in touch to talk about Tycoon Lagoon and the wider Lucky Riot portfolio.</p>
               <ButtonLink href="/contact/" size="lg" className="mt-8">Talk to Lucky Riot</ButtonLink>
             </div>
           </div>
@@ -131,16 +131,23 @@ function ArtworkPlaceholder() {
     <div className="absolute inset-0 flex items-center justify-center surface-gradient">
       <svg viewBox="0 0 240 150" className="h-full w-full opacity-90" aria-hidden="true">
         <defs>
-          <linearGradient id="trash-art" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#4B5563" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#10B981" stopOpacity="0.35" />
+          <linearGradient id="lagoon-art" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#0EA5B5" stopOpacity="0.55" />
+            <stop offset="100%" stopColor="#0B4A63" stopOpacity="0.35" />
           </linearGradient>
         </defs>
-        {/* Bin + collectible motif */}
-        <rect x="86" y="60" width="68" height="56" rx="6" fill="url(#trash-art)" fillOpacity="0.4" stroke="#293543" />
-        <rect x="78" y="52" width="84" height="12" rx="4" fill="url(#trash-art)" fillOpacity="0.5" stroke="#293543" />
-        <circle cx="178" cy="104" r="12" fill="#F2B705" fillOpacity="0.5" stroke="#293543" />
-        <text x="120" y="40" textAnchor="middle" fill="#10B981" fontSize="15" fontWeight="700" opacity="0.6">LOOT</text>
+        {/* Fishing boat + catch motif on the lagoon */}
+        {/* water */}
+        <rect x="20" y="96" width="200" height="34" rx="8" fill="url(#lagoon-art)" fillOpacity="0.5" stroke="#1E5B70" />
+        {/* boat hull */}
+        <path d="M78 86 H162 L150 108 H90 Z" fill="url(#lagoon-art)" fillOpacity="0.7" stroke="#1E5B70" />
+        {/* mast + sail */}
+        <rect x="118" y="52" width="4" height="34" fill="#1E5B70" />
+        <path d="M122 54 L150 84 H122 Z" fill="#E8F6FB" fillOpacity="0.5" stroke="#1E5B70" />
+        {/* golden fish */}
+        <ellipse cx="186" cy="112" rx="12" ry="7" fill="#F2B705" fillOpacity="0.6" stroke="#1E5B70" />
+        <path d="M174 112 L166 106 V118 Z" fill="#F2B705" fillOpacity="0.6" stroke="#1E5B70" />
+        <text x="120" y="40" textAnchor="middle" fill="#0EA5B5" fontSize="15" fontWeight="700" opacity="0.65">BIG CATCH</text>
       </svg>
     </div>
   );

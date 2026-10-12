@@ -7,17 +7,17 @@ import { getDeployment } from "@/content/game-deployments";
 import { buildProfiles } from "@/content/games";
 
 export const metadata: Metadata = {
-  title: "Trash Pandas — Development Build",
+  title: "Tycoon Lagoon — Development Build",
   robots: { index: false, follow: false, nocache: true },
 };
 
 /**
- * INTERNAL PLAYTEST ROUTE — /games/trash-pandas/dev/
- * Trash Pandas is the public identity of the engine project `farmyard-frenzy`.
+ * INTERNAL PLAYTEST ROUTE — /games/tycoon-lagoon/dev/
+ * Tycoon Lagoon is the public identity of the engine project `farmyard-frenzy`.
  * Access control is enforced at the hosting/edge layer, never client-side.
  */
-export default function TrashPandasDevPlaytestPage() {
-  const manifest = getDeployment("trash-pandas", "PLAYTEST");
+export default function TycoonLagoonDevPlaytestPage() {
+  const manifest = getDeployment("tycoon-lagoon", "PLAYTEST");
   const policy = buildProfiles.PLAYTEST;
   const meta = manifest?.buildMetadata ?? {};
 
@@ -26,15 +26,15 @@ export default function TrashPandasDevPlaytestPage() {
       <div className="rounded-xl2 border border-riot-pink/50 bg-riot-pink/10 p-5">
         <p className="text-sm font-bold uppercase tracking-[0.2em] text-riot-pink">⚠ Development Build — Internal Playtest</p>
         <p className="mt-2 text-sm leading-relaxed text-riot-text">
-          This is a private internal playtest build of Trash Pandas. It is not for public distribution and must be served behind hosting-layer access control. This route is marked{" "}
+          This is a private internal playtest build of Tycoon Lagoon. It is not for public distribution and must be served behind hosting-layer access control. This route is marked{" "}
           <code className="text-riot-cyan">noindex, nofollow</code>.
         </p>
       </div>
 
       <div className="mt-8">
-        <Link href="/games/trash-pandas/" className="text-sm font-semibold text-riot-text-muted hover:text-riot-cyan">← Trash Pandas product page</Link>
+        <Link href="/games/tycoon-lagoon/" className="text-sm font-semibold text-riot-text-muted hover:text-riot-cyan">← Tycoon Lagoon product page</Link>
         <div className="mt-4 flex flex-wrap items-center gap-3">
-          <h1 id="dev-heading" className="font-display text-3xl uppercase text-riot-white md:text-4xl">Trash Pandas</h1>
+          <h1 id="dev-heading" className="font-display text-3xl uppercase text-riot-white md:text-4xl">Tycoon Lagoon</h1>
           <MaturityBadge maturity="PLAYTEST" />
         </div>
       </div>
@@ -53,12 +53,12 @@ export default function TrashPandasDevPlaytestPage() {
         ) : (
           <p className="mt-2 text-sm leading-relaxed text-riot-text-muted">
             No PLAYTEST artefact is currently present. Drop the compiled build into{" "}
-            <code className="text-riot-cyan">public/games/trash-pandas/dev/game/</code> and rebuild — build details will appear here from its manifest.
+            <code className="text-riot-cyan">public/games/tycoon-lagoon/dev/game/</code> and rebuild — build details will appear here from its manifest.
           </p>
         )}
       </div>
 
-      <div className="mt-8"><GameEmbed manifest={manifest} title="Trash Pandas (Playtest)" sizing="viewport" /></div>
+      <div className="mt-8"><GameEmbed manifest={manifest} title="Tycoon Lagoon (Playtest)" sizing="viewport" /></div>
 
       <div className="mt-8 rounded-xl2 border border-riot-border bg-riot-surface p-6">
         <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-riot-text">Access control</h2>

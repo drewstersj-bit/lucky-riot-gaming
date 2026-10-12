@@ -168,10 +168,10 @@ const registry: Record<string, GameDeploymentManifest> = {
   [key("video-poker-pro", "CUSTOMER")]: customerUnavailable("video-poker-pro", "Video Poker Pro"),
   [key("video-poker-pro", "PUBLIC")]: readManifest("video-poker-pro", "Video Poker Pro", "PUBLIC"),
 
-  // --- Trash Pandas (engine project: farmyard-frenzy) --------------------
-  [key("trash-pandas", "PLAYTEST")]: readManifest("trash-pandas", "Trash Pandas", "PLAYTEST"),
-  [key("trash-pandas", "CUSTOMER")]: customerUnavailable("trash-pandas", "Trash Pandas"),
-  [key("trash-pandas", "PUBLIC")]: readManifest("trash-pandas", "Trash Pandas", "PUBLIC"),
+  // --- Tycoon Lagoon (engine project: farmyard-frenzy) -------------------
+  [key("tycoon-lagoon", "PLAYTEST")]: readManifest("tycoon-lagoon", "Tycoon Lagoon", "PLAYTEST"),
+  [key("tycoon-lagoon", "CUSTOMER")]: customerUnavailable("tycoon-lagoon", "Tycoon Lagoon"),
+  [key("tycoon-lagoon", "PUBLIC")]: readManifest("tycoon-lagoon", "Tycoon Lagoon", "PUBLIC"),
 };
 
 /** Look up a deployment manifest, or undefined if none is registered. */

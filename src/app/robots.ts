@@ -16,7 +16,7 @@ export default function robots(): MetadataRoute.Robots {
         "/games/cluckus-maximus/dev/",
         "/games/glitch-city/dev/",
         "/games/ragnarok-riot/dev/",
-        "/games/trash-pandas/dev/",
+        "/games/tycoon-lagoon/dev/",
         "/games/video-poker-pro/dev/",
       ],
     },
