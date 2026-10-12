@@ -123,6 +123,7 @@ export const games2027: GameRecord[] = [
     projectPath: "games/tycoon-lagoon",
     slug: "tycoon-lagoon",
     logo: "/games/tycoon-lagoon/logo.png",
+    cardBackground: "/games/tycoon-lagoon/card-bg.webp",
     title: "Tycoon Lagoon",
     subtitle: "Big-Catch Fishing",
     previousNames: ["Farmyard Frenzy", "Trash Pandas"],

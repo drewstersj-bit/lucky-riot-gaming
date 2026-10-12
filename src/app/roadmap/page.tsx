@@ -40,6 +40,7 @@ function buildYears(): RoadmapYearData[] {
           statusLabel: s.label,
           statusTone: s.tone,
           logo: r.logo,
+          cardBackground: r.cardBackground,
           // Existing games have bespoke pages; planned games have the generic
           // detail route. Both resolve under /games/<slug>/.
           hasPage: true,

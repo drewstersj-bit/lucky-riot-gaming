@@ -123,6 +123,12 @@ export interface GameRecord {
   thumbnail?: string;
   heroImage?: string;
   logo?: string;
+  /**
+   * Themed card backdrop — typically the game's BASE-GAME background art. When
+   * set, the portfolio/roadmap card renders this behind the logo (with a scrim
+   * for legibility) so each card is themed to its game instead of a flat panel.
+   */
+  cardBackground?: string;
 
   // ─── Franchise relationships ──────────────────────────────────────────────
   /** `id` of a related game (sequel/prequel/same franchise). */

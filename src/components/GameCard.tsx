@@ -46,6 +46,7 @@ export function GameCard({ game }: { game: Game }) {
     maturity,
     description,
     artworkLandscape,
+    cardBackground,
     logo,
     featureTags,
     trailerUrl,
@@ -77,6 +78,29 @@ export function GameCard({ game }: { game: Game }) {
             sizes="(max-width: 768px) 100vw, 33vw"
             className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
           />
+        ) : cardBackground ? (
+          // Game-themed card: the base-game background art fills the frame, the
+          // logo sits centred on top, and a scrim keeps the badge/lockup legible.
+          <div className="absolute inset-0">
+            <Image
+              src={cardBackground}
+              alt={`${title} background art`}
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+            />
+            {/* Scrim: darken top (badge) and bottom (lockup) for contrast. */}
+            <div className="absolute inset-0 bg-gradient-to-b from-riot-black/55 via-riot-black/10 to-riot-black/55" />
+            {logo && (
+              <Image
+                src={logo}
+                alt={`${title} logo`}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-contain p-6 drop-shadow-[0_4px_24px_rgba(0,0,0,0.55)] transition-transform duration-500 group-hover:scale-[1.05]"
+              />
+            )}
+          </div>
         ) : logo ? (
           // No full key art yet: the LOGO IS the hero of the card — fill the
           // frame on a themed backdrop so branding reads loudly in the lobby.

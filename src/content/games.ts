@@ -220,6 +220,12 @@ export interface Game {
   artworkLandscape?: string;
   /** Portrait key art (mobile-first). */
   artworkPortrait?: string;
+  /**
+   * Themed card backdrop (usually the base-game background). Rendered behind the
+   * logo on the portfolio/roadmap card with a legibility scrim. Falls back to
+   * the themed gradient when absent.
+   */
+  cardBackground?: string;
   /** Feature/mechanic tags. */
   featureTags?: string[];
   /** Detailed feature breakdown for the detail page. */
@@ -410,6 +416,7 @@ function toGame(r: GameRecord): Game {
     // placeholder whenever they are absent, so leaving them undefined is safe.
     logo: r.logo,
     artworkLandscape: r.heroImage,
+    cardBackground: r.cardBackground,
     // Existing projects have bespoke product pages; planned games use the
     // generic /games/[slug] detail route.
     hasDetailPage: !r.existingProject,

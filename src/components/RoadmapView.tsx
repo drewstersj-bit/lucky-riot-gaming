@@ -16,6 +16,8 @@ export interface RoadmapEntry {
   hasPage: boolean;
   /** Optional logo path; when present it headlines the roadmap card. */
   logo?: string;
+  /** Optional base-game background art used as the card's themed backdrop. */
+  cardBackground?: string;
 }
 
 export interface RoadmapQuarterData {
@@ -117,19 +119,38 @@ export function RoadmapView({ years }: { years: RoadmapYearData[] }) {
               {q.entries.map((e) => {
                 const Card = (
                   <article className="group flex h-full flex-col overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface transition-all duration-300 hover:-translate-y-1 hover:border-lucky-gold/50 hover:shadow-card-hover">
-                    {/* Logo headline panel (branded title text when no logo yet). */}
+                    {/* Logo headline panel. When base-game background art is
+                        available the card is themed to the game: the bg fills
+                        the panel, a scrim keeps text legible, logo sits on top. */}
                     <div className="relative aspect-[16/9] w-full overflow-hidden surface-gradient">
+                      {e.cardBackground && (
+                        <>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={e.cardBackground}
+                            alt={`${e.title} background art`}
+                            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.06]"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-b from-riot-black/55 via-riot-black/10 to-riot-black/55" />
+                        </>
+                      )}
                       {e.logo ? (
                         /* eslint-disable-next-line @next/next/no-img-element */
                         <img
                           src={e.logo}
                           alt={`${e.title} logo`}
-                          className="absolute inset-0 h-full w-full object-contain p-4 drop-shadow-[0_0_24px_rgba(255,193,10,0.4)] transition-transform duration-500 group-hover:scale-[1.06]"
+                          className={`absolute inset-0 h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-[1.06] ${
+                            e.cardBackground
+                              ? "drop-shadow-[0_4px_20px_rgba(0,0,0,0.55)]"
+                              : "drop-shadow-[0_0_24px_rgba(255,193,10,0.4)]"
+                          }`}
                         />
                       ) : (
-                        <div className="absolute inset-0 flex items-center justify-center p-4 text-center">
-                          <span className="font-display text-base uppercase tracking-wide text-riot-white/80">{e.title}</span>
-                        </div>
+                        !e.cardBackground && (
+                          <div className="absolute inset-0 flex items-center justify-center p-4 text-center">
+                            <span className="font-display text-base uppercase tracking-wide text-riot-white/80">{e.title}</span>
+                          </div>
+                        )
                       )}
                       <span className={`absolute right-3 top-3 inline-flex items-center rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${toneClasses(e.statusTone)}`}>
                         {e.statusLabel}
