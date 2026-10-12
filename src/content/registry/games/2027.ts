@@ -27,7 +27,7 @@ export const games2027: GameRecord[] = [
     shortDescription: "Expanding-grid Roman comedy slot building towards Maximus Mode.",
     roadmapYear: 2027,
     roadmapQuarter: 1,
-    targetReleaseMonth: 1,
+    targetReleaseMonth: 3,
     developmentStatus: "production",
     publicVisibility: "published",
     existingProject: true,
@@ -78,8 +78,8 @@ export const games2027: GameRecord[] = [
     shortDescription: "Cyberpunk 10-line slot with a free-spins surge.",
     logo: "/games/glitch-city/logo.png",
     roadmapYear: 2027,
-    roadmapQuarter: 1,
-    targetReleaseMonth: 3,
+    roadmapQuarter: 2,
+    targetReleaseMonth: 4,
     developmentStatus: "production",
     publicVisibility: "published",
     existingProject: true,
@@ -95,7 +95,7 @@ export const games2027: GameRecord[] = [
 
   // ─── Q2 ─────────────────────────────────────────────────────────────────
 
-  // April — planned.
+  // May — planned.
   {
     id: "scarab-syndicate",
     slug: "scarab-syndicate",
@@ -108,7 +108,7 @@ export const games2027: GameRecord[] = [
     shortDescription: "Egyptian tomb-robber slot chasing the scarab's treasure.",
     roadmapYear: 2027,
     roadmapQuarter: 2,
-    targetReleaseMonth: 4,
+    targetReleaseMonth: 5,
     developmentStatus: "concept",
     publicVisibility: "roadmap",
     existingProject: false,
@@ -116,7 +116,8 @@ export const games2027: GameRecord[] = [
     playable: false,
   },
 
-  // May — existing project (Farmyard Frenzy → Trash Pandas → Tycoon Lagoon).
+  // January — LEAD TITLE, in active development (Farmyard Frenzy → Trash Pandas
+  // → Tycoon Lagoon). First game being built towards release.
   {
     id: "farmyard-frenzy",
     projectPath: "games/tycoon-lagoon",
@@ -131,9 +132,9 @@ export const games2027: GameRecord[] = [
       "A big-catch fishing slot where every free spin reels in valuable fish — a 10-line grid with a boat-scatter collect bonus and a golden trophy fish.",
     shortDescription: "Tropical fishing slot with a catch-value free-spins collect bonus.",
     roadmapYear: 2027,
-    roadmapQuarter: 2,
-    targetReleaseMonth: 5,
-    developmentStatus: "production",
+    roadmapQuarter: 1,
+    targetReleaseMonth: 1,
+    developmentStatus: "pre-production",
     publicVisibility: "published",
     existingProject: true,
     featureTags: ["5×3 Reels", "10 Lines", "Collect Bonus", "Free Spins"],
