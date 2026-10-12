@@ -121,6 +121,7 @@ export const games2027: GameRecord[] = [
     id: "farmyard-frenzy",
     projectPath: "games/tycoon-lagoon",
     slug: "tycoon-lagoon",
+    logo: "/games/tycoon-lagoon/logo.png",
     title: "Tycoon Lagoon",
     subtitle: "Big-Catch Fishing",
     previousNames: ["Farmyard Frenzy", "Trash Pandas"],
