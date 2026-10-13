@@ -4,44 +4,71 @@ import { useEffect, useState, type FormEvent } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { siteGate } from "@/content/site";
 import { ComingSoonVideo } from "./ComingSoonVideo";
-import { Button } from "./Button";
+import { Button, ButtonLink } from "./Button";
 
 const STORAGE_KEY = "lrg-site-unlocked";
+const AGE_KEY = "lrg-age-confirmed";
+
+/** Where visitors who are not 18+ are directed. */
+const UNDER_18_URL = "https://www.gamblingcommission.gov.uk/public-and-players/safer-gambling";
 
 /**
- * Pre-launch access gate.
+ * Front-page gate.
  *
- * The full-screen coming-soon experience is the supplied intro video, with a
- * restrained lower overlay (headline, tagline, "Join the Riot"). "Join the
- * Riot" opens the early-access login used to enter the site before launch.
+ * The full-screen intro video sits behind a restrained lower overlay that
+ * frames Lucky Riot as a games-development studio, followed by an age check:
+ * "Yes, over 18" enters the site; "No, I'm under 18" redirects to the Gambling
+ * Commission safer-gambling resource.
  *
- * The unlock flag is stored in sessionStorage (cleared when the tab/browser
- * closes). When `siteGate.locked` is false this component renders children
- * immediately and adds no overhead.
+ * Two independent flags are stored in sessionStorage (cleared when the
+ * tab/browser closes):
+ *   - AGE_KEY  — set once the visitor confirms they are 18+.
+ *   - STORAGE_KEY — set once the early-access credentials are accepted
+ *     (only relevant while `siteGate.locked` is true).
+ *
+ * The visitor sees `children` only when age is confirmed AND, if the site is
+ * locked for early access, the credentials have been accepted.
  *
  * NOTE: This is obscurity, not security, on a static export. See README for the
  * Netlify Basic Auth alternative for genuine protection.
  */
 export function SiteGate({ children }: { children: React.ReactNode }) {
-  const [unlocked, setUnlocked] = useState(!siteGate.locked);
-  const [ready, setReady] = useState(!siteGate.locked);
+  const [ageConfirmed, setAgeConfirmed] = useState(false);
+  const [accessUnlocked, setAccessUnlocked] = useState(!siteGate.locked);
+  const [ready, setReady] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const reduce = useReducedMotion();
 
+  // Visitor is in once they are 18+ and (if locked) have early-access.
+  const unlocked = ageConfirmed && accessUnlocked;
+
   useEffect(() => {
-    if (!siteGate.locked) return;
     try {
-      if (window.sessionStorage.getItem(STORAGE_KEY) === "yes") {
-        setUnlocked(true);
+      if (window.sessionStorage.getItem(AGE_KEY) === "yes") {
+        setAgeConfirmed(true);
+      }
+      if (siteGate.locked && window.sessionStorage.getItem(STORAGE_KEY) === "yes") {
+        setAccessUnlocked(true);
       }
     } catch {
       /* ignore storage errors */
     }
     setReady(true);
   }, []);
+
+  function confirmAge() {
+    try {
+      window.sessionStorage.setItem(AGE_KEY, "yes");
+    } catch {
+      /* ignore storage errors */
+    }
+    setAgeConfirmed(true);
+    // If the site is still locked for early access, prompt for credentials.
+    if (siteGate.locked) setShowLogin(true);
+  }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -52,7 +79,7 @@ export function SiteGate({ children }: { children: React.ReactNode }) {
         /* ignore storage errors */
       }
       setError(null);
-      setUnlocked(true);
+      setAccessUnlocked(true);
     } else {
       setError("Incorrect username or password.");
     }
@@ -83,22 +110,27 @@ export function SiteGate({ children }: { children: React.ReactNode }) {
             transition={{ duration: reduce ? 0 : 0.6, delay: reduce ? 0 : 0.3 }}
           >
             <h1 className="font-display text-[clamp(1.75rem,5vw,3.25rem)] uppercase leading-[1.05] text-riot-white">
-              Built to <span className="text-gradient-lucky">Break</span> the Pattern.
+              A Games <span className="text-gradient-lucky">Development</span> Studio.
             </h1>
-            <p className="mt-2 text-base text-riot-text md:text-lg">Serious maths. Beautiful chaos.</p>
-            <div className="mt-5">
-              <Button size="lg" onClick={() => setShowLogin(true)}>
-                Join the Riot
-              </Button>
-            </div>
-            <p className="mt-4 text-xs uppercase tracking-[0.2em] text-riot-text-muted">
-              18+ | For business and industry audiences
+            <p className="mt-2 text-base text-riot-text md:text-lg">
+              We design and build original online games — engineering, art and maths under one roof.
             </p>
+            <p className="mt-4 text-sm text-riot-text-muted">
+              This site showcases our game development work. Please confirm you are over 18 to continue.
+            </p>
+            <div className="mt-5 flex flex-wrap items-center gap-3">
+              <Button size="lg" onClick={confirmAge}>
+                Yes, over 18
+              </Button>
+              <ButtonLink href={UNDER_18_URL} external variant="secondary" size="lg">
+                No, I&apos;m under 18
+              </ButtonLink>
+            </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Early-access login (opened by "Join the Riot") */}
+      {/* Early-access login (shown after age confirmation while the site is locked) */}
       <AnimatePresence>
         {showLogin && (
           <motion.div
