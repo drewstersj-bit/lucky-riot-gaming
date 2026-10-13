@@ -437,7 +437,7 @@
         "ogg": {
           "path": "generated/assets/audio/test-blip.ogg",
           "bytes": 4824,
-          "hash": "81238d2bfd"
+          "hash": "b246602b62"
         },
         "m4a": {
           "path": "generated/assets/audio/test-blip.m4a",
@@ -515,7 +515,7 @@
     }
   },
   "buildMetadata": {
-    "builtAt": "2026-10-02T19:20:31.446Z",
+    "builtAt": "2026-10-13T14:07:10.826Z",
     "pipelineVersion": "0.1.0"
   }
 }

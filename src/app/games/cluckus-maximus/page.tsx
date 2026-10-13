@@ -8,8 +8,10 @@ import { Streak } from "@/components/Streak";
 import { ButtonLink } from "@/components/Button";
 import { MaturityBadge } from "@/components/MaturityBadge";
 import { GamePassport } from "@/components/GamePassport";
+import { GamePreviewFrame } from "@/components/GamePreviewFrame";
 import { GridExpansionDemo } from "@/components/GridExpansionDemo";
 import { getGameById } from "@/content/games";
+import { getDeployment } from "@/content/game-deployments";
 import { buildMetadata } from "@/lib/seo";
 
 const GAME_ID = "cluckus-maximus";
@@ -25,6 +27,8 @@ export const metadata: Metadata = buildMetadata({
 
 export default function CluckusProductPage() {
   if (!game) notFound();
+
+  const preview = getDeployment(GAME_ID, "PUBLIC");
 
   return (
     <>
@@ -72,20 +76,24 @@ export default function CluckusProductPage() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="relative aspect-[16/10] overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface shadow-card">
-                {game.artworkLandscape ? (
-                  <Image
-                    src={game.artworkLandscape}
-                    alt={`${game.title} key artwork`}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
-                    priority
-                  />
-                ) : (
-                  <ArtworkPlaceholder />
-                )}
-              </div>
+              {preview?.available ? (
+                <GamePreviewFrame manifest={preview} title={game.title} />
+              ) : (
+                <div className="relative aspect-[16/10] overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface shadow-card">
+                  {game.artworkLandscape ? (
+                    <Image
+                      src={game.artworkLandscape}
+                      alt={`${game.title} key artwork`}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover"
+                      priority
+                    />
+                  ) : (
+                    <ArtworkPlaceholder />
+                  )}
+                </div>
+              )}
             </Reveal>
           </div>
         </div>

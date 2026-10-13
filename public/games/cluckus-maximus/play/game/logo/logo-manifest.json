@@ -1,0 +1,53 @@
+{
+  "type": "loadingLogo",
+  "reference": 800,
+  "tiers": {
+    "100": {
+      "px": 800,
+      "off": "logo/loading-off-800.png",
+      "on": "logo/loading-on-800.png"
+    },
+    "75": {
+      "px": 600,
+      "off": "logo/loading-off-600.png",
+      "on": "logo/loading-on-600.png"
+    },
+    "50": {
+      "px": 400,
+      "off": "logo/loading-off-400.png",
+      "on": "logo/loading-on-400.png"
+    },
+    "35": {
+      "px": 280,
+      "off": "logo/loading-off-280.png",
+      "on": "logo/loading-on-280.png"
+    },
+    "25": {
+      "px": 200,
+      "off": "logo/loading-off-200.png",
+      "on": "logo/loading-on-200.png"
+    }
+  },
+  "bands": [
+    {
+      "minDevicePx": 2200,
+      "tier": 100
+    },
+    {
+      "minDevicePx": 1500,
+      "tier": 75
+    },
+    {
+      "minDevicePx": 1000,
+      "tier": 50
+    },
+    {
+      "minDevicePx": 700,
+      "tier": 35
+    },
+    {
+      "minDevicePx": 0,
+      "tier": 25
+    }
+  ]
+}

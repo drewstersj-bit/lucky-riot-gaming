@@ -8,7 +8,9 @@ import { Streak } from "@/components/Streak";
 import { ButtonLink } from "@/components/Button";
 import { MaturityBadge } from "@/components/MaturityBadge";
 import { GamePassport } from "@/components/GamePassport";
+import { GamePreviewFrame } from "@/components/GamePreviewFrame";
 import { getGameById } from "@/content/games";
+import { getDeployment } from "@/content/game-deployments";
 import { buildMetadata } from "@/lib/seo";
 
 const GAME_SLUG = "joker-bars";
@@ -24,6 +26,8 @@ export const metadata: Metadata = buildMetadata({
 
 export default function JokerBarsProductPage() {
   if (!game) notFound();
+
+  const preview = getDeployment(GAME_SLUG, "PUBLIC");
 
   return (
     <>
@@ -70,31 +74,35 @@ export default function JokerBarsProductPage() {
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="relative aspect-[16/10] overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface shadow-card">
-                {game.artworkLandscape ? (
-                  <Image
-                    src={game.artworkLandscape}
-                    alt={`${game.title} key artwork`}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover"
-                    priority
-                  />
-                ) : game.logo ? (
-                  <div className="absolute inset-0 flex items-center justify-center surface-gradient">
+              {preview?.available ? (
+                <GamePreviewFrame manifest={preview} title={game.title} />
+              ) : (
+                <div className="relative aspect-[16/10] overflow-hidden rounded-xl2 border border-riot-border bg-riot-surface shadow-card">
+                  {game.artworkLandscape ? (
                     <Image
-                      src={game.logo}
-                      alt={`${game.title} logo`}
+                      src={game.artworkLandscape}
+                      alt={`${game.title} key artwork`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-contain p-5 drop-shadow-[0_0_40px_rgba(214,178,102,0.5)]"
+                      className="object-cover"
                       priority
                     />
-                  </div>
-                ) : (
-                  <ArtworkPlaceholder />
-                )}
-              </div>
+                  ) : game.logo ? (
+                    <div className="absolute inset-0 flex items-center justify-center surface-gradient">
+                      <Image
+                        src={game.logo}
+                        alt={`${game.title} logo`}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-contain p-5 drop-shadow-[0_0_40px_rgba(214,178,102,0.5)]"
+                        priority
+                      />
+                    </div>
+                  ) : (
+                    <ArtworkPlaceholder />
+                  )}
+                </div>
+              )}
             </Reveal>
           </div>
         </div>

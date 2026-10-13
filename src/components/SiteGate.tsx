@@ -110,10 +110,10 @@ export function SiteGate({ children }: { children: React.ReactNode }) {
             transition={{ duration: reduce ? 0 : 0.6, delay: reduce ? 0 : 0.3 }}
           >
             <h1 className="font-display text-[clamp(1.75rem,5vw,3.25rem)] uppercase leading-[1.05] text-riot-white">
-              A Games <span className="text-gradient-lucky">Development</span> Studio.
+              Where Great Games <span className="text-gradient-lucky">Break</span> the Rules.
             </h1>
             <p className="mt-2 text-base text-riot-text md:text-lg">
-              We design and build original online games — engineering, art and maths under one roof.
+              Independent thinking. Original ideas. Exceptional execution. We build games designed to stand out.
             </p>
             <p className="mt-4 text-sm text-riot-text-muted">
               This site showcases our game development work. Please confirm you are over 18 to continue.
