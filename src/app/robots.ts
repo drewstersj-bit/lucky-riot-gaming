@@ -14,7 +14,7 @@ export default function robots(): MetadataRoute.Robots {
       disallow: [
         "/customer/",
         "/games/cluckus-maximus/dev/",
-        "/games/glitch-city/dev/",
+        "/games/joker-bars/dev/",
         "/games/ragnarok-riot/dev/",
         "/games/tycoon-lagoon/dev/",
         "/games/video-poker-pro/dev/",

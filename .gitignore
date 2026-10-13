@@ -62,8 +62,8 @@ public/games/*/play/game/**
 # the engine repo, not built here). Revert this block when CI artefact
 # retrieval is wired, to go back to not committing built game files.
 !public/games/cluckus-maximus/play/game/**
-# Same exception for the Glitch City PUBLIC demo artefact (engine: mega-bars).
-!public/games/glitch-city/play/game/**
+# Same exception for the Joker Bars PUBLIC demo artefact (engine: mega-bars; was Glitch City).
+!public/games/joker-bars/play/game/**
 # Same exception for the Ragnarok Riot PUBLIC demo artefact (engine: bison-fury).
 !public/games/ragnarok-riot/play/game/**
 

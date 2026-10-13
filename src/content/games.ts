@@ -300,21 +300,21 @@ const PRESENTATION: Record<string, Presentation> = {
       demoAvailability: "In development",
     },
   },
-  // Megabars engine → Glitch City (cyberpunk re-theme, same mechanics).
+  // Megabars engine → Glitch City → Joker Bars (premium classic re-theme, same mechanics).
   "mega-bars": {
     devProgress: 40,
     summary:
-      "Glitch City is a neon cyberpunk slot — 5 reels, 3 rows, 10 lines and a clean, high-clarity symbol set. Wins pay on 3 or more adjacent symbols from the left, with a scaling free-spins surge. Currently an early playable development build.",
+      "Joker Bars is a premium classic BAR slot — 5 reels, 3 rows, 10 lines and a clean, high-clarity symbol set in black, gold and crimson. Wins pay on 3 or more adjacent symbols from the left, with a scaling free-spins feature led by the Joker. Currently an early playable development build.",
     featureBreakdown: [
       { title: "10 Lines, Adjacent Pays", description: "Wins land on 3 or more adjacent symbols from the left across 10 lines, with the highest win paid on each line." },
-      { title: "Clean Symbol Set", description: "A deliberately minimal set for clear, readable play on a neon grid." },
-      { title: "Free Spins Surge", description: "Three or more adjacent trigger symbols launch a free-spins run that scales with the bet tier and can retrigger." },
+      { title: "Classic BAR Symbol Set", description: "A deliberately minimal, premium set — Triple Bar, Double Bar and the Joker — for clear, readable play." },
+      { title: "Free Spins Feature", description: "Three or more adjacent trigger symbols launch a free-spins run that scales with the bet tier and can retrigger." },
     ],
     passport: {
       gameType: "Video slot",
       gridFormat: "5 reels × 3 rows, 10 lines",
       orientation: "Landscape and portrait",
-      featureSummary: "A clean symbol set across 10 lines with a scaling free-spins surge.",
+      featureSummary: "A premium classic BAR symbol set across 10 lines with a scaling free-spins feature.",
       releaseStatus: "Playable development build",
       certificationStatus: "Not yet certified",
       demoAvailability: "In development",

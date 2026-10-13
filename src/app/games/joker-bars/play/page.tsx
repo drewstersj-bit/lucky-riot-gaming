@@ -4,18 +4,18 @@ import { GameEmbed } from "@/components/GameEmbed";
 import { getDeployment } from "@/content/game-deployments";
 import { buildMetadata } from "@/lib/seo";
 
-const GAME_ID = "glitch-city";
+const GAME_ID = "joker-bars";
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: "Glitch City — Demo",
-    description: "Play the Glitch City public demo from Lucky Riot Games.",
+    title: "Joker Bars — Demo",
+    description: "Play the Joker Bars public demo from Lucky Riot Games.",
     path: `/games/${GAME_ID}/play`,
   }),
   robots: { index: false, follow: false },
 };
 
-export default function GlitchCityPublicPlayPage() {
+export default function JokerBarsPublicPlayPage() {
   const manifest = getDeployment(GAME_ID, "PUBLIC");
 
   return (
@@ -28,11 +28,11 @@ export default function GlitchCityPublicPlayPage() {
           ← Back
         </Link>
         <h1 id="play-heading" className="truncate font-display text-sm uppercase tracking-wide text-riot-white">
-          Glitch City — Demo
+          Joker Bars — Demo
         </h1>
         <span className="text-[10px] uppercase tracking-[0.18em] text-riot-text-muted">18+</span>
       </div>
-      <GameEmbed manifest={manifest} title="Glitch City" sizing="fullscreen" />
+      <GameEmbed manifest={manifest} title="Joker Bars" sizing="fullscreen" />
     </div>
   );
 }

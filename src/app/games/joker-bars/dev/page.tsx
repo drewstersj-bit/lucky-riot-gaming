@@ -7,22 +7,22 @@ import { getDeployment } from "@/content/game-deployments";
 import { buildProfiles } from "@/content/games";
 
 export const metadata: Metadata = {
-  title: "Glitch City — Development Build",
+  title: "Joker Bars — Development Build",
   robots: { index: false, follow: false, nocache: true },
 };
 
 /**
- * INTERNAL PLAYTEST ROUTE — /games/glitch-city/dev/
+ * INTERNAL PLAYTEST ROUTE — /games/joker-bars/dev/
  *
- * Embeds the PLAYTEST artefact hosted beneath /games/glitch-city/dev/game/.
+ * Embeds the PLAYTEST artefact hosted beneath /games/joker-bars/dev/game/.
  * Access control is enforced at the hosting/edge layer (Netlify Edge Function
  * Basic Auth), never in client-side JavaScript.
  *
- * Glitch City is the public identity of the engine project `mega-bars`; the
+ * Joker Bars is the public identity of the engine project `mega-bars`; the
  * artefact drop-in folder uses the public slug.
  */
-export default function GlitchCityDevPlaytestPage() {
-  const manifest = getDeployment("glitch-city", "PLAYTEST");
+export default function JokerBarsDevPlaytestPage() {
+  const manifest = getDeployment("joker-bars", "PLAYTEST");
   const policy = buildProfiles.PLAYTEST;
   const meta = manifest?.buildMetadata ?? {};
 
@@ -33,19 +33,19 @@ export default function GlitchCityDevPlaytestPage() {
           ⚠ Development Build — Internal Playtest
         </p>
         <p className="mt-2 text-sm leading-relaxed text-riot-text">
-          This is a private internal playtest build of Glitch City. It is not for public
+          This is a private internal playtest build of Joker Bars. It is not for public
           distribution and must be served behind hosting-layer access control. This route is marked{" "}
           <code className="text-riot-cyan">noindex, nofollow</code>.
         </p>
       </div>
 
       <div className="mt-8">
-        <Link href="/games/glitch-city/" className="text-sm font-semibold text-riot-text-muted hover:text-riot-cyan">
-          ← Glitch City product page
+        <Link href="/games/joker-bars/" className="text-sm font-semibold text-riot-text-muted hover:text-riot-cyan">
+          ← Joker Bars product page
         </Link>
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <h1 id="dev-heading" className="font-display text-3xl uppercase text-riot-white md:text-4xl">
-            Glitch City
+            Joker Bars
           </h1>
           <MaturityBadge maturity="PLAYTEST" />
         </div>
@@ -91,14 +91,14 @@ export default function GlitchCityDevPlaytestPage() {
         ) : (
           <p className="mt-2 text-sm leading-relaxed text-riot-text-muted">
             No PLAYTEST artefact is currently present. Drop the compiled build into{" "}
-            <code className="text-riot-cyan">public/games/glitch-city/dev/game/</code> and rebuild —
+            <code className="text-riot-cyan">public/games/joker-bars/dev/game/</code> and rebuild —
             build details will appear here from its manifest.
           </p>
         )}
       </div>
 
       <div className="mt-8">
-        <GameEmbed manifest={manifest} title="Glitch City (Playtest)" sizing="viewport" />
+        <GameEmbed manifest={manifest} title="Joker Bars (Playtest)" sizing="viewport" />
       </div>
 
       <div className="mt-8 rounded-xl2 border border-riot-border bg-riot-surface p-6">

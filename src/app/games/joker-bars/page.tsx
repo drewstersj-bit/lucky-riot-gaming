@@ -11,18 +11,18 @@ import { GamePassport } from "@/components/GamePassport";
 import { getGameById } from "@/content/games";
 import { buildMetadata } from "@/lib/seo";
 
-const GAME_SLUG = "glitch-city";
+const GAME_SLUG = "joker-bars";
 
 const game = getGameById(GAME_SLUG);
 
 export const metadata: Metadata = buildMetadata({
-  title: "Glitch City",
+  title: "Joker Bars",
   description:
-    "Glitch City — an original Lucky Riot slot: a neon cyberpunk machine with bold reels, a clean symbol set and a free-spins surge. Early playable development build.",
+    "Joker Bars — an original Lucky Riot slot: a premium classic BAR machine in black, gold and crimson with elegant Joker styling and a free-spins feature. Early playable development build.",
   path: `/games/${GAME_SLUG}`,
 });
 
-export default function GlitchCityProductPage() {
+export default function JokerBarsProductPage() {
   if (!game) notFound();
 
   return (
@@ -87,7 +87,7 @@ export default function GlitchCityProductPage() {
                       alt={`${game.title} logo`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-contain p-5 drop-shadow-[0_0_40px_rgba(24,200,242,0.5)]"
+                      className="object-contain p-5 drop-shadow-[0_0_40px_rgba(214,178,102,0.5)]"
                       priority
                     />
                   </div>
@@ -165,7 +165,7 @@ export default function GlitchCityProductPage() {
                 />
               </div>
               <p className="mt-4 text-sm leading-relaxed text-riot-text-muted">
-                Glitch City is an early playable development build. Progress is indicative and
+                Joker Bars is an early playable development build. Progress is indicative and
                 subject to change as the game moves towards a release candidate.
               </p>
             </div>
@@ -205,7 +205,7 @@ export default function GlitchCityProductPage() {
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-riot-text">
                 We work with operators, aggregators and platform providers. Get in touch to talk
-                about Glitch City and the wider Lucky Riot portfolio.
+                about Joker Bars and the wider Lucky Riot portfolio.
               </p>
               <ButtonLink href="/contact/" size="lg" className="mt-8">
                 Talk to Lucky Riot
@@ -223,27 +223,27 @@ function ArtworkPlaceholder() {
     <div className="absolute inset-0 flex items-center justify-center surface-gradient">
       <svg viewBox="0 0 240 150" className="h-full w-full opacity-90" aria-hidden="true">
         <defs>
-          <linearGradient id="glitch-art" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#18C8F2" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#FF3DAE" stopOpacity="0.35" />
+          <linearGradient id="joker-art" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#D6B266" stopOpacity="0.55" />
+            <stop offset="100%" stopColor="#A31D2B" stopOpacity="0.35" />
           </linearGradient>
         </defs>
-        {/* Glitch bars nodding to the cyberpunk theme */}
-        {[44, 74, 104].map((y, i) => (
+        {/* Stacked BAR symbols nodding to the premium classic theme */}
+        {[52, 82, 112].map((y, i) => (
           <rect
             key={y}
-            x={30 + i * 10}
+            x={60}
             y={y}
-            width="170"
-            height="18"
+            width="120"
+            height="20"
             rx="3"
-            fill="url(#glitch-art)"
-            fillOpacity={0.3 + i * 0.12}
-            stroke="#293543"
+            fill="url(#joker-art)"
+            fillOpacity={0.3 + i * 0.14}
+            stroke="#4a3a1e"
           />
         ))}
-        <text x="120" y="34" textAnchor="middle" fill="#18C8F2" fontSize="15" fontWeight="700" opacity="0.6">
-          GLITCH
+        <text x="120" y="36" textAnchor="middle" fill="#D6B266" fontSize="15" fontWeight="700" opacity="0.7" letterSpacing="2">
+          JOKER BARS
         </text>
       </svg>
     </div>

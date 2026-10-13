@@ -153,10 +153,10 @@ const registry: Record<string, GameDeploymentManifest> = {
     "PUBLIC",
   ),
 
-  // --- Glitch City (engine project: mega-bars) ---------------------------
-  [key("glitch-city", "PLAYTEST")]: readManifest("glitch-city", "Glitch City", "PLAYTEST"),
-  [key("glitch-city", "CUSTOMER")]: customerUnavailable("glitch-city", "Glitch City"),
-  [key("glitch-city", "PUBLIC")]: readManifest("glitch-city", "Glitch City", "PUBLIC"),
+  // --- Joker Bars (engine project: mega-bars; was Glitch City) ------------
+  [key("joker-bars", "PLAYTEST")]: readManifest("joker-bars", "Joker Bars", "PLAYTEST"),
+  [key("joker-bars", "CUSTOMER")]: customerUnavailable("joker-bars", "Joker Bars"),
+  [key("joker-bars", "PUBLIC")]: readManifest("joker-bars", "Joker Bars", "PUBLIC"),
 
   // --- Ragnarok Riot (engine project: bison-fury) ------------------------
   [key("ragnarok-riot", "PLAYTEST")]: readManifest("ragnarok-riot", "Ragnarok Riot", "PLAYTEST"),

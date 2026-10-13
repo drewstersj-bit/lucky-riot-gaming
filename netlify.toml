@@ -43,7 +43,14 @@
 # Technical/engine IDs are unchanged; only the public URL moved.
 [[redirects]]
   from = "/games/megabars/*"
-  to = "/games/glitch-city/:splat"
+  to = "/games/joker-bars/:splat"
+  status = 301
+  force = true
+
+# Former Glitch City slug -> Joker Bars (rebrand; engine id mega-bars unchanged).
+[[redirects]]
+  from = "/games/glitch-city/*"
+  to = "/games/joker-bars/:splat"
   status = 301
   force = true
 
@@ -82,11 +89,11 @@
 
 [[edge_functions]]
   function = "playtest-auth"
-  path = "/games/glitch-city/dev"
+  path = "/games/joker-bars/dev"
 
 [[edge_functions]]
   function = "playtest-auth"
-  path = "/games/glitch-city/dev/*"
+  path = "/games/joker-bars/dev/*"
 
 [[edge_functions]]
   function = "playtest-auth"
@@ -152,16 +159,16 @@
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
 
-# Glitch City PLAYTEST game assets (engine project mega-bars; same relaxations).
+# Joker Bars PLAYTEST game assets (engine project mega-bars; same relaxations).
 [[headers]]
-  for = "/games/glitch-city/dev/game/*"
+  for = "/games/joker-bars/dev/game/*"
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
     X-Robots-Tag = "noindex, nofollow, noarchive"
 
-# Glitch City PUBLIC demo game assets (public, indexable — no noindex tag).
+# Joker Bars PUBLIC demo game assets (public, indexable — no noindex tag).
 [[headers]]
-  for = "/games/glitch-city/play/game/*"
+  for = "/games/joker-bars/play/game/*"
   [headers.values]
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob:; worker-src 'self' blob:; frame-ancestors 'self'; base-uri 'self'; object-src 'none'"
 

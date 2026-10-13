@@ -29,8 +29,8 @@ export const customerGames: CustomerGameSummary[] = [
     candidateAvailable: false,
   },
   {
-    gameId: "glitch-city",
-    displayName: "Glitch City",
+    gameId: "joker-bars",
+    displayName: "Joker Bars",
     category: "Online Slot",
     maturity: "PLAYABLE DEVELOPMENT",
     candidateAvailable: false,
@@ -96,13 +96,13 @@ export const customerGameDetails: Record<string, CustomerGameDetail> = {
       { label: "Key art", note: "Available at candidate stage." },
     ],
   },
-  "glitch-city": {
-    gameId: "glitch-city",
-    displayName: "Glitch City",
+  "joker-bars": {
+    gameId: "joker-bars",
+    displayName: "Joker Bars",
     category: "Online Slot",
     maturity: "PLAYABLE DEVELOPMENT",
     overview:
-      "Glitch City is an early playable development build. A clean release candidate will be published to this portal when available. Figures below are from the current maths model and remain provisional until certification.",
+      "Joker Bars is an early playable development build. A clean release candidate will be published to this portal when available. Figures below are from the current maths model and remain provisional until certification.",
     spec: [
       { label: "Game type", value: "Video slot" },
       { label: "Reels / lines", value: "5 reels, 10 paylines" },

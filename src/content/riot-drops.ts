@@ -45,14 +45,14 @@ export const riotDrops: RiotDrop[] = [
     href: "/games/cluckus-maximus/",
   },
   {
-    id: "glitch-city",
-    title: "GLITCH CITY",
+    id: "joker-bars",
+    title: "JOKER BARS",
     category: "Online Slot",
-    accent: "cyan",
+    accent: "gold",
     status: "In Development",
     teaser:
-      "A neon cyberpunk slot: 10 paylines, a clean symbol set and a free-spins surge through the digital underground.",
-    href: "/games/glitch-city/",
+      "A premium classic BAR slot: 10 paylines in black, gold and crimson with an elegant Joker and a free-spins feature.",
+    href: "/games/joker-bars/",
   },
   {
     id: "ragnarok-riot",
