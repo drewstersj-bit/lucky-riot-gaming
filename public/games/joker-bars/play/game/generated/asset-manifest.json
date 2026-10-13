@@ -1,0 +1,229 @@
+{
+  "schemaVersion": "1.0.0",
+  "gameId": "joker-bars",
+  "version": "0c1e594e40",
+  "assetsBasePath": "./",
+  "tiers": [
+    100,
+    75,
+    50,
+    35,
+    25
+  ],
+  "assets": {
+    "background.base.main": {
+      "type": "image",
+      "group": "BASE_GAME",
+      "source": {
+        "width": 1920,
+        "height": 1080
+      },
+      "variants": {
+        "25": {
+          "webp": {
+            "path": "generated/assets/25/graphics/backgrounds/background.base.main.webp",
+            "bytes": 13432,
+            "hash": "b2b89dd2e9",
+            "format": "webp",
+            "width": 480,
+            "height": 270
+          },
+          "png": {
+            "path": "generated/assets/25/graphics/backgrounds/background.base.main.png",
+            "bytes": 67352,
+            "hash": "8812945301",
+            "format": "png",
+            "width": 480,
+            "height": 270
+          }
+        },
+        "35": {
+          "webp": {
+            "path": "generated/assets/35/graphics/backgrounds/background.base.main.webp",
+            "bytes": 22206,
+            "hash": "b2b74c2dc6",
+            "format": "webp",
+            "width": 672,
+            "height": 378
+          },
+          "png": {
+            "path": "generated/assets/35/graphics/backgrounds/background.base.main.png",
+            "bytes": 123336,
+            "hash": "9de8aeca75",
+            "format": "png",
+            "width": 672,
+            "height": 378
+          }
+        },
+        "50": {
+          "webp": {
+            "path": "generated/assets/50/graphics/backgrounds/background.base.main.webp",
+            "bytes": 35690,
+            "hash": "a4f8544626",
+            "format": "webp",
+            "width": 960,
+            "height": 540
+          },
+          "png": {
+            "path": "generated/assets/50/graphics/backgrounds/background.base.main.png",
+            "bytes": 226165,
+            "hash": "120c89a43a",
+            "format": "png",
+            "width": 960,
+            "height": 540
+          }
+        },
+        "75": {
+          "webp": {
+            "path": "generated/assets/75/graphics/backgrounds/background.base.main.webp",
+            "bytes": 60466,
+            "hash": "252bbf86be",
+            "format": "webp",
+            "width": 1440,
+            "height": 810
+          },
+          "png": {
+            "path": "generated/assets/75/graphics/backgrounds/background.base.main.png",
+            "bytes": 414388,
+            "hash": "d10b434569",
+            "format": "png",
+            "width": 1440,
+            "height": 810
+          }
+        },
+        "100": {
+          "webp": {
+            "path": "generated/assets/100/graphics/backgrounds/background.base.main.webp",
+            "bytes": 85636,
+            "hash": "c77ca9e237",
+            "format": "webp",
+            "width": 1920,
+            "height": 1080
+          },
+          "png": {
+            "path": "generated/assets/100/graphics/backgrounds/background.base.main.png",
+            "bytes": 585191,
+            "hash": "c9fd2460d9",
+            "format": "png",
+            "width": 1920,
+            "height": 1080
+          }
+        }
+      },
+      "tags": [
+        "production",
+        "background",
+        "landscape"
+      ]
+    },
+    "background.base.main.portrait": {
+      "type": "image",
+      "group": "BASE_GAME",
+      "source": {
+        "width": 1080,
+        "height": 1920
+      },
+      "variants": {
+        "25": {
+          "webp": {
+            "path": "generated/assets/25/graphics/backgrounds/background.base.main.portrait.webp",
+            "bytes": 16094,
+            "hash": "b246f97ce3",
+            "format": "webp",
+            "width": 270,
+            "height": 480
+          },
+          "png": {
+            "path": "generated/assets/25/graphics/backgrounds/background.base.main.portrait.png",
+            "bytes": 75220,
+            "hash": "50e29bf8b4",
+            "format": "png",
+            "width": 270,
+            "height": 480
+          }
+        },
+        "35": {
+          "webp": {
+            "path": "generated/assets/35/graphics/backgrounds/background.base.main.portrait.webp",
+            "bytes": 26838,
+            "hash": "1148177987",
+            "format": "webp",
+            "width": 378,
+            "height": 672
+          },
+          "png": {
+            "path": "generated/assets/35/graphics/backgrounds/background.base.main.portrait.png",
+            "bytes": 137746,
+            "hash": "4a39026245",
+            "format": "png",
+            "width": 378,
+            "height": 672
+          }
+        },
+        "50": {
+          "webp": {
+            "path": "generated/assets/50/graphics/backgrounds/background.base.main.portrait.webp",
+            "bytes": 44960,
+            "hash": "f0d9e57021",
+            "format": "webp",
+            "width": 540,
+            "height": 960
+          },
+          "png": {
+            "path": "generated/assets/50/graphics/backgrounds/background.base.main.portrait.png",
+            "bytes": 260272,
+            "hash": "ffc590d5e2",
+            "format": "png",
+            "width": 540,
+            "height": 960
+          }
+        },
+        "75": {
+          "webp": {
+            "path": "generated/assets/75/graphics/backgrounds/background.base.main.portrait.webp",
+            "bytes": 81930,
+            "hash": "13345e5a4d",
+            "format": "webp",
+            "width": 810,
+            "height": 1440
+          },
+          "png": {
+            "path": "generated/assets/75/graphics/backgrounds/background.base.main.portrait.png",
+            "bytes": 536059,
+            "hash": "236d95b519",
+            "format": "png",
+            "width": 810,
+            "height": 1440
+          }
+        },
+        "100": {
+          "webp": {
+            "path": "generated/assets/100/graphics/backgrounds/background.base.main.portrait.webp",
+            "bytes": 118570,
+            "hash": "a5949a966f",
+            "format": "webp",
+            "width": 1080,
+            "height": 1920
+          },
+          "png": {
+            "path": "generated/assets/100/graphics/backgrounds/background.base.main.portrait.png",
+            "bytes": 854334,
+            "hash": "63b17c37e2",
+            "format": "png",
+            "width": 1080,
+            "height": 1920
+          }
+        }
+      },
+      "tags": [
+        "production",
+        "background",
+        "portrait"
+      ]
+    }
+  },
+  "buildMetadata": {
+    "builtAt": "2026-10-13T14:06:23.686Z",
+    "pipelineVersion": "0.1.0"
+  }
+}
