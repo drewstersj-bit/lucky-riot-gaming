@@ -1,6 +1,7 @@
 {
   "type": "loadingLogo",
   "reference": 800,
+  "version": "e8d17fdd12",
   "tiers": {
     "100": {
       "px": 800,
