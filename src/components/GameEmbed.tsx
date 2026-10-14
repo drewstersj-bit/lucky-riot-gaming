@@ -42,12 +42,12 @@ export function GameEmbed({
         : "relative aspect-video w-full overflow-hidden rounded-xl2 border border-riot-border bg-riot-black";
 
   // Fullscreen height is set with an inline style (not a Tailwind arbitrary
-  // class) so it always applies regardless of the content scanner. The subtracted
-  // 3.5rem accounts for the slim back-bar above the game; the site header sits
-  // above that. `100dvh` tracks the dynamic viewport so mobile browser chrome
-  // doesn't clip the game.
+  // class) so it always applies regardless of the content scanner. The public
+  // play route has NO site chrome or back-bar (ChromeGate suppresses it), so the
+  // game fills the full dynamic viewport. `100dvh` tracks the dynamic viewport so
+  // mobile browser chrome doesn't clip the game.
   const frameStyle =
-    sizing === "fullscreen" ? { height: "calc(100dvh - 3.5rem)", minHeight: "420px" } : undefined;
+    sizing === "fullscreen" ? { height: "100dvh", minHeight: "420px" } : undefined;
 
   return (
     <div className={frameClass} style={frameStyle}>

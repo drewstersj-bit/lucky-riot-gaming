@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo_Black, Sora } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { ChromeGate } from "@/components/ChromeGate";
 import { CookieConsent } from "@/components/CookieConsent";
 import { SiteGate } from "@/components/SiteGate";
 import { siteConfig, siteGate } from "@/content/site";
@@ -62,9 +61,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
         />
         <SiteGate>
-          <Header />
-          <main id="main">{children}</main>
-          <Footer />
+          <ChromeGate>{children}</ChromeGate>
           <CookieConsent />
         </SiteGate>
       </body>

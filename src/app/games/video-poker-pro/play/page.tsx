@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { GameEmbed } from "@/components/GameEmbed";
 import { getDeployment } from "@/content/game-deployments";
 import { buildMetadata } from "@/lib/seo";
@@ -12,31 +11,15 @@ export const metadata: Metadata = {
     description: "Play the Video Poker Pro public demo from Lucky Riot Games.",
     path: `/games/${GAME_ID}/play`,
   }),
-  // SEO for the public demo is decided at release stage; keep it out of the
-  // index until a real, released demo build is wired.
   robots: { index: false, follow: false },
 };
 
+/**
+ * Full-screen public demo. Site chrome is suppressed for this route by
+ * ChromeGate, so the game fills the whole viewport edge-to-edge. PUBLIC build
+ * profile — clean demo only (no devtools / internal maths / fixtures).
+ */
 export default function VideoPokerProPublicPlayPage() {
-  // PUBLIC build profile — clean demo only. No devtools, no internal maths,
-  // no fixtures, no debug controls (enforced by the artefact + build profile).
   const manifest = getDeployment(GAME_ID, "PUBLIC");
-
-  return (
-    <div className="flex flex-col">
-      <div className="flex items-center justify-between gap-3 border-b border-riot-border bg-riot-black/60 px-4 py-2">
-        <Link
-          href={`/games/${GAME_ID}/`}
-          className="text-sm font-semibold text-riot-text-muted hover:text-riot-cyan"
-        >
-          ← Back
-        </Link>
-        <h1 id="play-heading" className="truncate font-display text-sm uppercase tracking-wide text-riot-white">
-          Video Poker Pro — Demo
-        </h1>
-        <span className="text-[10px] uppercase tracking-[0.18em] text-riot-text-muted">18+</span>
-      </div>
-      <GameEmbed manifest={manifest} title="Video Poker Pro" sizing="fullscreen" />
-    </div>
-  );
+  return <GameEmbed manifest={manifest} title="Video Poker Pro" sizing="fullscreen" />;
 }
