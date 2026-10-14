@@ -22,16 +22,16 @@
         "25": {
           "webp": {
             "path": "generated/assets/25/graphics/backgrounds/background.base.main.webp",
-            "bytes": 55644,
-            "hash": "06f4239805",
+            "bytes": 52996,
+            "hash": "d783e048d1",
             "format": "webp",
             "width": 480,
             "height": 270
           },
           "png": {
             "path": "generated/assets/25/graphics/backgrounds/background.base.main.png",
-            "bytes": 70179,
-            "hash": "f9795d1c98",
+            "bytes": 67901,
+            "hash": "38401169c1",
             "format": "png",
             "width": 480,
             "height": 270
@@ -40,16 +40,16 @@
         "35": {
           "webp": {
             "path": "generated/assets/35/graphics/backgrounds/background.base.main.webp",
-            "bytes": 98098,
-            "hash": "259b4d5661",
+            "bytes": 94558,
+            "hash": "53bcf0ef56",
             "format": "webp",
             "width": 672,
             "height": 378
           },
           "png": {
             "path": "generated/assets/35/graphics/backgrounds/background.base.main.png",
-            "bytes": 124083,
-            "hash": "057823ebfd",
+            "bytes": 119089,
+            "hash": "6dade5b73a",
             "format": "png",
             "width": 672,
             "height": 378
@@ -58,16 +58,16 @@
         "50": {
           "webp": {
             "path": "generated/assets/50/graphics/backgrounds/background.base.main.webp",
-            "bytes": 169748,
-            "hash": "c8ed0783e2",
+            "bytes": 166362,
+            "hash": "e3480d61cb",
             "format": "webp",
             "width": 960,
             "height": 540
           },
           "png": {
             "path": "generated/assets/50/graphics/backgrounds/background.base.main.png",
-            "bytes": 229102,
-            "hash": "ab7913b371",
+            "bytes": 219988,
+            "hash": "bf98dfd0b2",
             "format": "png",
             "width": 960,
             "height": 540
@@ -76,16 +76,16 @@
         "75": {
           "webp": {
             "path": "generated/assets/75/graphics/backgrounds/background.base.main.webp",
-            "bytes": 303006,
-            "hash": "1ed233a6a4",
+            "bytes": 306118,
+            "hash": "b47e19473a",
             "format": "webp",
             "width": 1440,
             "height": 810
           },
           "png": {
             "path": "generated/assets/75/graphics/backgrounds/background.base.main.png",
-            "bytes": 465918,
-            "hash": "72b7e6d680",
+            "bytes": 445828,
+            "hash": "5a69dcc654",
             "format": "png",
             "width": 1440,
             "height": 810
@@ -94,16 +94,16 @@
         "100": {
           "webp": {
             "path": "generated/assets/100/graphics/backgrounds/background.base.main.webp",
-            "bytes": 437970,
-            "hash": "9b7ab7186b",
+            "bytes": 452194,
+            "hash": "7f3034e595",
             "format": "webp",
             "width": 1920,
             "height": 1080
           },
           "png": {
             "path": "generated/assets/100/graphics/backgrounds/background.base.main.png",
-            "bytes": 758564,
-            "hash": "f72e1b2bce",
+            "bytes": 732767,
+            "hash": "e4d3afb232",
             "format": "png",
             "width": 1920,
             "height": 1080
@@ -229,7 +229,7 @@
         "ogg": {
           "path": "generated/assets/audio/base_game_loop.ogg",
           "bytes": 3630756,
-          "hash": "380c045fad"
+          "hash": "5ecc806902"
         },
         "m4a": {
           "path": "generated/assets/audio/base_game_loop.m4a",
@@ -256,7 +256,7 @@
     }
   },
   "buildMetadata": {
-    "builtAt": "2026-10-14T21:28:55.936Z",
+    "builtAt": "2026-10-14T22:30:28.046Z",
     "pipelineVersion": "0.1.0"
   }
 }
