@@ -22,16 +22,16 @@
         "25": {
           "webp": {
             "path": "generated/assets/25/graphics/backgrounds/background.base.main.webp",
-            "bytes": 33928,
-            "hash": "6b98f39f94",
+            "bytes": 55644,
+            "hash": "06f4239805",
             "format": "webp",
             "width": 480,
             "height": 270
           },
           "png": {
             "path": "generated/assets/25/graphics/backgrounds/background.base.main.png",
-            "bytes": 60846,
-            "hash": "74b0ae3b18",
+            "bytes": 70179,
+            "hash": "f9795d1c98",
             "format": "png",
             "width": 480,
             "height": 270
@@ -40,16 +40,16 @@
         "35": {
           "webp": {
             "path": "generated/assets/35/graphics/backgrounds/background.base.main.webp",
-            "bytes": 57364,
-            "hash": "0ab2492330",
+            "bytes": 98098,
+            "hash": "259b4d5661",
             "format": "webp",
             "width": 672,
             "height": 378
           },
           "png": {
             "path": "generated/assets/35/graphics/backgrounds/background.base.main.png",
-            "bytes": 108250,
-            "hash": "e88e4089a7",
+            "bytes": 124083,
+            "hash": "057823ebfd",
             "format": "png",
             "width": 672,
             "height": 378
@@ -58,16 +58,16 @@
         "50": {
           "webp": {
             "path": "generated/assets/50/graphics/backgrounds/background.base.main.webp",
-            "bytes": 96656,
-            "hash": "0b26edd8ce",
+            "bytes": 169748,
+            "hash": "c8ed0783e2",
             "format": "webp",
             "width": 960,
             "height": 540
           },
           "png": {
             "path": "generated/assets/50/graphics/backgrounds/background.base.main.png",
-            "bytes": 202770,
-            "hash": "f501dd8e50",
+            "bytes": 229102,
+            "hash": "ab7913b371",
             "format": "png",
             "width": 960,
             "height": 540
@@ -76,16 +76,16 @@
         "75": {
           "webp": {
             "path": "generated/assets/75/graphics/backgrounds/background.base.main.webp",
-            "bytes": 160590,
-            "hash": "f2648c9258",
+            "bytes": 303006,
+            "hash": "1ed233a6a4",
             "format": "webp",
             "width": 1440,
             "height": 810
           },
           "png": {
             "path": "generated/assets/75/graphics/backgrounds/background.base.main.png",
-            "bytes": 413097,
-            "hash": "60a980c30d",
+            "bytes": 465918,
+            "hash": "72b7e6d680",
             "format": "png",
             "width": 1440,
             "height": 810
@@ -94,16 +94,16 @@
         "100": {
           "webp": {
             "path": "generated/assets/100/graphics/backgrounds/background.base.main.webp",
-            "bytes": 228918,
-            "hash": "bf4307dc73",
+            "bytes": 437970,
+            "hash": "9b7ab7186b",
             "format": "webp",
             "width": 1920,
             "height": 1080
           },
           "png": {
             "path": "generated/assets/100/graphics/backgrounds/background.base.main.png",
-            "bytes": 678281,
-            "hash": "2fd6844801",
+            "bytes": 758564,
+            "hash": "f72e1b2bce",
             "format": "png",
             "width": 1920,
             "height": 1080
@@ -127,16 +127,16 @@
         "25": {
           "webp": {
             "path": "generated/assets/25/graphics/backgrounds/background.base.main.portrait.webp",
-            "bytes": 18948,
-            "hash": "100a88d7e5",
+            "bytes": 30782,
+            "hash": "16f0ad4e00",
             "format": "webp",
             "width": 270,
             "height": 480
           },
           "png": {
             "path": "generated/assets/25/graphics/backgrounds/background.base.main.portrait.png",
-            "bytes": 38351,
-            "hash": "d55ca95cb3",
+            "bytes": 49844,
+            "hash": "9193f090fc",
             "format": "png",
             "width": 270,
             "height": 480
@@ -145,16 +145,16 @@
         "35": {
           "webp": {
             "path": "generated/assets/35/graphics/backgrounds/background.base.main.portrait.webp",
-            "bytes": 30400,
-            "hash": "1740425fc7",
+            "bytes": 52102,
+            "hash": "51d25fbdf8",
             "format": "webp",
             "width": 378,
             "height": 672
           },
           "png": {
             "path": "generated/assets/35/graphics/backgrounds/background.base.main.portrait.png",
-            "bytes": 66385,
-            "hash": "d421184a89",
+            "bytes": 87679,
+            "hash": "b54e4183f5",
             "format": "png",
             "width": 378,
             "height": 672
@@ -163,16 +163,16 @@
         "50": {
           "webp": {
             "path": "generated/assets/50/graphics/backgrounds/background.base.main.portrait.webp",
-            "bytes": 48326,
-            "hash": "9072c08fa7",
+            "bytes": 87002,
+            "hash": "1ef35c187d",
             "format": "webp",
             "width": 540,
             "height": 960
           },
           "png": {
             "path": "generated/assets/50/graphics/backgrounds/background.base.main.portrait.png",
-            "bytes": 123484,
-            "hash": "8b101d958d",
+            "bytes": 161629,
+            "hash": "97889ac5ba",
             "format": "png",
             "width": 540,
             "height": 960
@@ -181,16 +181,16 @@
         "75": {
           "webp": {
             "path": "generated/assets/75/graphics/backgrounds/background.base.main.portrait.webp",
-            "bytes": 79490,
-            "hash": "f0beb64aaf",
+            "bytes": 141134,
+            "hash": "4b2ae59aa7",
             "format": "webp",
             "width": 810,
             "height": 1440
           },
           "png": {
             "path": "generated/assets/75/graphics/backgrounds/background.base.main.portrait.png",
-            "bytes": 249690,
-            "hash": "add6300b37",
+            "bytes": 328298,
+            "hash": "fe238e7b01",
             "format": "png",
             "width": 810,
             "height": 1440
@@ -199,16 +199,16 @@
         "100": {
           "webp": {
             "path": "generated/assets/100/graphics/backgrounds/background.base.main.portrait.webp",
-            "bytes": 109862,
-            "hash": "cfeba3af29",
+            "bytes": 195566,
+            "hash": "baacbb5de1",
             "format": "webp",
             "width": 1080,
             "height": 1920
           },
           "png": {
             "path": "generated/assets/100/graphics/backgrounds/background.base.main.portrait.png",
-            "bytes": 408999,
-            "hash": "ffe890bb30",
+            "bytes": 556321,
+            "hash": "4cc4011bc7",
             "format": "png",
             "width": 1080,
             "height": 1920
@@ -229,7 +229,7 @@
         "ogg": {
           "path": "generated/assets/audio/base_game_loop.ogg",
           "bytes": 3630756,
-          "hash": "08aa8dcc8b"
+          "hash": "380c045fad"
         },
         "m4a": {
           "path": "generated/assets/audio/base_game_loop.m4a",
@@ -256,7 +256,7 @@
     }
   },
   "buildMetadata": {
-    "builtAt": "2026-10-14T19:35:37.031Z",
+    "builtAt": "2026-10-14T21:28:55.936Z",
     "pipelineVersion": "0.1.0"
   }
 }
