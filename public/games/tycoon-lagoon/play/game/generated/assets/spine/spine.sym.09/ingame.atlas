@@ -1,0 +1,10 @@
+ingame.png
+size:781,464
+filter:Linear,Linear
+symbols/sym_a_base
+bounds:2,2,460,435
+offsets:25,50,512,512
+rotate:90
+symbols/sym_j_base
+bounds:439,11,340,451
+offsets:85,42,512,512
