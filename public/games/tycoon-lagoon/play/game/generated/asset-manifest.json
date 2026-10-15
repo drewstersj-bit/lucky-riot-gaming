@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "gameId": "tycoon-lagoon",
-  "version": "9be38a1aee",
+  "version": "5861d39633",
   "assetsBasePath": "./",
   "tiers": [
     100,
@@ -229,7 +229,7 @@
         "ogg": {
           "path": "generated/assets/audio/base_game_loop.ogg",
           "bytes": 3630756,
-          "hash": "5ecc806902"
+          "hash": "618c23c58e"
         },
         "m4a": {
           "path": "generated/assets/audio/base_game_loop.m4a",
@@ -253,10 +253,556 @@
         "music",
         "base-game"
       ]
+    },
+    "symbol.ten.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/symbol.ten.base/SYM_TEN.json",
+        "bytes": 991,
+        "hash": "e9d45fcc76",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/symbol.ten.base/ingame.atlas",
+            "bytes": 178,
+            "hash": "f1a1d89770"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/symbol.ten.base/ingame.png",
+              "bytes": 685784,
+              "hash": "b7527c834e"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "SKN_DEFAULT",
+        "SKN_SPIN"
+      ],
+      "animations": [
+        "ANI_IDLE",
+        "ANI_LAND",
+        "ANI_SPIN",
+        "ANI_WIN"
+      ],
+      "tags": [
+        "production",
+        "symbol",
+        "spine"
+      ]
+    },
+    "symbol.jack.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/symbol.jack.base/SYM_JACK.json",
+        "bytes": 1535,
+        "hash": "6041fe26db",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/symbol.jack.base/ingame.atlas",
+            "bytes": 178,
+            "hash": "f1a1d89770"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/symbol.jack.base/ingame.png",
+              "bytes": 685784,
+              "hash": "b7527c834e"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "SKN_DEFAULT",
+        "SKN_SPIN"
+      ],
+      "animations": [
+        "ANI_IDLE",
+        "ANI_LAND",
+        "ANI_SPIN",
+        "ANI_WIN"
+      ],
+      "tags": [
+        "production",
+        "symbol",
+        "spine"
+      ]
+    },
+    "symbol.queen.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/symbol.queen.base/SYM_QUEEN.json",
+        "bytes": 1535,
+        "hash": "6041fe26db",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/symbol.queen.base/ingame.atlas",
+            "bytes": 178,
+            "hash": "f1a1d89770"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/symbol.queen.base/ingame.png",
+              "bytes": 685784,
+              "hash": "b7527c834e"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "SKN_DEFAULT",
+        "SKN_SPIN"
+      ],
+      "animations": [
+        "ANI_IDLE",
+        "ANI_LAND",
+        "ANI_SPIN",
+        "ANI_WIN"
+      ],
+      "tags": [
+        "production",
+        "symbol",
+        "spine"
+      ]
+    },
+    "symbol.king.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/symbol.king.base/SYM_KING.json",
+        "bytes": 1535,
+        "hash": "6041fe26db",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/symbol.king.base/ingame.atlas",
+            "bytes": 178,
+            "hash": "f1a1d89770"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/symbol.king.base/ingame.png",
+              "bytes": 685784,
+              "hash": "b7527c834e"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "SKN_DEFAULT",
+        "SKN_SPIN"
+      ],
+      "animations": [
+        "ANI_IDLE",
+        "ANI_LAND",
+        "ANI_SPIN",
+        "ANI_WIN"
+      ],
+      "tags": [
+        "production",
+        "symbol",
+        "spine"
+      ]
+    },
+    "symbol.ace.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/symbol.ace.base/SYM_ACE.json",
+        "bytes": 1535,
+        "hash": "6041fe26db",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/symbol.ace.base/ingame.atlas",
+            "bytes": 178,
+            "hash": "f1a1d89770"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/symbol.ace.base/ingame.png",
+              "bytes": 685784,
+              "hash": "b7527c834e"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "SKN_DEFAULT",
+        "SKN_SPIN"
+      ],
+      "animations": [
+        "ANI_IDLE",
+        "ANI_LAND",
+        "ANI_SPIN",
+        "ANI_WIN"
+      ],
+      "tags": [
+        "production",
+        "symbol",
+        "spine"
+      ]
+    },
+    "symbol.pic1.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/symbol.pic1.base/SYM_PIC1.json",
+        "bytes": 1535,
+        "hash": "6041fe26db",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/symbol.pic1.base/ingame.atlas",
+            "bytes": 178,
+            "hash": "f1a1d89770"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/symbol.pic1.base/ingame.png",
+              "bytes": 685784,
+              "hash": "b7527c834e"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "SKN_DEFAULT",
+        "SKN_SPIN"
+      ],
+      "animations": [
+        "ANI_IDLE",
+        "ANI_LAND",
+        "ANI_SPIN",
+        "ANI_WIN"
+      ],
+      "tags": [
+        "production",
+        "symbol",
+        "spine"
+      ]
+    },
+    "symbol.pic2.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/symbol.pic2.base/SYM_PIC2.json",
+        "bytes": 1535,
+        "hash": "6041fe26db",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/symbol.pic2.base/ingame.atlas",
+            "bytes": 178,
+            "hash": "f1a1d89770"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/symbol.pic2.base/ingame.png",
+              "bytes": 685784,
+              "hash": "b7527c834e"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "SKN_DEFAULT",
+        "SKN_SPIN"
+      ],
+      "animations": [
+        "ANI_IDLE",
+        "ANI_LAND",
+        "ANI_SPIN",
+        "ANI_WIN"
+      ],
+      "tags": [
+        "production",
+        "symbol",
+        "spine"
+      ]
+    },
+    "symbol.pic3.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/symbol.pic3.base/SYM_PIC3.json",
+        "bytes": 1535,
+        "hash": "6041fe26db",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/symbol.pic3.base/ingame.atlas",
+            "bytes": 178,
+            "hash": "f1a1d89770"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/symbol.pic3.base/ingame.png",
+              "bytes": 685784,
+              "hash": "b7527c834e"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "SKN_DEFAULT",
+        "SKN_SPIN"
+      ],
+      "animations": [
+        "ANI_IDLE",
+        "ANI_LAND",
+        "ANI_SPIN",
+        "ANI_WIN"
+      ],
+      "tags": [
+        "production",
+        "symbol",
+        "spine"
+      ]
+    },
+    "symbol.pic4.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/symbol.pic4.base/SYM_PIC4.json",
+        "bytes": 1535,
+        "hash": "6041fe26db",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/symbol.pic4.base/ingame.atlas",
+            "bytes": 178,
+            "hash": "f1a1d89770"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/symbol.pic4.base/ingame.png",
+              "bytes": 685784,
+              "hash": "b7527c834e"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "SKN_DEFAULT",
+        "SKN_SPIN"
+      ],
+      "animations": [
+        "ANI_IDLE",
+        "ANI_LAND",
+        "ANI_SPIN",
+        "ANI_WIN"
+      ],
+      "tags": [
+        "production",
+        "symbol",
+        "spine"
+      ]
+    },
+    "symbol.egg.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/symbol.egg.base/SYM_EGG.json",
+        "bytes": 1535,
+        "hash": "6041fe26db",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/symbol.egg.base/ingame.atlas",
+            "bytes": 178,
+            "hash": "f1a1d89770"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/symbol.egg.base/ingame.png",
+              "bytes": 685784,
+              "hash": "b7527c834e"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "SKN_DEFAULT",
+        "SKN_SPIN"
+      ],
+      "animations": [
+        "ANI_IDLE",
+        "ANI_LAND",
+        "ANI_SPIN",
+        "ANI_WIN"
+      ],
+      "tags": [
+        "production",
+        "symbol",
+        "spine"
+      ]
+    },
+    "symbol.golden.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/symbol.golden.base/SYM_GOLDEN.json",
+        "bytes": 1535,
+        "hash": "6041fe26db",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/symbol.golden.base/ingame.atlas",
+            "bytes": 178,
+            "hash": "f1a1d89770"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/symbol.golden.base/ingame.png",
+              "bytes": 685784,
+              "hash": "b7527c834e"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "SKN_DEFAULT",
+        "SKN_SPIN"
+      ],
+      "animations": [
+        "ANI_IDLE",
+        "ANI_LAND",
+        "ANI_SPIN",
+        "ANI_WIN"
+      ],
+      "tags": [
+        "production",
+        "symbol",
+        "spine"
+      ]
+    },
+    "symbol.scatter.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/symbol.scatter.base/SYM_SCATTER.json",
+        "bytes": 1535,
+        "hash": "6041fe26db",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/symbol.scatter.base/ingame.atlas",
+            "bytes": 178,
+            "hash": "f1a1d89770"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/symbol.scatter.base/ingame.png",
+              "bytes": 685784,
+              "hash": "b7527c834e"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "SKN_DEFAULT",
+        "SKN_SPIN"
+      ],
+      "animations": [
+        "ANI_IDLE",
+        "ANI_LAND",
+        "ANI_SPIN",
+        "ANI_WIN"
+      ],
+      "tags": [
+        "production",
+        "symbol",
+        "spine"
+      ]
+    },
+    "symbol.wild.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/symbol.wild.base/SYM_WILD.json",
+        "bytes": 1535,
+        "hash": "6041fe26db",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/symbol.wild.base/ingame.atlas",
+            "bytes": 178,
+            "hash": "f1a1d89770"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/symbol.wild.base/ingame.png",
+              "bytes": 685784,
+              "hash": "b7527c834e"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "SKN_DEFAULT",
+        "SKN_SPIN"
+      ],
+      "animations": [
+        "ANI_IDLE",
+        "ANI_LAND",
+        "ANI_SPIN",
+        "ANI_WIN"
+      ],
+      "tags": [
+        "production",
+        "symbol",
+        "spine"
+      ]
     }
   },
   "buildMetadata": {
-    "builtAt": "2026-10-14T22:30:28.046Z",
+    "builtAt": "2026-10-15T16:24:49.909Z",
     "pipelineVersion": "0.1.0"
   }
 }
