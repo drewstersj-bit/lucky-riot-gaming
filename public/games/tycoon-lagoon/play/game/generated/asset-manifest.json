@@ -229,7 +229,7 @@
         "ogg": {
           "path": "generated/assets/audio/base_game_loop.ogg",
           "bytes": 3630756,
-          "hash": "84772bdca5"
+          "hash": "99fa4d40f9"
         },
         "m4a": {
           "path": "generated/assets/audio/base_game_loop.m4a",
@@ -917,7 +917,7 @@
     }
   },
   "buildMetadata": {
-    "builtAt": "2026-10-15T22:24:36.598Z",
+    "builtAt": "2026-10-15T22:48:35.153Z",
     "pipelineVersion": "0.1.0"
   }
 }
