@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "gameId": "tycoon-lagoon",
-  "version": "5861d39633",
+  "version": "c17a45d506",
   "assetsBasePath": "./",
   "tiers": [
     100,
@@ -22,16 +22,16 @@
         "25": {
           "webp": {
             "path": "generated/assets/25/graphics/backgrounds/background.base.main.webp",
-            "bytes": 52996,
-            "hash": "d783e048d1",
+            "bytes": 47426,
+            "hash": "cb97394083",
             "format": "webp",
             "width": 480,
             "height": 270
           },
           "png": {
             "path": "generated/assets/25/graphics/backgrounds/background.base.main.png",
-            "bytes": 67901,
-            "hash": "38401169c1",
+            "bytes": 63393,
+            "hash": "2d6302d7e5",
             "format": "png",
             "width": 480,
             "height": 270
@@ -40,16 +40,16 @@
         "35": {
           "webp": {
             "path": "generated/assets/35/graphics/backgrounds/background.base.main.webp",
-            "bytes": 94558,
-            "hash": "53bcf0ef56",
+            "bytes": 81716,
+            "hash": "ef51acc5a4",
             "format": "webp",
             "width": 672,
             "height": 378
           },
           "png": {
             "path": "generated/assets/35/graphics/backgrounds/background.base.main.png",
-            "bytes": 119089,
-            "hash": "6dade5b73a",
+            "bytes": 111189,
+            "hash": "f40712ce19",
             "format": "png",
             "width": 672,
             "height": 378
@@ -58,16 +58,16 @@
         "50": {
           "webp": {
             "path": "generated/assets/50/graphics/backgrounds/background.base.main.webp",
-            "bytes": 166362,
-            "hash": "e3480d61cb",
+            "bytes": 143620,
+            "hash": "71a1825172",
             "format": "webp",
             "width": 960,
             "height": 540
           },
           "png": {
             "path": "generated/assets/50/graphics/backgrounds/background.base.main.png",
-            "bytes": 219988,
-            "hash": "bf98dfd0b2",
+            "bytes": 204588,
+            "hash": "d883199987",
             "format": "png",
             "width": 960,
             "height": 540
@@ -76,16 +76,16 @@
         "75": {
           "webp": {
             "path": "generated/assets/75/graphics/backgrounds/background.base.main.webp",
-            "bytes": 306118,
-            "hash": "b47e19473a",
+            "bytes": 257730,
+            "hash": "260dceae32",
             "format": "webp",
             "width": 1440,
             "height": 810
           },
           "png": {
             "path": "generated/assets/75/graphics/backgrounds/background.base.main.png",
-            "bytes": 445828,
-            "hash": "5a69dcc654",
+            "bytes": 416257,
+            "hash": "007944dd9a",
             "format": "png",
             "width": 1440,
             "height": 810
@@ -94,16 +94,16 @@
         "100": {
           "webp": {
             "path": "generated/assets/100/graphics/backgrounds/background.base.main.webp",
-            "bytes": 452194,
-            "hash": "7f3034e595",
+            "bytes": 381404,
+            "hash": "6f3d8d89df",
             "format": "webp",
             "width": 1920,
             "height": 1080
           },
           "png": {
             "path": "generated/assets/100/graphics/backgrounds/background.base.main.png",
-            "bytes": 732767,
-            "hash": "e4d3afb232",
+            "bytes": 691735,
+            "hash": "c52fd1d5fb",
             "format": "png",
             "width": 1920,
             "height": 1080
@@ -229,7 +229,7 @@
         "ogg": {
           "path": "generated/assets/audio/base_game_loop.ogg",
           "bytes": 3630756,
-          "hash": "512183744d"
+          "hash": "84772bdca5"
         },
         "m4a": {
           "path": "generated/assets/audio/base_game_loop.m4a",
@@ -260,22 +260,22 @@
       "spineVersion": "4.3",
       "skeleton": {
         "path": "generated/assets/spine/symbol.ten.base/SYM_TEN.json",
-        "bytes": 1003,
-        "hash": "d94cc403df",
+        "bytes": 1035,
+        "hash": "28dfab5430",
         "dataFormat": "json"
       },
       "atlas": {
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.ten.base/ingame.atlas",
-            "bytes": 597,
-            "hash": "ab9d1d030c"
+            "bytes": 1021,
+            "hash": "baad3416ed"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.ten.base/ingame.png",
-              "bytes": 570056,
-              "hash": "b33fec6644"
+              "bytes": 2928976,
+              "hash": "190d57e6df"
             }
           ]
         }
@@ -302,22 +302,22 @@
       "spineVersion": "4.3",
       "skeleton": {
         "path": "generated/assets/spine/symbol.jack.base/SYM_JACK.json",
-        "bytes": 999,
-        "hash": "a9e7bd7dcb",
+        "bytes": 1031,
+        "hash": "64633b177b",
         "dataFormat": "json"
       },
       "atlas": {
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.jack.base/ingame.atlas",
-            "bytes": 597,
-            "hash": "ab9d1d030c"
+            "bytes": 1021,
+            "hash": "baad3416ed"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.jack.base/ingame.png",
-              "bytes": 570056,
-              "hash": "b33fec6644"
+              "bytes": 2928976,
+              "hash": "190d57e6df"
             }
           ]
         }
@@ -344,22 +344,22 @@
       "spineVersion": "4.3",
       "skeleton": {
         "path": "generated/assets/spine/symbol.queen.base/SYM_QUEEN.json",
-        "bytes": 969,
-        "hash": "b3bead73b8",
+        "bytes": 1001,
+        "hash": "d74b9df56d",
         "dataFormat": "json"
       },
       "atlas": {
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.queen.base/ingame.atlas",
-            "bytes": 597,
-            "hash": "ab9d1d030c"
+            "bytes": 1021,
+            "hash": "baad3416ed"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.queen.base/ingame.png",
-              "bytes": 570056,
-              "hash": "b33fec6644"
+              "bytes": 2928976,
+              "hash": "190d57e6df"
             }
           ]
         }
@@ -386,22 +386,22 @@
       "spineVersion": "4.3",
       "skeleton": {
         "path": "generated/assets/spine/symbol.king.base/SYM_KING.json",
-        "bytes": 967,
-        "hash": "f64100c966",
+        "bytes": 999,
+        "hash": "561c459879",
         "dataFormat": "json"
       },
       "atlas": {
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.king.base/ingame.atlas",
-            "bytes": 597,
-            "hash": "ab9d1d030c"
+            "bytes": 1021,
+            "hash": "baad3416ed"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.king.base/ingame.png",
-              "bytes": 570056,
-              "hash": "b33fec6644"
+              "bytes": 2928976,
+              "hash": "190d57e6df"
             }
           ]
         }
@@ -436,14 +436,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.ace.base/ingame.atlas",
-            "bytes": 597,
-            "hash": "ab9d1d030c"
+            "bytes": 1021,
+            "hash": "baad3416ed"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.ace.base/ingame.png",
-              "bytes": 570056,
-              "hash": "b33fec6644"
+              "bytes": 2928976,
+              "hash": "190d57e6df"
             }
           ]
         }
@@ -478,14 +478,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.pic1.base/ingame.atlas",
-            "bytes": 597,
-            "hash": "ab9d1d030c"
+            "bytes": 1021,
+            "hash": "baad3416ed"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.pic1.base/ingame.png",
-              "bytes": 570056,
-              "hash": "b33fec6644"
+              "bytes": 2928976,
+              "hash": "190d57e6df"
             }
           ]
         }
@@ -520,14 +520,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.pic2.base/ingame.atlas",
-            "bytes": 597,
-            "hash": "ab9d1d030c"
+            "bytes": 1021,
+            "hash": "baad3416ed"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.pic2.base/ingame.png",
-              "bytes": 570056,
-              "hash": "b33fec6644"
+              "bytes": 2928976,
+              "hash": "190d57e6df"
             }
           ]
         }
@@ -562,14 +562,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.pic3.base/ingame.atlas",
-            "bytes": 597,
-            "hash": "ab9d1d030c"
+            "bytes": 1021,
+            "hash": "baad3416ed"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.pic3.base/ingame.png",
-              "bytes": 570056,
-              "hash": "b33fec6644"
+              "bytes": 2928976,
+              "hash": "190d57e6df"
             }
           ]
         }
@@ -604,14 +604,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.pic4.base/ingame.atlas",
-            "bytes": 597,
-            "hash": "ab9d1d030c"
+            "bytes": 1021,
+            "hash": "baad3416ed"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.pic4.base/ingame.png",
-              "bytes": 570056,
-              "hash": "b33fec6644"
+              "bytes": 2928976,
+              "hash": "190d57e6df"
             }
           ]
         }
@@ -638,22 +638,22 @@
       "spineVersion": "4.3",
       "skeleton": {
         "path": "generated/assets/spine/symbol.egg.base/SYM_EGG.json",
-        "bytes": 1087,
-        "hash": "f51e4fad93",
+        "bytes": 967,
+        "hash": "73ddd10a66",
         "dataFormat": "json"
       },
       "atlas": {
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.egg.base/ingame.atlas",
-            "bytes": 597,
-            "hash": "ab9d1d030c"
+            "bytes": 1021,
+            "hash": "baad3416ed"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.egg.base/ingame.png",
-              "bytes": 570056,
-              "hash": "b33fec6644"
+              "bytes": 2928976,
+              "hash": "190d57e6df"
             }
           ]
         }
@@ -688,14 +688,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.golden.base/ingame.atlas",
-            "bytes": 597,
-            "hash": "ab9d1d030c"
+            "bytes": 1021,
+            "hash": "baad3416ed"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.golden.base/ingame.png",
-              "bytes": 570056,
-              "hash": "b33fec6644"
+              "bytes": 2928976,
+              "hash": "190d57e6df"
             }
           ]
         }
@@ -722,22 +722,22 @@
       "spineVersion": "4.3",
       "skeleton": {
         "path": "generated/assets/spine/symbol.scatter.base/SYM_SCATTER.json",
-        "bytes": 997,
-        "hash": "3744b347fe",
+        "bytes": 971,
+        "hash": "a8aea0121a",
         "dataFormat": "json"
       },
       "atlas": {
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.scatter.base/ingame.atlas",
-            "bytes": 597,
-            "hash": "ab9d1d030c"
+            "bytes": 1021,
+            "hash": "baad3416ed"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.scatter.base/ingame.png",
-              "bytes": 570056,
-              "hash": "b33fec6644"
+              "bytes": 2928976,
+              "hash": "190d57e6df"
             }
           ]
         }
@@ -764,22 +764,22 @@
       "spineVersion": "4.3",
       "skeleton": {
         "path": "generated/assets/spine/symbol.wild.base/SYM_WILD.json",
-        "bytes": 997,
-        "hash": "3744b347fe",
+        "bytes": 965,
+        "hash": "d0e4cc7a68",
         "dataFormat": "json"
       },
       "atlas": {
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.wild.base/ingame.atlas",
-            "bytes": 597,
-            "hash": "ab9d1d030c"
+            "bytes": 1021,
+            "hash": "baad3416ed"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.wild.base/ingame.png",
-              "bytes": 570056,
-              "hash": "b33fec6644"
+              "bytes": 2928976,
+              "hash": "190d57e6df"
             }
           ]
         }
@@ -799,10 +799,125 @@
         "symbol",
         "spine"
       ]
+    },
+    "frame.reel.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/frame.reel.base/reel_frame.json",
+        "bytes": 440,
+        "hash": "aaa0986552",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/frame.reel.base/ingame.atlas",
+            "bytes": 1021,
+            "hash": "baad3416ed"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/frame.reel.base/ingame.png",
+              "bytes": 2928976,
+              "hash": "190d57e6df"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "default"
+      ],
+      "animations": [
+        "animation"
+      ],
+      "tags": [
+        "production",
+        "frame",
+        "spine"
+      ]
+    },
+    "character.fisherman.base": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/character.fisherman.base/character_fisherman.json",
+        "bytes": 2845,
+        "hash": "fd7dedb763",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/character.fisherman.base/ingame.atlas",
+            "bytes": 1021,
+            "hash": "baad3416ed"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/character.fisherman.base/ingame.png",
+              "bytes": 2928976,
+              "hash": "190d57e6df"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "default"
+      ],
+      "animations": [
+        "ANI_IDLE",
+        "ANI_WIN_1"
+      ],
+      "tags": [
+        "production",
+        "character",
+        "spine"
+      ]
+    },
+    "furniture.logo": {
+      "type": "spine",
+      "group": "BASE_GAME",
+      "spineVersion": "4.3",
+      "skeleton": {
+        "path": "generated/assets/spine/furniture.logo/ingame_logo.json",
+        "bytes": 420,
+        "hash": "5f01d0aaa1",
+        "dataFormat": "json"
+      },
+      "atlas": {
+        "100": {
+          "atlas": {
+            "path": "generated/assets/spine/furniture.logo/ingame.atlas",
+            "bytes": 1021,
+            "hash": "baad3416ed"
+          },
+          "pages": [
+            {
+              "path": "generated/assets/spine/furniture.logo/ingame.png",
+              "bytes": 2928976,
+              "hash": "190d57e6df"
+            }
+          ]
+        }
+      },
+      "skins": [
+        "default"
+      ],
+      "animations": [
+        "ANI_LOGO_IDLE"
+      ],
+      "tags": [
+        "production",
+        "furniture",
+        "spine"
+      ]
     }
   },
   "buildMetadata": {
-    "builtAt": "2026-10-15T19:05:29.290Z",
+    "builtAt": "2026-10-15T22:24:36.598Z",
     "pipelineVersion": "0.1.0"
   }
 }
