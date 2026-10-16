@@ -1782,8 +1782,8 @@
       "spineVersion": "4.3",
       "skeleton": {
         "path": "generated/assets/spine/frame.reel.base/reel_frame.json",
-        "bytes": 457,
-        "hash": "f6f0ce56a1",
+        "bytes": 438,
+        "hash": "1346c1167a",
         "dataFormat": "json"
       },
       "atlas": {
@@ -1893,7 +1893,7 @@
     }
   },
   "buildMetadata": {
-    "builtAt": "2026-10-16T16:15:02.001Z",
+    "builtAt": "2026-10-16T17:41:20.895Z",
     "pipelineVersion": "0.1.0"
   }
 }
