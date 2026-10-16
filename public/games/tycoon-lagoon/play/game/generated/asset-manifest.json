@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "gameId": "tycoon-lagoon",
-  "version": "9f57d33fe9",
+  "version": "d0b44805b5",
   "assetsBasePath": "./",
   "tiers": [
     100,
@@ -229,7 +229,7 @@
         "ogg": {
           "path": "generated/assets/audio/music_base_loop.ogg",
           "bytes": 415249,
-          "hash": "c8b13a9c5e"
+          "hash": "6b3f31a068"
         },
         "m4a": {
           "path": "generated/assets/audio/music_base_loop.m4a",
@@ -262,7 +262,7 @@
         "ogg": {
           "path": "generated/assets/audio/music_freespins_loop.ogg",
           "bytes": 439494,
-          "hash": "7dec1be1c5"
+          "hash": "3376ffb501"
         },
         "m4a": {
           "path": "generated/assets/audio/music_freespins_loop.m4a",
@@ -295,7 +295,7 @@
         "ogg": {
           "path": "generated/assets/audio/ambience_lagoon.ogg",
           "bytes": 265117,
-          "hash": "4d05073be2"
+          "hash": "f10110df7a"
         },
         "m4a": {
           "path": "generated/assets/audio/ambience_lagoon.m4a",
@@ -327,7 +327,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_spin_start.ogg",
           "bytes": 20204,
-          "hash": "eee3eb97c0"
+          "hash": "a5cb5fd50b"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_spin_start.m4a",
@@ -359,7 +359,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_reel_stop.ogg",
           "bytes": 15032,
-          "hash": "78c230795e"
+          "hash": "8b8c580aed"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_reel_stop.m4a",
@@ -391,7 +391,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_win_small.ogg",
           "bytes": 18359,
-          "hash": "da5bedd14b"
+          "hash": "a441a38efb"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_win_small.m4a",
@@ -423,7 +423,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_win_big.ogg",
           "bytes": 35973,
-          "hash": "1725bda75d"
+          "hash": "af88ad2235"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_win_big.m4a",
@@ -455,7 +455,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_fish_catch.ogg",
           "bytes": 16001,
-          "hash": "5a418f9dbf"
+          "hash": "c4b23bd990"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_fish_catch.m4a",
@@ -487,7 +487,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_scatter_land.ogg",
           "bytes": 16797,
-          "hash": "f62f5c3b31"
+          "hash": "612f6d5357"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_scatter_land.m4a",
@@ -519,7 +519,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_anticipation_loop.ogg",
           "bytes": 113371,
-          "hash": "df934dc5da"
+          "hash": "30812ea32e"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_anticipation_loop.m4a",
@@ -552,7 +552,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_anticipation_hit.ogg",
           "bytes": 21632,
-          "hash": "3cd26278d1"
+          "hash": "a1ee400d6b"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_anticipation_hit.m4a",
@@ -584,7 +584,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_freespins_trigger.ogg",
           "bytes": 34663,
-          "hash": "f26c230638"
+          "hash": "e05030e6a4"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_freespins_trigger.m4a",
@@ -616,7 +616,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_golden_fish.ogg",
           "bytes": 35723,
-          "hash": "a986681d93"
+          "hash": "4a3b33e717"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_golden_fish.m4a",
@@ -648,7 +648,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_freespins_end.ogg",
           "bytes": 29224,
-          "hash": "a2edcad43f"
+          "hash": "530940fa18"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_freespins_end.m4a",
@@ -680,7 +680,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_win_1.ogg",
           "bytes": 18298,
-          "hash": "94a30cdaad"
+          "hash": "88617c5f71"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_win_1.m4a",
@@ -711,7 +711,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_win_2.ogg",
           "bytes": 15230,
-          "hash": "c4738b2ae2"
+          "hash": "16acd2c722"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_win_2.m4a",
@@ -742,7 +742,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_win_3.ogg",
           "bytes": 17184,
-          "hash": "af61afc37e"
+          "hash": "26717d3641"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_win_3.m4a",
@@ -773,7 +773,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_bigwin_1.ogg",
           "bytes": 25503,
-          "hash": "95828b16a0"
+          "hash": "6bc827b2e1"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_bigwin_1.m4a",
@@ -804,7 +804,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_bigwin_2.ogg",
           "bytes": 30842,
-          "hash": "834aa65aa9"
+          "hash": "76fe564fb7"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_bigwin_2.m4a",
@@ -835,7 +835,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_bigwin_3.ogg",
           "bytes": 31358,
-          "hash": "ab9389106e"
+          "hash": "9a7b799104"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_bigwin_3.m4a",
@@ -866,7 +866,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_freespins_1.ogg",
           "bytes": 28053,
-          "hash": "4a9267cac6"
+          "hash": "9c89fd97bd"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_freespins_1.m4a",
@@ -897,7 +897,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_freespins_2.ogg",
           "bytes": 29758,
-          "hash": "f715bb64c6"
+          "hash": "0d3dbec534"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_freespins_2.m4a",
@@ -928,7 +928,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_anticipation_1.ogg",
           "bytes": 24568,
-          "hash": "f52ae3461d"
+          "hash": "00d6cf9004"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_anticipation_1.m4a",
@@ -959,7 +959,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_anticipation_2.ogg",
           "bytes": 32478,
-          "hash": "e413919e6a"
+          "hash": "8ff5f599a5"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_anticipation_2.m4a",
@@ -990,7 +990,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_catch_1.ogg",
           "bytes": 13002,
-          "hash": "cc700d3ec7"
+          "hash": "f952254fd7"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_catch_1.m4a",
@@ -1021,7 +1021,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_catch_2.ogg",
           "bytes": 19844,
-          "hash": "a1128a8672"
+          "hash": "636abfcd53"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_catch_2.m4a",
@@ -1052,7 +1052,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_golden_1.ogg",
           "bytes": 27598,
-          "hash": "8143dee0f8"
+          "hash": "bf876a2d58"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_golden_1.m4a",
@@ -1083,7 +1083,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_golden_2.ogg",
           "bytes": 26770,
-          "hash": "aba77347e8"
+          "hash": "795b5af6bf"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_golden_2.m4a",
@@ -1114,7 +1114,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_idle_1.ogg",
           "bytes": 23405,
-          "hash": "e14595d70a"
+          "hash": "b73507fcc2"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_idle_1.m4a",
@@ -1145,7 +1145,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_idle_2.ogg",
           "bytes": 24279,
-          "hash": "e9ac1a9c1d"
+          "hash": "03e660d2dd"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_idle_2.m4a",
@@ -1176,7 +1176,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_lose_1.ogg",
           "bytes": 23162,
-          "hash": "449c193961"
+          "hash": "cdd2c3ea85"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_lose_1.m4a",
@@ -1207,7 +1207,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_lose_2.ogg",
           "bytes": 26656,
-          "hash": "c09ca9e39c"
+          "hash": "2441588fb0"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_lose_2.m4a",
@@ -1228,6 +1228,60 @@
       "tags": [
         "production",
         "voice"
+      ]
+    },
+    "font.win": {
+      "type": "font",
+      "group": "BASE_GAME",
+      "family": "Bangers",
+      "style": "normal",
+      "weight": 400,
+      "file": {
+        "path": "generated/assets/fonts/local/Bangers.ttf",
+        "bytes": 91216,
+        "hash": "93dfcc2358",
+        "fontFormat": "ttf"
+      },
+      "googleFontRef": "Bangers",
+      "tags": [
+        "production",
+        "font"
+      ]
+    },
+    "font.fish": {
+      "type": "font",
+      "group": "BASE_GAME",
+      "family": "Bakbak One",
+      "style": "normal",
+      "weight": 400,
+      "file": {
+        "path": "generated/assets/fonts/local/BakbakOne.ttf",
+        "bytes": 253240,
+        "hash": "9ffbe4fbc8",
+        "fontFormat": "ttf"
+      },
+      "googleFontRef": "Bakbak One",
+      "tags": [
+        "production",
+        "font"
+      ]
+    },
+    "font.feature": {
+      "type": "font",
+      "group": "BASE_GAME",
+      "family": "Cherry Bomb One",
+      "style": "normal",
+      "weight": 400,
+      "file": {
+        "path": "generated/assets/fonts/local/CherryBombOne.ttf",
+        "bytes": 208456,
+        "hash": "5a918a821e",
+        "fontFormat": "ttf"
+      },
+      "googleFontRef": "Cherry Bomb One",
+      "tags": [
+        "production",
+        "font"
       ]
     },
     "symbol.ten.base": {
@@ -1893,7 +1947,7 @@
     }
   },
   "buildMetadata": {
-    "builtAt": "2026-10-16T17:41:20.895Z",
+    "builtAt": "2026-10-16T19:09:49.128Z",
     "pipelineVersion": "0.1.0"
   }
 }
