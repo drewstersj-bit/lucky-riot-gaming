@@ -283,3 +283,27 @@
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+# ---------------------------------------------------------------------------
+# GAME ASSETS (per-game generated/ bundle): always revalidate.
+# ---------------------------------------------------------------------------
+# The game's generated assets (Spine skeleton/atlas/texture PNG, tiered images,
+# audio) use STABLE filenames (e.g. ingame.png, SYM_WILD.json). The AssetManager
+# cache-busts most URLs with ?v=<contentHash>, but a Spine atlas's TEXTURE is
+# fetched by the spine runtime using the bare image name written INSIDE the
+# .atlas file, resolved RELATIVE to the atlas URL — so the ?v= query does not
+# reach the PNG. Under the generic /*.png rule (7-day) the browser then served a
+# STALE atlas texture after new art shipped ("old Spine art in the live demo").
+# Forcing revalidation on everything under a game's generated/ bundle makes the
+# browser re-check on each load (a cheap 304 when unchanged, fresh bytes after a
+# deploy). Placed LAST so it wins over the generic extension rules above for
+# these paths (Netlify applies the most specific / last-matching header).
+[[headers]]
+  for = "/games/*/play/game/generated/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/games/*/dev/game/generated/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
