@@ -229,7 +229,7 @@
         "ogg": {
           "path": "generated/assets/audio/music_base_loop.ogg",
           "bytes": 415249,
-          "hash": "ec91dad3f0"
+          "hash": "587ff2722e"
         },
         "m4a": {
           "path": "generated/assets/audio/music_base_loop.m4a",
@@ -262,7 +262,7 @@
         "ogg": {
           "path": "generated/assets/audio/music_freespins_loop.ogg",
           "bytes": 439494,
-          "hash": "ff48a031f1"
+          "hash": "469410793c"
         },
         "m4a": {
           "path": "generated/assets/audio/music_freespins_loop.m4a",
@@ -295,7 +295,7 @@
         "ogg": {
           "path": "generated/assets/audio/ambience_lagoon.ogg",
           "bytes": 265117,
-          "hash": "f744711c60"
+          "hash": "b9028a9a2d"
         },
         "m4a": {
           "path": "generated/assets/audio/ambience_lagoon.m4a",
@@ -327,7 +327,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_spin_start.ogg",
           "bytes": 20204,
-          "hash": "a95d0eda9e"
+          "hash": "8fc05a185b"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_spin_start.m4a",
@@ -359,7 +359,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_reel_stop.ogg",
           "bytes": 15032,
-          "hash": "735b7c21cc"
+          "hash": "cdf8a2dc27"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_reel_stop.m4a",
@@ -391,7 +391,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_win_small.ogg",
           "bytes": 18359,
-          "hash": "7a47480755"
+          "hash": "bf303fba29"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_win_small.m4a",
@@ -423,7 +423,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_win_big.ogg",
           "bytes": 35973,
-          "hash": "9286782d8e"
+          "hash": "dc8f245277"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_win_big.m4a",
@@ -455,7 +455,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_fish_catch.ogg",
           "bytes": 16001,
-          "hash": "13aeffdd23"
+          "hash": "25341a7efe"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_fish_catch.m4a",
@@ -487,7 +487,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_scatter_land.ogg",
           "bytes": 16797,
-          "hash": "018c07db7c"
+          "hash": "410d7c8c5a"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_scatter_land.m4a",
@@ -519,7 +519,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_anticipation_loop.ogg",
           "bytes": 113371,
-          "hash": "4f903e9653"
+          "hash": "0358f69b9a"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_anticipation_loop.m4a",
@@ -552,7 +552,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_anticipation_hit.ogg",
           "bytes": 21632,
-          "hash": "9bb24c5a51"
+          "hash": "efc08aba95"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_anticipation_hit.m4a",
@@ -584,7 +584,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_freespins_trigger.ogg",
           "bytes": 34663,
-          "hash": "db616e65b2"
+          "hash": "2811e97eca"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_freespins_trigger.m4a",
@@ -616,7 +616,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_golden_fish.ogg",
           "bytes": 35723,
-          "hash": "16221d65a4"
+          "hash": "199d77e77a"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_golden_fish.m4a",
@@ -648,7 +648,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_freespins_end.ogg",
           "bytes": 29224,
-          "hash": "328a23e6dc"
+          "hash": "e6ba961498"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_freespins_end.m4a",
@@ -679,21 +679,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_win_1.ogg",
-          "bytes": 18298,
-          "hash": "08c0221ece"
+          "bytes": 16422,
+          "hash": "5ef7603b67"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_win_1.m4a",
-          "bytes": 28850,
-          "hash": "c11a56d95b"
+          "bytes": 24653,
+          "hash": "0492ae4f5d"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_win_1.mp3",
-          "bytes": 18193,
-          "hash": "07c89aea27"
+          "bytes": 15091,
+          "hash": "6cc022913c"
         }
       },
-      "durationMs": 1393,
+      "durationMs": 1161,
       "channels": 1,
       "defaultVolume": 0.95,
       "policy": "preload",
@@ -710,21 +710,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_win_2.ogg",
-          "bytes": 15230,
-          "hash": "9a8c50bdfb"
+          "bytes": 16954,
+          "hash": "2ac637f0f9"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_win_2.m4a",
-          "bytes": 23250,
-          "hash": "3a4b1657e6"
+          "bytes": 26630,
+          "hash": "9868ac0623"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_win_2.mp3",
-          "bytes": 15795,
-          "hash": "6009426fd8"
+          "bytes": 16918,
+          "hash": "dcf63c490c"
         }
       },
-      "durationMs": 1161,
+      "durationMs": 1300,
       "channels": 1,
       "defaultVolume": 0.95,
       "policy": "preload",
@@ -741,21 +741,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_win_3.ogg",
-          "bytes": 17184,
-          "hash": "c8223091a3"
+          "bytes": 15615,
+          "hash": "8758ec870f"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_win_3.m4a",
-          "bytes": 26204,
-          "hash": "f277582dd0"
+          "bytes": 23808,
+          "hash": "0b7eaffb83"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_win_3.mp3",
-          "bytes": 17202,
-          "hash": "cf53c29d91"
+          "bytes": 15537,
+          "hash": "524a461c22"
         }
       },
-      "durationMs": 1254,
+      "durationMs": 1161,
       "channels": 1,
       "defaultVolume": 0.95,
       "policy": "preload",
@@ -772,21 +772,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_bigwin_1.ogg",
-          "bytes": 25503,
-          "hash": "0757969cf7"
+          "bytes": 20684,
+          "hash": "22da031b90"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_bigwin_1.m4a",
-          "bytes": 44238,
-          "hash": "be1152b627"
+          "bytes": 32566,
+          "hash": "af7ef215c8"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_bigwin_1.mp3",
-          "bytes": 27006,
-          "hash": "ba744b2a02"
+          "bytes": 20854,
+          "hash": "7966719674"
         }
       },
-      "durationMs": 2136,
+      "durationMs": 1625,
       "channels": 1,
       "defaultVolume": 0.95,
       "policy": "preload",
@@ -803,21 +803,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_bigwin_2.ogg",
-          "bytes": 30842,
-          "hash": "f7eef41ef2"
+          "bytes": 24806,
+          "hash": "5b3e123873"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_bigwin_2.m4a",
-          "bytes": 55084,
-          "hash": "236379cc5b"
+          "bytes": 44645,
+          "hash": "d6285abcda"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_bigwin_2.mp3",
-          "bytes": 33060,
-          "hash": "345478fe53"
+          "bytes": 26124,
+          "hash": "ff26535b85"
         }
       },
-      "durationMs": 2694,
+      "durationMs": 2136,
       "channels": 1,
       "defaultVolume": 0.95,
       "policy": "preload",
@@ -834,21 +834,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_bigwin_3.ogg",
-          "bytes": 31358,
-          "hash": "5af7d725bd"
+          "bytes": 25839,
+          "hash": "6ecd3ec49f"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_bigwin_3.m4a",
-          "bytes": 57431,
-          "hash": "db51d40ddd"
+          "bytes": 45285,
+          "hash": "8c45101d4b"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_bigwin_3.mp3",
-          "bytes": 34361,
-          "hash": "5327ef5f78"
+          "bytes": 28183,
+          "hash": "1f69bd0c6b"
         }
       },
-      "durationMs": 2740,
+      "durationMs": 2229,
       "channels": 1,
       "defaultVolume": 0.95,
       "policy": "preload",
@@ -865,21 +865,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_freespins_1.ogg",
-          "bytes": 28053,
-          "hash": "43978f6dc2"
+          "bytes": 27084,
+          "hash": "da53c0daa9"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_freespins_1.m4a",
-          "bytes": 49660,
-          "hash": "23477070f0"
+          "bytes": 47350,
+          "hash": "990fe95219"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_freespins_1.mp3",
-          "bytes": 31206,
-          "hash": "8accb8ac36"
+          "bytes": 29748,
+          "hash": "766c24c4eb"
         }
       },
-      "durationMs": 2368,
+      "durationMs": 2276,
       "channels": 1,
       "defaultVolume": 0.95,
       "policy": "preload",
@@ -896,21 +896,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_freespins_2.ogg",
-          "bytes": 29758,
-          "hash": "046994de8a"
+          "bytes": 31765,
+          "hash": "c088a81509"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_freespins_2.m4a",
-          "bytes": 52820,
-          "hash": "0492446d7b"
+          "bytes": 55939,
+          "hash": "cf58d47b39"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_freespins_2.mp3",
-          "bytes": 31624,
-          "hash": "3f69664595"
+          "bytes": 36063,
+          "hash": "2060a884cc"
         }
       },
-      "durationMs": 2508,
+      "durationMs": 2786,
       "channels": 1,
       "defaultVolume": 0.95,
       "policy": "preload",
@@ -927,21 +927,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_anticipation_1.ogg",
-          "bytes": 24568,
-          "hash": "201bd60207"
+          "bytes": 27009,
+          "hash": "0258f1221e"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_anticipation_1.m4a",
-          "bytes": 42694,
-          "hash": "d382661802"
+          "bytes": 51653,
+          "hash": "4a7eaf3c1c"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_anticipation_1.mp3",
-          "bytes": 27558,
-          "hash": "c91a48a17f"
+          "bytes": 32277,
+          "hash": "d92f16a2bc"
         }
       },
-      "durationMs": 2090,
+      "durationMs": 2415,
       "channels": 1,
       "defaultVolume": 0.95,
       "policy": "preload",
@@ -958,21 +958,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_anticipation_2.ogg",
-          "bytes": 32478,
-          "hash": "f1de88d679"
+          "bytes": 31401,
+          "hash": "447e3456e6"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_anticipation_2.m4a",
-          "bytes": 59655,
-          "hash": "e46f049ed2"
+          "bytes": 57538,
+          "hash": "daa77a8146"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_anticipation_2.mp3",
-          "bytes": 36886,
-          "hash": "c3d1e5c918"
+          "bytes": 35931,
+          "hash": "90bc89c429"
         }
       },
-      "durationMs": 2833,
+      "durationMs": 2694,
       "channels": 1,
       "defaultVolume": 0.95,
       "policy": "preload",
@@ -989,21 +989,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_catch_1.ogg",
-          "bytes": 13002,
-          "hash": "f94180ecb7"
+          "bytes": 12319,
+          "hash": "68ffef73b2"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_catch_1.m4a",
-          "bytes": 18604,
-          "hash": "e85fa439b1"
+          "bytes": 16546,
+          "hash": "e470529d2e"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_catch_1.mp3",
-          "bytes": 11779,
-          "hash": "4e7953c484"
+          "bytes": 11229,
+          "hash": "e57b419463"
         }
       },
-      "durationMs": 929,
+      "durationMs": 836,
       "channels": 1,
       "defaultVolume": 0.95,
       "policy": "preload",
@@ -1020,21 +1020,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_catch_2.ogg",
-          "bytes": 19844,
-          "hash": "b978da7bf3"
+          "bytes": 17748,
+          "hash": "69129bcf0f"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_catch_2.m4a",
-          "bytes": 32633,
-          "hash": "7e19c1d285"
+          "bytes": 28248,
+          "hash": "9c1f0874ea"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_catch_2.mp3",
-          "bytes": 18896,
-          "hash": "68476e2b7d"
+          "bytes": 16994,
+          "hash": "b8e042cc94"
         }
       },
-      "durationMs": 1533,
+      "durationMs": 1347,
       "channels": 1,
       "defaultVolume": 0.95,
       "policy": "preload",
@@ -1051,21 +1051,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_golden_1.ogg",
-          "bytes": 27598,
-          "hash": "0bb3b613ea"
+          "bytes": 25362,
+          "hash": "c2f3365369"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_golden_1.m4a",
-          "bytes": 49725,
-          "hash": "3842a4d5e7"
+          "bytes": 45951,
+          "hash": "8bab1dc3ce"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_golden_1.mp3",
-          "bytes": 30740,
-          "hash": "c225f90d93"
+          "bytes": 29331,
+          "hash": "beb8fe5a68"
         }
       },
-      "durationMs": 2322,
+      "durationMs": 2229,
       "channels": 1,
       "defaultVolume": 0.95,
       "policy": "preload",
@@ -1082,21 +1082,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_golden_2.ogg",
-          "bytes": 26770,
-          "hash": "7f8d5fc2c8"
+          "bytes": 23873,
+          "hash": "0814d842c6"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_golden_2.m4a",
-          "bytes": 46173,
-          "hash": "8658706389"
+          "bytes": 40516,
+          "hash": "5c85ea0350"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_golden_2.mp3",
-          "bytes": 29898,
-          "hash": "14c4be91aa"
+          "bytes": 24634,
+          "hash": "13956a9239"
         }
       },
-      "durationMs": 2276,
+      "durationMs": 1904,
       "channels": 1,
       "defaultVolume": 0.95,
       "policy": "preload",
@@ -1113,18 +1113,18 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_idle_1.ogg",
-          "bytes": 23405,
-          "hash": "021baa8008"
+          "bytes": 22302,
+          "hash": "3509b9f5c2"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_idle_1.m4a",
-          "bytes": 39444,
-          "hash": "64ff106498"
+          "bytes": 38296,
+          "hash": "4823fc3493"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_idle_1.mp3",
-          "bytes": 25054,
-          "hash": "32d31f2e12"
+          "bytes": 23800,
+          "hash": "1e9f91413e"
         }
       },
       "durationMs": 1904,
@@ -1144,21 +1144,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_idle_2.ogg",
-          "bytes": 24279,
-          "hash": "b9ad136f3b"
+          "bytes": 21503,
+          "hash": "84a6d8b941"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_idle_2.m4a",
-          "bytes": 43031,
-          "hash": "f215a57725"
+          "bytes": 35445,
+          "hash": "782528f88a"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_idle_2.mp3",
-          "bytes": 28258,
-          "hash": "4cc4d43184"
+          "bytes": 23122,
+          "hash": "d11b734be6"
         }
       },
-      "durationMs": 2090,
+      "durationMs": 1765,
       "channels": 1,
       "defaultVolume": 0.9,
       "policy": "preload",
@@ -1175,21 +1175,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_lose_1.ogg",
-          "bytes": 23162,
-          "hash": "b44788a835"
+          "bytes": 18774,
+          "hash": "822fc16589"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_lose_1.m4a",
-          "bytes": 37589,
-          "hash": "d3e01ed36d"
+          "bytes": 31204,
+          "hash": "c6f5bc0c71"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_lose_1.mp3",
-          "bytes": 24869,
-          "hash": "9219e72eb1"
+          "bytes": 19031,
+          "hash": "c1f123611e"
         }
       },
-      "durationMs": 1811,
+      "durationMs": 1486,
       "channels": 1,
       "defaultVolume": 0.9,
       "policy": "preload",
@@ -1206,21 +1206,21 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/voice/vo_lose_2.ogg",
-          "bytes": 26656,
-          "hash": "9c5b0e8a9f"
+          "bytes": 24886,
+          "hash": "3e16370a74"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_lose_2.m4a",
-          "bytes": 46923,
-          "hash": "5db7a88382"
+          "bytes": 42750,
+          "hash": "453f63aa54"
         },
         "mp3": {
           "path": "generated/assets/audio/voice/vo_lose_2.mp3",
-          "bytes": 28127,
-          "hash": "05c1f192ee"
+          "bytes": 26462,
+          "hash": "32ba56d337"
         }
       },
-      "durationMs": 2276,
+      "durationMs": 2043,
       "channels": 1,
       "defaultVolume": 0.9,
       "policy": "preload",
@@ -1990,18 +1990,18 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/music_base_loop_2.ogg",
-          "bytes": 269356,
-          "hash": "187d007e91"
+          "bytes": 306158,
+          "hash": "33999e892e"
         },
         "m4a": {
           "path": "generated/assets/audio/music_base_loop_2.m4a",
-          "bytes": 404729,
-          "hash": "908f58d79c"
+          "bytes": 408135,
+          "hash": "0088796142"
         },
         "mp3": {
           "path": "generated/assets/audio/music_base_loop_2.mp3",
-          "bytes": 316948,
-          "hash": "1462894ab0"
+          "bytes": 376123,
+          "hash": "8c3847ceec"
         }
       },
       "durationMs": 20000,
@@ -2023,18 +2023,18 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/music_base_loop_3.ogg",
-          "bytes": 434558,
-          "hash": "42aa708f69"
+          "bytes": 375489,
+          "hash": "525af811f5"
         },
         "m4a": {
           "path": "generated/assets/audio/music_base_loop_3.m4a",
-          "bytes": 417687,
-          "hash": "3f29e97386"
+          "bytes": 423715,
+          "hash": "11b8c2b2d7"
         },
         "mp3": {
           "path": "generated/assets/audio/music_base_loop_3.mp3",
-          "bytes": 430050,
-          "hash": "025557c59b"
+          "bytes": 414818,
+          "hash": "00080e721d"
         }
       },
       "durationMs": 20000,
@@ -2056,18 +2056,18 @@
       "formats": {
         "ogg": {
           "path": "generated/assets/audio/music_base_loop_4.ogg",
-          "bytes": 283259,
-          "hash": "60db90708f"
+          "bytes": 294833,
+          "hash": "99ba16dec3"
         },
         "m4a": {
           "path": "generated/assets/audio/music_base_loop_4.m4a",
-          "bytes": 405972,
-          "hash": "2a4511dcbd"
+          "bytes": 405194,
+          "hash": "7244c08852"
         },
         "mp3": {
           "path": "generated/assets/audio/music_base_loop_4.mp3",
-          "bytes": 353885,
-          "hash": "4eb8bafe8c"
+          "bytes": 381604,
+          "hash": "7fc0801047"
         }
       },
       "durationMs": 20000,
@@ -2084,7 +2084,7 @@
     }
   },
   "buildMetadata": {
-    "builtAt": "2026-10-18T21:50:29.551Z",
+    "builtAt": "2026-10-18T22:03:44.447Z",
     "pipelineVersion": "0.1.0"
   }
 }
