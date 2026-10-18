@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Section } from "@/components/Section";
 import { MaturityBadge } from "@/components/MaturityBadge";
 import { GameEmbed } from "@/components/GameEmbed";
+import { PlaytestStudio } from "@/components/PlaytestStudio";
 import { getDeployment } from "@/content/game-deployments";
 import { buildProfiles } from "@/content/games";
 
@@ -57,6 +58,18 @@ export default function TycoonLagoonDevPlaytestPage() {
           </p>
         )}
       </div>
+
+      {manifest?.available && (
+        <div className="mt-8 rounded-xl2 border border-riot-cyan/40 bg-riot-cyan/5 p-5">
+          <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-riot-cyan">Playtest studio</h2>
+          <p className="mt-2 text-sm leading-relaxed text-riot-text-muted">
+            Pop the game into its own window for a full-size view (less cramped than the embed, especially in portrait). The in-game DEV panel — including the new <span className="font-semibold text-riot-text">Force</span> menu — travels with it.
+          </p>
+          <div className="mt-4">
+            <PlaytestStudio entryPoint={manifest.entryPoint} title="Tycoon Lagoon" />
+          </div>
+        </div>
+      )}
 
       <div className="mt-8"><GameEmbed manifest={manifest} title="Tycoon Lagoon (Playtest)" sizing="viewport" /></div>
 
