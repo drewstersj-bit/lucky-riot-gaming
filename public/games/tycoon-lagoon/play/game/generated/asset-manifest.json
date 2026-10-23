@@ -439,7 +439,7 @@
         "ogg": {
           "path": "generated/assets/audio/music_base_loop.ogg",
           "bytes": 415249,
-          "hash": "ea27b10a55"
+          "hash": "ee987026b4"
         },
         "m4a": {
           "path": "generated/assets/audio/music_base_loop.m4a",
@@ -472,7 +472,7 @@
         "ogg": {
           "path": "generated/assets/audio/music_base_loop_2.ogg",
           "bytes": 386660,
-          "hash": "d0af84d9f2"
+          "hash": "e87273597a"
         },
         "m4a": {
           "path": "generated/assets/audio/music_base_loop_2.m4a",
@@ -505,7 +505,7 @@
         "ogg": {
           "path": "generated/assets/audio/music_base_loop_3.ogg",
           "bytes": 419922,
-          "hash": "6015d727be"
+          "hash": "af8b68ceda"
         },
         "m4a": {
           "path": "generated/assets/audio/music_base_loop_3.m4a",
@@ -538,7 +538,7 @@
         "ogg": {
           "path": "generated/assets/audio/music_base_loop_4.ogg",
           "bytes": 405056,
-          "hash": "0349d75248"
+          "hash": "ab2f90191f"
         },
         "m4a": {
           "path": "generated/assets/audio/music_base_loop_4.m4a",
@@ -571,7 +571,7 @@
         "ogg": {
           "path": "generated/assets/audio/music_freespins_loop.ogg",
           "bytes": 439494,
-          "hash": "9a5dfc1476"
+          "hash": "25c13d6560"
         },
         "m4a": {
           "path": "generated/assets/audio/music_freespins_loop.m4a",
@@ -604,7 +604,7 @@
         "ogg": {
           "path": "generated/assets/audio/ambience_lagoon.ogg",
           "bytes": 265117,
-          "hash": "e473ddc962"
+          "hash": "4d7e3f40ce"
         },
         "m4a": {
           "path": "generated/assets/audio/ambience_lagoon.m4a",
@@ -636,7 +636,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_spin_start.ogg",
           "bytes": 20204,
-          "hash": "5b4db48686"
+          "hash": "88dedb6c28"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_spin_start.m4a",
@@ -668,7 +668,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_reel_stop.ogg",
           "bytes": 15032,
-          "hash": "d1c257704d"
+          "hash": "46df2ca634"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_reel_stop.m4a",
@@ -700,7 +700,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_win_small.ogg",
           "bytes": 18359,
-          "hash": "35b060cdd2"
+          "hash": "70114cd1c9"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_win_small.m4a",
@@ -732,7 +732,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_win_big.ogg",
           "bytes": 35973,
-          "hash": "92f0cfc798"
+          "hash": "d8abd9ef38"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_win_big.m4a",
@@ -764,7 +764,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_fish_catch.ogg",
           "bytes": 16001,
-          "hash": "0b43430ce3"
+          "hash": "1b7d69dcd0"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_fish_catch.m4a",
@@ -796,7 +796,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_scatter_land.ogg",
           "bytes": 16797,
-          "hash": "c2e8f6114a"
+          "hash": "0103b03160"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_scatter_land.m4a",
@@ -828,7 +828,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_anticipation_loop.ogg",
           "bytes": 113371,
-          "hash": "2ac29000f6"
+          "hash": "fc259fd2c2"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_anticipation_loop.m4a",
@@ -861,7 +861,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_anticipation_hit.ogg",
           "bytes": 21632,
-          "hash": "ac6b28370e"
+          "hash": "0cc470e6e0"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_anticipation_hit.m4a",
@@ -893,7 +893,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_freespins_trigger.ogg",
           "bytes": 34663,
-          "hash": "2a7546c09a"
+          "hash": "35c584a1dc"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_freespins_trigger.m4a",
@@ -925,7 +925,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_golden_fish.ogg",
           "bytes": 35723,
-          "hash": "40285374f3"
+          "hash": "4aff788cf1"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_golden_fish.m4a",
@@ -957,7 +957,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_freespins_end.ogg",
           "bytes": 29224,
-          "hash": "43011770e4"
+          "hash": "6d9883a86c"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_freespins_end.m4a",
@@ -989,7 +989,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_win_1.ogg",
           "bytes": 16422,
-          "hash": "8285e999d7"
+          "hash": "27431dd867"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_win_1.m4a",
@@ -1020,7 +1020,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_win_2.ogg",
           "bytes": 16954,
-          "hash": "3e7a1db189"
+          "hash": "7e96853127"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_win_2.m4a",
@@ -1051,7 +1051,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_win_3.ogg",
           "bytes": 15615,
-          "hash": "a8b83b0503"
+          "hash": "16dcd68965"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_win_3.m4a",
@@ -1082,7 +1082,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_bigwin_1.ogg",
           "bytes": 20684,
-          "hash": "f08ceb6940"
+          "hash": "da678748f2"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_bigwin_1.m4a",
@@ -1113,7 +1113,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_bigwin_2.ogg",
           "bytes": 24806,
-          "hash": "45bed3142e"
+          "hash": "e1a689672c"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_bigwin_2.m4a",
@@ -1144,7 +1144,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_bigwin_3.ogg",
           "bytes": 25839,
-          "hash": "168c2c6a88"
+          "hash": "892183a1ed"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_bigwin_3.m4a",
@@ -1175,7 +1175,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_freespins_1.ogg",
           "bytes": 27084,
-          "hash": "15d7112f29"
+          "hash": "2e1ef662f4"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_freespins_1.m4a",
@@ -1206,7 +1206,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_freespins_2.ogg",
           "bytes": 31765,
-          "hash": "3886519bfc"
+          "hash": "e30ef1082e"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_freespins_2.m4a",
@@ -1237,7 +1237,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_anticipation_1.ogg",
           "bytes": 27009,
-          "hash": "feff94ea4a"
+          "hash": "06d2537226"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_anticipation_1.m4a",
@@ -1268,7 +1268,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_anticipation_2.ogg",
           "bytes": 31401,
-          "hash": "96b2cdc3de"
+          "hash": "1f00a8a14a"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_anticipation_2.m4a",
@@ -1299,7 +1299,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_catch_1.ogg",
           "bytes": 12319,
-          "hash": "c71498fad7"
+          "hash": "c024f631e7"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_catch_1.m4a",
@@ -1330,7 +1330,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_catch_2.ogg",
           "bytes": 17748,
-          "hash": "6d12611aa1"
+          "hash": "956cc79efc"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_catch_2.m4a",
@@ -1361,7 +1361,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_golden_1.ogg",
           "bytes": 25362,
-          "hash": "9b50bb3f06"
+          "hash": "0ffd47ec4f"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_golden_1.m4a",
@@ -1392,7 +1392,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_golden_2.ogg",
           "bytes": 23873,
-          "hash": "ded87e7f9f"
+          "hash": "d928852d2e"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_golden_2.m4a",
@@ -1423,7 +1423,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_idle_1.ogg",
           "bytes": 22302,
-          "hash": "915a1d45bc"
+          "hash": "9e8d4a14a1"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_idle_1.m4a",
@@ -1454,7 +1454,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_idle_2.ogg",
           "bytes": 21503,
-          "hash": "af5e007fd0"
+          "hash": "373978af59"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_idle_2.m4a",
@@ -1485,7 +1485,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_lose_1.ogg",
           "bytes": 18774,
-          "hash": "05fb534f41"
+          "hash": "67b97b112c"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_lose_1.m4a",
@@ -1516,7 +1516,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_lose_2.ogg",
           "bytes": 24886,
-          "hash": "0106a01177"
+          "hash": "082ee90e00"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_lose_2.m4a",
@@ -2294,7 +2294,7 @@
     }
   },
   "buildMetadata": {
-    "builtAt": "2026-10-22T22:29:44.984Z",
+    "builtAt": "2026-10-22T22:44:16.318Z",
     "pipelineVersion": "0.1.0"
   }
 }
