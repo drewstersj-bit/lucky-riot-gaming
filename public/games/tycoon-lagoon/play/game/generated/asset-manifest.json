@@ -439,7 +439,7 @@
         "ogg": {
           "path": "generated/assets/audio/music_base_loop.ogg",
           "bytes": 415249,
-          "hash": "ee987026b4"
+          "hash": "98a51fe18c"
         },
         "m4a": {
           "path": "generated/assets/audio/music_base_loop.m4a",
@@ -472,7 +472,7 @@
         "ogg": {
           "path": "generated/assets/audio/music_base_loop_2.ogg",
           "bytes": 386660,
-          "hash": "e87273597a"
+          "hash": "ebb0664bef"
         },
         "m4a": {
           "path": "generated/assets/audio/music_base_loop_2.m4a",
@@ -505,7 +505,7 @@
         "ogg": {
           "path": "generated/assets/audio/music_base_loop_3.ogg",
           "bytes": 419922,
-          "hash": "af8b68ceda"
+          "hash": "c0e89cbcf5"
         },
         "m4a": {
           "path": "generated/assets/audio/music_base_loop_3.m4a",
@@ -538,7 +538,7 @@
         "ogg": {
           "path": "generated/assets/audio/music_base_loop_4.ogg",
           "bytes": 405056,
-          "hash": "ab2f90191f"
+          "hash": "0e124da29c"
         },
         "m4a": {
           "path": "generated/assets/audio/music_base_loop_4.m4a",
@@ -571,7 +571,7 @@
         "ogg": {
           "path": "generated/assets/audio/music_freespins_loop.ogg",
           "bytes": 439494,
-          "hash": "25c13d6560"
+          "hash": "5776784079"
         },
         "m4a": {
           "path": "generated/assets/audio/music_freespins_loop.m4a",
@@ -604,7 +604,7 @@
         "ogg": {
           "path": "generated/assets/audio/ambience_lagoon.ogg",
           "bytes": 265117,
-          "hash": "4d7e3f40ce"
+          "hash": "c49f67c8f1"
         },
         "m4a": {
           "path": "generated/assets/audio/ambience_lagoon.m4a",
@@ -636,7 +636,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_spin_start.ogg",
           "bytes": 20204,
-          "hash": "88dedb6c28"
+          "hash": "d427e79366"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_spin_start.m4a",
@@ -668,7 +668,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_reel_stop.ogg",
           "bytes": 15032,
-          "hash": "46df2ca634"
+          "hash": "8241228250"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_reel_stop.m4a",
@@ -700,7 +700,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_win_small.ogg",
           "bytes": 18359,
-          "hash": "70114cd1c9"
+          "hash": "50d4f45883"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_win_small.m4a",
@@ -732,7 +732,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_win_big.ogg",
           "bytes": 35973,
-          "hash": "d8abd9ef38"
+          "hash": "00d2870bd1"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_win_big.m4a",
@@ -764,7 +764,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_fish_catch.ogg",
           "bytes": 16001,
-          "hash": "1b7d69dcd0"
+          "hash": "873526969b"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_fish_catch.m4a",
@@ -796,7 +796,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_scatter_land.ogg",
           "bytes": 16797,
-          "hash": "0103b03160"
+          "hash": "1afd184b0e"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_scatter_land.m4a",
@@ -828,7 +828,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_anticipation_loop.ogg",
           "bytes": 113371,
-          "hash": "fc259fd2c2"
+          "hash": "d89898c609"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_anticipation_loop.m4a",
@@ -861,7 +861,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_anticipation_hit.ogg",
           "bytes": 21632,
-          "hash": "0cc470e6e0"
+          "hash": "88a6be8ef9"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_anticipation_hit.m4a",
@@ -893,7 +893,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_freespins_trigger.ogg",
           "bytes": 34663,
-          "hash": "35c584a1dc"
+          "hash": "75f9db34ce"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_freespins_trigger.m4a",
@@ -925,7 +925,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_golden_fish.ogg",
           "bytes": 35723,
-          "hash": "4aff788cf1"
+          "hash": "a156ec4bf9"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_golden_fish.m4a",
@@ -957,7 +957,7 @@
         "ogg": {
           "path": "generated/assets/audio/sfx_freespins_end.ogg",
           "bytes": 29224,
-          "hash": "6d9883a86c"
+          "hash": "8a215bd485"
         },
         "m4a": {
           "path": "generated/assets/audio/sfx_freespins_end.m4a",
@@ -989,7 +989,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_win_1.ogg",
           "bytes": 16422,
-          "hash": "27431dd867"
+          "hash": "c360c5c996"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_win_1.m4a",
@@ -1020,7 +1020,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_win_2.ogg",
           "bytes": 16954,
-          "hash": "7e96853127"
+          "hash": "cd68f28c96"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_win_2.m4a",
@@ -1051,7 +1051,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_win_3.ogg",
           "bytes": 15615,
-          "hash": "16dcd68965"
+          "hash": "b8b2073eba"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_win_3.m4a",
@@ -1082,7 +1082,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_bigwin_1.ogg",
           "bytes": 20684,
-          "hash": "da678748f2"
+          "hash": "ccdba3a661"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_bigwin_1.m4a",
@@ -1113,7 +1113,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_bigwin_2.ogg",
           "bytes": 24806,
-          "hash": "e1a689672c"
+          "hash": "eaac3e630d"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_bigwin_2.m4a",
@@ -1144,7 +1144,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_bigwin_3.ogg",
           "bytes": 25839,
-          "hash": "892183a1ed"
+          "hash": "8bc479abc7"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_bigwin_3.m4a",
@@ -1175,7 +1175,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_freespins_1.ogg",
           "bytes": 27084,
-          "hash": "2e1ef662f4"
+          "hash": "2ae74dc72c"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_freespins_1.m4a",
@@ -1206,7 +1206,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_freespins_2.ogg",
           "bytes": 31765,
-          "hash": "e30ef1082e"
+          "hash": "2b0d7768d1"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_freespins_2.m4a",
@@ -1237,7 +1237,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_anticipation_1.ogg",
           "bytes": 27009,
-          "hash": "06d2537226"
+          "hash": "7a2ecbf98b"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_anticipation_1.m4a",
@@ -1268,7 +1268,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_anticipation_2.ogg",
           "bytes": 31401,
-          "hash": "1f00a8a14a"
+          "hash": "9f6acc4c74"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_anticipation_2.m4a",
@@ -1299,7 +1299,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_catch_1.ogg",
           "bytes": 12319,
-          "hash": "c024f631e7"
+          "hash": "2a26ba1a37"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_catch_1.m4a",
@@ -1330,7 +1330,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_catch_2.ogg",
           "bytes": 17748,
-          "hash": "956cc79efc"
+          "hash": "5acf5a7dec"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_catch_2.m4a",
@@ -1361,7 +1361,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_golden_1.ogg",
           "bytes": 25362,
-          "hash": "0ffd47ec4f"
+          "hash": "27cf390c2a"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_golden_1.m4a",
@@ -1392,7 +1392,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_golden_2.ogg",
           "bytes": 23873,
-          "hash": "d928852d2e"
+          "hash": "0839aa506b"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_golden_2.m4a",
@@ -1423,7 +1423,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_idle_1.ogg",
           "bytes": 22302,
-          "hash": "9e8d4a14a1"
+          "hash": "1fdf66ff76"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_idle_1.m4a",
@@ -1454,7 +1454,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_idle_2.ogg",
           "bytes": 21503,
-          "hash": "373978af59"
+          "hash": "99908bef2c"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_idle_2.m4a",
@@ -1485,7 +1485,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_lose_1.ogg",
           "bytes": 18774,
-          "hash": "67b97b112c"
+          "hash": "d6a5587602"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_lose_1.m4a",
@@ -1516,7 +1516,7 @@
         "ogg": {
           "path": "generated/assets/audio/voice/vo_lose_2.ogg",
           "bytes": 24886,
-          "hash": "082ee90e00"
+          "hash": "cc93dd157d"
         },
         "m4a": {
           "path": "generated/assets/audio/voice/vo_lose_2.m4a",
@@ -1607,14 +1607,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.ten.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.ten.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -1649,14 +1649,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.jack.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.jack.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -1691,14 +1691,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.queen.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.queen.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -1733,14 +1733,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.king.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.king.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -1775,14 +1775,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.ace.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.ace.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -1817,14 +1817,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.pic1.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.pic1.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -1859,14 +1859,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.pic2.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.pic2.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -1901,14 +1901,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.pic3.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.pic3.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -1943,14 +1943,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.pic4.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.pic4.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -1985,14 +1985,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.egg.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.egg.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -2027,14 +2027,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.golden.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.golden.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -2069,14 +2069,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.scatter.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.scatter.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -2111,14 +2111,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/symbol.wild.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/symbol.wild.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -2153,14 +2153,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/frame.reel.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/frame.reel.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -2183,22 +2183,22 @@
       "spineVersion": "4.3",
       "skeleton": {
         "path": "generated/assets/spine/anticipation.base/anticipation.json",
-        "bytes": 562,
-        "hash": "d93fd765f5",
+        "bytes": 421,
+        "hash": "2e18716414",
         "dataFormat": "json"
       },
       "atlas": {
         "100": {
           "atlas": {
             "path": "generated/assets/spine/anticipation.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/anticipation.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -2221,32 +2221,31 @@
       "spineVersion": "4.3",
       "skeleton": {
         "path": "generated/assets/spine/character.fisherman.base/character_fisherman.json",
-        "bytes": 524,
-        "hash": "33255f3912",
+        "bytes": 80109,
+        "hash": "8b71029fe5",
         "dataFormat": "json"
       },
       "atlas": {
         "100": {
           "atlas": {
             "path": "generated/assets/spine/character.fisherman.base/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/character.fisherman.base/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
       },
       "skins": [
-        "default"
+        "SKN_BASE"
       ],
       "animations": [
-        "ANI_IDLE",
-        "ANI_WIN_1"
+        "ANI_IDLE"
       ],
       "tags": [
         "production",
@@ -2268,14 +2267,14 @@
         "100": {
           "atlas": {
             "path": "generated/assets/spine/furniture.logo/ingame.atlas",
-            "bytes": 1697,
-            "hash": "f0a00cefc9"
+            "bytes": 6578,
+            "hash": "3096e49d82"
           },
           "pages": [
             {
               "path": "generated/assets/spine/furniture.logo/ingame.png",
-              "bytes": 3118859,
-              "hash": "ab74529b83"
+              "bytes": 6671413,
+              "hash": "195134afee"
             }
           ]
         }
@@ -2294,7 +2293,7 @@
     }
   },
   "buildMetadata": {
-    "builtAt": "2026-10-22T22:44:16.318Z",
+    "builtAt": "2026-11-05T17:10:31.083Z",
     "pipelineVersion": "0.1.0"
   }
 }
